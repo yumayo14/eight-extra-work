@@ -51,4 +51,5 @@ production:
   <<: *default
   database: eight_production
   username: eight
-  password: <%= ENV['EIGHT_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

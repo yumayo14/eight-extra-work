@@ -3,76 +3,62 @@
 ## usersテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|name        |string |null: false, add_index :users, :name, unique: true|
-|birthday    |
-|address     |
-|avatar      |
-|facebook_url|
-|summary     |
-|gender      |
+|name        |string|null: false, add_index :users, :name, unique: true|
+|birthday    |date|
+|address     |string|
+|avatar      |string|
+|facebook_url|string|
+|summary     |text|
+|gender      |string|
+### association
+has_many :telephones
+has_many :careers
+has_many :academys
 
 ## telephoneテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|telephone_num |integer   |
+|num|integer   |
 |telephone_type|references|
-|user          |references
+|user          |references|
+### association
+belongs_to :user
+belongs_to :telephone_type
 
-## telehone_typeテーブル
+## telephone_typeテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|cellphone|
-|fixedphone|
-|FAX|
-|telephone|references|
+|name|string|
+### association
+has_many :telephones
 
-## carrerテーブル
+## careerテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|department|
-|position  |
+|department|string|
+|position  |string|
 |user      |references|
 |company   |references|
+### association
+belongs_to :user
+belongs_to :company
 
 ## companyテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|company_name|
-|company_url |
+|name|string|
+|url|string|
+### association
+has_many :careers
 
 ## academyテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|school_type|
-|university|
-|major     |
-|degree    |
-|duration  |
-
-
-
-<!-- # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
- -->
+|school_type|string|
+|university|string|
+|major     |string|
+|degree    |string|
+|duration  |date|
+|user|references|
+### association
+belongs_to :user

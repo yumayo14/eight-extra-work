@@ -1,10 +1,8 @@
-# データベース設計計画書
-
 ## usersテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|name        |string|null: false, add_index :users, :name, unique: true|
-|birthday    |date|
+|name        |string|null: false, add_index :users, :name|
+|birthday    |date|null: false
 |address     |string|
 |avatar      |string|
 |facebook_url|string|
@@ -13,14 +11,13 @@
 ### association
 has_many :telephones
 has_many :careers
-has_many :academys
+has_many :academies
 
 ## telephoneテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|num|integer   |
-|telephone_type|references|
-|user          |references|
+|num   |string   |
+|user  |references| foreign_key: true
 ### association
 belongs_to :user
 belongs_to :telephone_type
@@ -28,6 +25,7 @@ belongs_to :telephone_type
 ## telephone_typeテーブル
 |Column| Type|Options|
 |------|-----|-------|
+|telephone|references|
 |name|string|
 ### association
 has_many :telephones
@@ -37,8 +35,10 @@ has_many :telephones
 |------|-----|-------|
 |department|string|
 |position  |string|
-|user      |references|
-|company   |references|
+|from      |date  |
+|to        |date|
+|user      |references| foreign_key: true
+|company   |references| foreign_key: true
 ### association
 belongs_to :user
 belongs_to :company
@@ -46,19 +46,30 @@ belongs_to :company
 ## companyテーブル
 |Column| Type|Options|
 |------|-----|-------|
-|name|string|
-|url|string|
+|name|string| null: false
+|url |string|
 ### association
 has_many :careers
+
+## cardテーブル
+|Column| Type|Options|
+|------|-----|-------|
+|image |string| null: false
+|user  |references| foreign_key: true
+|career|references| foreign_key: true
+### association
+belongs_to :user
+belongs_to :career
 
 ## academyテーブル
 |Column| Type|Options|
 |------|-----|-------|
 |school_type|string|
-|university|string|
-|major     |string|
-|degree    |string|
-|duration  |date|
-|user|references|
+|name       |string|
+|major      |string|
+|degree     |string|
+|from       |date|
+|to         |date|
+|user       |references| foreign_key: true
 ### association
 belongs_to :user

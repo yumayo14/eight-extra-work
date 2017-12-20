@@ -6,5 +6,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :birthday, :address, :avatar, :facebook_url, :summary, :text, :gender])
     devise_parameter_sanitizer.permit(:edit, keys: [:name, :birthday, :address, :avatar, :facebook_url, :summary, :text, :gender])
   end
-  end
 end

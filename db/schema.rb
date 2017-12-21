@@ -71,6 +71,5 @@ ActiveRecord::Schema.define(version: 20171221005617) do
     t.datetime "updated_at", null: false
     t.index ["telephone_type_id"], name: "index_telephones_on_telephone_type_id"
     t.index ["user_id"], name: "index_telephones_on_user_id"
-  end
 
 end

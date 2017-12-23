@@ -1,0 +1,566 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Eight
+    %meta{:content => "utf-8", :name => "charset"}/
+    %meta{:content => "IE=edge", :name => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}/
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "f5uXDEmva/uAps77aAGS/et2fkWTHvGxr5/AOcCSLj1oyKY65Xt9lVmE5sjIQ88UC8OmVf46bg3KD9sOMkVs1A==", :name => "csrf-token"}/
+    %meta{:content => "Eight - 名刺でつながる、ビジネスのためのSNS", :property => "og:title"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %meta{:content => "https://8card.net/", :property => "og:url"}/
+    %meta{:content => "https://assets.8card.net/assets/common/eight_logo_ogimg-ca2b672b46c4c25d1de5aeec00c2361b.png", :property => "og:image"}/
+    %meta{:content => "https://assets.8card.net/assets/common/eight_logo_ogimg-ca2b672b46c4c25d1de5aeec00c2361b.png", :property => "og:image:secure_url"}/
+    %meta{:content => "Eight - 名刺でつながる、ビジネスのためのSNS", :property => "og:site_name"}/
+    %meta{:content => "国内ユーザー150万人を突破。成田凌と青木崇高のテレビCM放送中！", :property => "og:description"}/
+    %meta{:content => "ja_JP", :property => "og:locale"}/
+    %meta{:content => "350764341782744", :property => "fb:app_id"}/
+    %meta{:content => "app", :name => "twitter:card"}/
+    %meta{:content => "撮るだけで簡単に名刺管理ができ、情報交換もできる無料のアプリです。成田凌と青木崇高のテレビCM放送中！", :name => "twitter:description"}/
+    %meta{:content => "Eight - 100万人が使う名刺アプリ", :name => "twitter:app:name:iphone"}/
+    %meta{:content => "444423637", :name => "twitter:app:id:iphone"}/
+    %meta{:content => "eightcard://net.8card.eightcard", :name => "twitter:app:url:iphone"}/
+    %meta{:content => "JP", :name => "twitter:app:country"}/
+    %meta{:content => "Eight - 100万人が使う名刺アプリ", :name => "twitter:app:name:ipad"}/
+    %meta{:content => "444423637", :name => "twitter:app:id:ipad"}/
+    %meta{:content => "eightcard://net.8card.eightcard", :name => "twitter:app:url:ipad"}/
+    %meta{:content => "Eight - 100万人が使う名刺アプリ", :name => "twitter:app:name:googleplay"}/
+    %meta{:content => "net.eightcard", :name => "twitter:app:id:googleplay"}/
+    %meta{:content => "eightcard://net.8card.eightcard", :name => "twitter:app:url:googleplay"}/
+    %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/vnd.microsoft.icon"}/
+    %link{:href => "/favicon.ico", :rel => "icon", :type => "image/vnd.microsoft.icon"}/
+    %link{:href => "/apple-touch-icon-200x200.png", :rel => "apple-touch-icon", :sizes => "200x200"}/
+    / Google Tag Manager
+    %script{:src => "//yjtag.yahoo.co.jp/tag?site=5IrR4px&docReferrer=https%3A%2F%2F8card.net%2Fmyhome&H=-onfhyc", :type => "text/javascript"}
+    %script{:async => "", :src => "//s.yjtag.jp/tag.js#site=5IrR4px"}
+    %script{:async => "", :src => "https://connect.facebook.net/signals/config/1897823920502053?v=2.8.6&r=stable"}
+    %script{:async => "", :src => "https://connect.facebook.net/signals/config/159046491375784?v=2.8.6&r=stable"}
+    %script{:async => "", :src => "https://connect.facebook.net/signals/plugins/iwl.js?v=2.8.6"}
+    %script{:async => "", :src => "https://connect.facebook.net/en_US/fbevents.js"}
+    %script{:async => "", :src => "//www.googleadservices.com/pagead/conversion_async.js", :type => "text/javascript"}
+    %script{:async => "", :src => "https://www.google-analytics.com/analytics.js", :type => "text/javascript"}
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtm.js?id=GTM-M4FVTG6"}
+    :javascript
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-M4FVTG6');
+    :javascript
+      dataLayer.push({
+        'eight_dmp_cooperation_code': 'df18ee29e566a3234d472b0efecc8dd9c5a6494985dff37e2a8b569e3ae3c5ca'
+      })
+    / End Google Tag Manager
+    %link{:href => "https://assets.8card.net/assets/bundle-f7ff8b482fb55cb38527dec8db45732a.css", :media => "screen", :rel => "stylesheet"}/
+    %style#react-tooltip
+      :cdata
+        \.__react_component_tooltip{border-radius:3px;display:inline-block;font-size:13px;left:-999em;opacity:0;padding:8px 21px;position:fixed;pointer-events:none;transition:opacity 0.3s ease-out , margin-top 0.3s ease-out, margin-left 0.3s ease-out;top:-999em;visibility:hidden;z-index:999}.__react_component_tooltip:before,.__react_component_tooltip:after{content:"";width:0;height:0;position:absolute}.__react_component_tooltip.show{opacity:0.9;margin-top:0px;margin-left:0px;visibility:visible}.__react_component_tooltip.type-dark{color:#fff;background-color:#222}.__react_component_tooltip.type-dark.place-top:after{border-top:6px solid #222}.__react_component_tooltip.type-dark.place-bottom:after{border-bottom:6px solid #222}.__react_component_tooltip.type-dark.place-left:after{border-left:6px solid #222}.__react_component_tooltip.type-dark.place-right:after{border-right:6px solid #222}.__react_component_tooltip.type-dark.border{border:1px solid #fff}.__react_component_tooltip.type-dark.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-dark.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-dark.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-dark.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-success{color:#fff;background-color:#8DC572}.__react_component_tooltip.type-success.place-top:after{border-top:6px solid #8DC572}.__react_component_tooltip.type-success.place-bottom:after{border-bottom:6px solid #8DC572}.__react_component_tooltip.type-success.place-left:after{border-left:6px solid #8DC572}.__react_component_tooltip.type-success.place-right:after{border-right:6px solid #8DC572}.__react_component_tooltip.type-success.border{border:1px solid #fff}.__react_component_tooltip.type-success.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-success.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-success.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-success.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-warning{color:#fff;background-color:#F0AD4E}.__react_component_tooltip.type-warning.place-top:after{border-top:6px solid #F0AD4E}.__react_component_tooltip.type-warning.place-bottom:after{border-bottom:6px solid #F0AD4E}.__react_component_tooltip.type-warning.place-left:after{border-left:6px solid #F0AD4E}.__react_component_tooltip.type-warning.place-right:after{border-right:6px solid #F0AD4E}.__react_component_tooltip.type-warning.border{border:1px solid #fff}.__react_component_tooltip.type-warning.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-warning.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-warning.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-warning.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-error{color:#fff;background-color:#BE6464}.__react_component_tooltip.type-error.place-top:after{border-top:6px solid #BE6464}.__react_component_tooltip.type-error.place-bottom:after{border-bottom:6px solid #BE6464}.__react_component_tooltip.type-error.place-left:after{border-left:6px solid #BE6464}.__react_component_tooltip.type-error.place-right:after{border-right:6px solid #BE6464}.__react_component_tooltip.type-error.border{border:1px solid #fff}.__react_component_tooltip.type-error.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-error.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-error.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-error.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-info{color:#fff;background-color:#337AB7}.__react_component_tooltip.type-info.place-top:after{border-top:6px solid #337AB7}.__react_component_tooltip.type-info.place-bottom:after{border-bottom:6px solid #337AB7}.__react_component_tooltip.type-info.place-left:after{border-left:6px solid #337AB7}.__react_component_tooltip.type-info.place-right:after{border-right:6px solid #337AB7}.__react_component_tooltip.type-info.border{border:1px solid #fff}.__react_component_tooltip.type-info.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-info.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-info.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-info.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-light{color:#222;background-color:#fff}.__react_component_tooltip.type-light.place-top:after{border-top:6px solid #fff}.__react_component_tooltip.type-light.place-bottom:after{border-bottom:6px solid #fff}.__react_component_tooltip.type-light.place-left:after{border-left:6px solid #fff}.__react_component_tooltip.type-light.place-right:after{border-right:6px solid #fff}.__react_component_tooltip.type-light.border{border:1px solid #222}.__react_component_tooltip.type-light.border.place-top:before{border-top:8px solid #222}.__react_component_tooltip.type-light.border.place-bottom:before{border-bottom:8px solid #222}.__react_component_tooltip.type-light.border.place-left:before{border-left:8px solid #222}.__react_component_tooltip.type-light.border.place-right:before{border-right:8px solid #222}.__react_component_tooltip.place-top{margin-top:-10px}.__react_component_tooltip.place-top:before{border-left:10px solid transparent;border-right:10px solid transparent;bottom:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-top:after{border-left:8px solid transparent;border-right:8px solid transparent;bottom:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-bottom{margin-top:10px}.__react_component_tooltip.place-bottom:before{border-left:10px solid transparent;border-right:10px solid transparent;top:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-bottom:after{border-left:8px solid transparent;border-right:8px solid transparent;top:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-left{margin-left:-10px}.__react_component_tooltip.place-left:before{border-top:6px solid transparent;border-bottom:6px solid transparent;right:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-left:after{border-top:5px solid transparent;border-bottom:5px solid transparent;right:-6px;top:50%;margin-top:-4px}.__react_component_tooltip.place-right{margin-left:10px}.__react_component_tooltip.place-right:before{border-top:6px solid transparent;border-bottom:6px solid transparent;left:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-right:after{border-top:5px solid transparent;border-bottom:5px solid transparent;left:-6px;top:50%;margin-top:-4px}.__react_component_tooltip .multi-line{display:block;padding:2px 0px;text-align:center}
+    %script{:src => "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/836144498/?random=1514010087284&cv=8&fst=1514010087284&num=1&guid=ON&eid=659238991&u_h=900&u_w=1440&u_ah=799&u_aw=1440&u_cd=24&u_his=11&u_tz=540&u_java=false&u_nplug=4&u_nmime=5&gtm=Gbe&frm=0&url=https%3A%2F%2F8card.net%2Fmy_profile&ref=https%3A%2F%2F8card.net%2Fmyhome&tiba=Eight&async=1&rfmt=3&fmt=4"}
+    %style#style-1-cropbar-clipper
+      :cdata
+        \/* Copyright 2014 Evernote Corporation. All rights reserved. */
+        \.en-markup-crop-options {
+        top: 18px !important;
+        left: 50% !important;
+        margin-left: -100px !important;
+        width: 200px !important;
+        border: 2px rgba(255,255,255,.38) solid !important;
+        border-radius: 4px !important;
+        }
+
+        \.en-markup-crop-options div div:first-of-type {
+        margin-left: 0px !important;
+        }
+  %body#top
+    .remarketing_tags{:style => "display: none;"}
+      / Google Tag Manager (noscript)
+      %noscript
+        \&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4FVTG6"
+        height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
+      / End Google Tag Manager (noscript)
+    / IM DMP START
+    %img{:border => "0", :height => "1", :src => "//atm.im-apps.net/a/beacon.gif?cid=12042&c1=df18ee29e566a3234d472b0efecc8dd9c5a6494985dff37e2a8b569e3ae3c5ca", :style => "display:none", :width => "1"}/
+    / IM DMP END
+    :javascript
+      var _ydmp = [
+        {
+          'eucd' : 'df18ee29e566a3234d472b0efecc8dd9c5a6494985dff37e2a8b569e3ae3c5ca'
+        }
+      ];
+    #c-wrap
+      #wrap.my_profile_main.profile{"data-reactroot" => ""}
+        %header.header-header.profile-header-container
+          .container
+            %h1.logo-title
+              %a{:href => "/", :title => "Eight[エイト]"}
+                Eight
+              / 修正箇所、コピーをしてもロゴの情報が持ってこれなかったので現在、文字で代用
+            %form.search-field
+              %input.srh-txt{:placeholder => "名前、会社を検索", :style => "color: rgb(160, 160, 160);", :type => "text"}/
+              %span.common-text_button.search-button
+                %i.fe.fe-search
+            .spacer
+            .header-header_navi.header-navi
+              %span.common-text_button.menu-button
+                %i.fe.fe-setup_icon{:title => "設定"}
+              %a.help-btn.menu-button{:href => "https://eight.zendesk.com/", :target => "_blank", :title => "ヘルプ"}
+                %i.fe.fe-hint_icon
+          / react-empty: 17
+        %article.contents-pane
+          %article.app_info{:style => "display: none;"}
+            .container
+              %span.common-text_button.close-button
+                %i.fe.fe-close
+          .container
+            %main.prof-wrap
+              %article.profile-my_profile-my_profile
+                .scroll
+                  %span.common-text_button.profile-my_profile-preview_button
+                    .profile-my_profile-preview_button__text-block
+                      %span プロフィールページをプレビューする
+                  .profile-my_profile-my_profile__profile-main-pane
+                    .profile-my_profile-my_profile__profile-nav
+                      %nav
+                        .common-back_button
+                          %span.common-text_button.prev
+                            %i.fe.fe-back.fe-fw
+                            %span
+                              %span 戻る
+                    %header.profile-my_profile-head.prof-head.hover{"data-ctltg" => "prof-head"}
+                      %section.profile-theme
+                        .background-image{:style => "background-image: url(\"/eight_users/me/theme?1514010087035\");"}
+                          %span.theme-picture-button{:style => "display: block;"}
+                            %i.fe.fe-2x.fe-photo
+                            %span.desc カバー写真を変更
+                        / react-empty: 44
+                      .profile-card
+                        .thumbnail
+                          %div
+                            %span{:style => "cursor: pointer;"}
+                              .mCS_img_loaded{:style => "padding: 0px; margin: 0px; border: 0px; display: block; position: static; overflow: visible; background: transparent; text-align: center;"}
+                                %img{:alt => "", :src => "//i0.8card.net/p/39687685458/display_career_image.json?nocard=1&size=NM&target=F&1514010086772", :style => "width: 223px; height: 135px;"}/
+                            / react-empty: 51
+                          %span.policy-icon{:style => "right: -1px;"}
+                            %span.profile-policy_icon.image-policy-in-head{"data-ctl" => "crr"}
+                              %span.common-text_button.policy-icon-field
+                                %i.policy-icon.editable.fe.fe-link
+                              %div
+                      %dl.profile-title-field
+                        %dt.thumbnail
+                          %img.common-avatar.people-avatar.face{:src => "https://upload-contents.8card.net/profiles/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg?1514010086751"}/
+                          %span.thumbnail-edit-icon
+                            / %a.camera-button{"data-ctl" => "prof-head", "data-dir" => "edit", :href => "javascript:void(0)"}カメラアイコンをコメントアウト
+                        %dd.text-field
+                          %dl
+                            %dt
+                              %h1.user-name
+
+                            %dd.description
+                              %span.text-part{"data-for" => "jobDescription", "data-tip" => "true"} IT系のエンジニアをしています。
+                              / %span.description-edit-icon
+                              /   %a.profile-edit_button.edit-link{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
+                              /     %i.fe.fe-edit
+                              /   %span.profile-policy_icon.policy-in-head{"data-ctl" => "crr"}
+                              /     %span.common-text_button.policy-icon-field
+                              /       %i.policy-icon.editable.fe.fe-public-open
+                              /       %i.fe.fe-fw.fe-down-arrow.select-btn
+                              / Jsのhoverを使ってアイコンを表示させていた箇所を消去
+                    %aside.profile-my_profile-my_profile__profile-aside
+                      .profile-my_profile-my_profile__profile-aside-inner
+                        %section.profile-my_profile-career_summary.profile-career_summary
+                          %dl.box.crr{"data-ctltg" => "crr hover"}
+                            %dt.profile-title
+                              %span キャリアサマリ
+                              %span.icons
+                                %a.profile-edit_button.career-summary-edit{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
+                                  %i.fe.fe-edit
+                                %span.profile-policy_icon{"data-ctl" => "crr"}
+                                  %span.common-text_button.policy-icon-field
+                                    %i.policy-icon.editable.fe.fe-public-open
+                                    %i.fe.fe-fw.fe-down-arrow.select-btn
+                                  %div
+                            %dd.cts
+                              %p.notfriend
+                                %span あなたの経歴、スキル、受賞歴、
+                                %br/
+                                %span 関わった主なプロジェクトなどを
+                                %br/
+                                %span 記載しましょう。
+                          / react-empty: 102
+                        %section.profile-my_profile-careers_info
+                          %dl.box.job{"data-ctltg" => "job"}
+                            %dt.profile-title
+                              %span 職歴
+                              %span.icons
+                                %a.career-sort{"data-ctl" => "job", :href => "javascript:void(0)"}
+                                  %i.fe.fe-2x.fe-sort
+                                %span.profile-policy_icon{"data-ctl" => "crr"}
+                                  %span.common-text_button.policy-icon-field
+                                    %i.policy-icon.editable.fe.fe-public-open
+                                    %i.fe.fe-fw.fe-down-arrow.select-btn
+                                  %div
+                            %dd.cts
+                              .itms
+                                .profile-my_profile-careers
+                                  .profile-merged_career
+                                    %dl
+                                      %dt
+                                        .ellipsis-tooltip
+                                          .base
+                                            %p.career-company{"data-ellipsis" => "true"}
+                                          .tooltip
+                                      %dd.merged-career
+                                        .career-piece
+                                          .ellipsis-tooltip
+                                            .base
+                                              %p.career-span{"data-ellipsis" => "true"}
+                                                %span 2017/11/01〜2017/11/30
+                                            .tooltip 2017/11/01〜2017/11/30
+                                          .ellipsis-tooltip
+                                            .base
+                                              %p.career-department{"data-ellipsis" => "true"}
+                                            .tooltip
+                                          .ellipsis-tooltip
+                                            .base
+                                              %p.career-title{"data-ellipsis" => "true"}
+                                            .tooltip
+                                        .profile-card_thumbnail.tmb
+                                          %span.card
+                                            %div{:style => "padding: 0px; margin: 0px; border: 0px; display: block; position: static; overflow: visible; background: transparent; text-align: center;"}
+                                              %img{:alt => "", :src => "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514010086772", :style => "width: 57px; height: 34px;"}/
+                                            %a.profile-edit_button.career-editor{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
+                                              %i.fe.fe-edit
+                        %section.profile-my_profile-educational_records_info.sec
+                          %dl.box.edinf{"data-ctltg" => "edinf"}
+                            %dt.profile-title
+                              %span 学歴
+                              %span.icons
+                                %span.educational_record-plus{"data-ctl" => "edinf"}
+                                  %span.common-text_button
+                                    %i.fe.fe-plus
+                                %span.profile-policy_icon{"data-ctl" => "crr"}
+                                  %span.common-text_button.policy-icon-field
+                                    %i.policy-icon.editable.fe.fe-public-open
+                                    %i.fe.fe-fw.fe-down-arrow.select-btn
+                                  %div
+                            %dd.cts
+                              %p.notfriend
+                                %span.new-icon NEW
+                                %span.promotion-words
+                                  %span あなたが通った高校や大学を設定しましょう。
+                      %section.profile-my_profile-basic_info
+                        %dl.box.prf{"data-ctltg" => "prf"}
+                          %dt.profile-title
+                            %span.title
+                              %span 性別・生年月日
+                            %span.info
+                              %span 非公開
+                            %span.icons
+                              %a.profile-edit_button.basic-edit{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
+                                %i.fe.fe-edit
+                          %dd.cts
+                            %dl.tbl
+                              %dt
+                                %span 性別
+                              %dd 男性
+                              %dt
+                                %span 生年月日
+                              %dd 1987年08月02日
+                        / react-empty: 178
+                      .components-profile-my_profile-career_status
+                        %dt.profile-title
+                          %span.components-profile-my_profile-career_status__title
+                            %span キャリアステータス
+                          %span.components-profile-my_profile-career_status__info
+                            %span 非公開
+                          %span.icons
+                            %a.profile-edit_button.components-profile-my_profile-career_status__edit-btn{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
+                              %i.fe.fe-edit
+                        .components-profile-my_profile-career_status__status 未設定
+                      %footer.footer.copy
+                        %nav.nav-c
+                          %ul
+                            %li
+                              %a{:href => "/kiyaku", :target => "new"}
+                                %span 利用規約
+                            %li
+                              %a{:href => "/privacy", :target => "new"}
+                                %span 個人情報保護方針
+                            %li
+                              %span
+                                %span その他
+                              %ul{:style => "display: none;"}
+                                %li
+                                  %a{:href => "/permission", :target => "new"}
+                                    %span 個人情報の取り扱いについて
+                                %li
+                                  %a{:href => "/tokutei", :target => "new"}
+                                    %span 特定商取引に基づく表記
+                                %li
+                                  %a{:href => "/aboutus", :target => "new"}
+                                    %span 運営会社
+                                %li
+                                  %a{:href => "/about_inquiry", :target => "new"}
+                                    %span お問い合わせについて
+                                %li
+                                  %a{:href => "https://contents.8card.net/company-account/ads/", :target => "new"}
+                                    %span 広告掲載
+                        %p.copyright
+                          %span ©Sansan, Inc.
+                    %main.profile-my_profile-my_profile__profile-main
+                      .inr
+                        %section.profile-my_profile-profile_info.hover
+                          .inner-header
+                            %p.ttl
+                              %span 基本情報
+                            .action-icons
+                              %a.profile-edit_button{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
+                                %i.fe.fe-edit
+                              / react-empty: 228
+                          .profile-profile_info.hover.info-table
+                            %ul.tbl
+                              %li
+                                %h2.title
+                                  %div{:currentitem => "false", "data-for" => "profile-info-tooltip-companyName", "data-tip" => "true"}
+                                    %i.fe.fe-company{"aria-hidden" => "true"}
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text 会社名
+                                    %span.sr-only 会社名
+                                %h3.contents
+                                .policy
+                                  %span.icos
+                                    %a.policy-icon-field{:href => "javascript:void(0)"}
+                                      %i.policy-icon.fe.fe-public-open
+                                      %i.fe.fe-fw.fe-down-arrow.select-btn
+                              %li
+                                %h2.title
+                                  %div{:currentitem => "false", "data-for" => "profile-info-tooltip-email", "data-tip" => "true"}
+                                    %i.fe.fe-mail{"aria-hidden" => "true"}
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text メールアドレス
+                                    %span.sr-only メールアドレス
+                                %h3.contents
+                                  .profile_mailto
+                                    %a{:href => "mailto:kothaka@hotmail.com", :rel => "nofollow", :target => "_blank"} kothaka@hotmail.com
+                                .policy
+                                  %span.icos
+                                    %a.policy-icon-field{:href => "javascript:void(0)"}
+                                      %i.policy-icon.fe.fe-link
+                                      %i.fe.fe-fw.fe-down-arrow.select-btn
+                              %li
+                                %h2.title
+                                  %div{:currentitem => "false", "data-for" => "profile-info-tooltip-postalCode", "data-tip" => "true"}
+                                    %i.fe.fe-postal-code{"aria-hidden" => "true"}
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text 郵便番号
+                                    %span.sr-only 郵便番号
+                                %h3.contents
+                                %p.text-block 1500002
+                                .policy
+                                  %span.icos
+                                    %a.policy-icon-field{:href => "javascript:void(0)"}
+                                      %i.policy-icon.fe.fe-link
+                                      %i.fe.fe-fw.fe-down-arrow.select-btn
+                              %li
+                                %h2.title
+                                  %div{:currentitem => "false", "data-for" => "profile-info-tooltip-address", "data-tip" => "true"}
+                                    %i.fe.fe-map{"aria-hidden" => "true"}
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text 住所
+                                    %span.sr-only 住所
+                                %h3.contents
+                                %p.text-block 東京都渋谷区渋谷
+                                .policy
+                                  %span.icos
+                                    %a.policy-icon-field{:href => "javascript:void(0)"}
+                                      %i.policy-icon.fe.fe-link
+                                      %i.fe.fe-fw.fe-down-arrow.select-btn
+                              %li
+                                %h2.title
+                                  %div{:currentitem => "false", "data-for" => "profile-info-tooltip-profileUrl", "data-tip" => "true"}
+                                    %i.fe.fe-profile-url{"aria-hidden" => "true"}
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text プロフィールURL
+                                    %span.sr-only プロフィールURL
+                                %h3.contents
+                                  %a.text-block{:href => "https://8card.net/p/39687685458", :target => "_blank"} https://8card.net/p/39687685458
+                                .policy
+                                  %span.icos
+                                    %a.policy-icon-field{:href => "javascript:void(0)"}
+                                      %i.policy-icon.fe.fe-public-open
+                                      %i.fe.fe-fw.fe-down-arrow.select-btn
+                              %li
+                                %h2.title
+                                  %div{:currentitem => "false", "data-for" => "profile-info-tooltip-facebook", "data-tip" => "true"}
+                                    %i.fe.fe-facebook{"aria-hidden" => "true"}
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text facebook
+                                    %span.sr-only facebook
+                                %h3.contents
+                                  %a.text-block{:href => "https://www.facebook.com/1777716882281176", :rel => "nofollow", :target => "_blank"} https://www.facebook.com/1777716882281176
+                                .policy
+                                  %span.icos
+                                    %a.policy-icon-field{:href => "javascript:void(0)"}
+                                      %i.policy-icon.fe.fe-public-open
+                                      %i.fe.fe-fw.fe-down-arrow.select-btn
+                            %div
+                        %section.profile-my_profile-timeline
+                          %dl.box.binf.timeline-container
+                            %dd
+                              .timeline-timeline.profile-timeline
+              %aside.aside-container
+                %article.recommended_people-recommended_people
+                  %dl
+                    %dt
+                    %dl.ttl
+                      %dt
+                        %span お知り合いですか？
+                      %dd
+                        %span 名刺交換リクエストを送信して、追加しましょう。
+                    %dd
+                      .scroll
+                        %ul
+                          %li.recommended_people-recommended_person
+                            .clickable
+                              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+                              %dl.profile-info
+                                %dt
+                                  .full-name 山田尚孝
+                                  .ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionCompanyName_12741495033", "data-tip" => "true"}
+                                    / react-text: 362
+                                    Sansan株式会社
+                                    / /react-text
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text Sansan株式会社
+                                .recommended-reason.ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionReason12741495033", "data-tip" => "true"}
+                                  / react-text: 366
+                                  / /react-text
+                                  .__react_component_tooltip{"data-id" => "tooltip"}
+                                    .elltip-text
+                            .recommended_people-follow_button
+                              .follow-button-container
+                                %button.common-button.theme-primary.l-mini-button.follow-button
+                                  %span 追加
+                                .dialog-position
+                                  %div
+                            %i.fe.fe-close
+                          %li.recommended_people-recommended_person
+                            .clickable
+                              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/c0c03037bede110aeb235e9773795b85d54388a3d02351e06ffade5fc44eb6c793e1f0222_76.jpg"}/
+                              %dl.profile-info
+                                %dt
+                                  .full-name 岡田拓也
+                                  .ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionCompanyName_39696925218", "data-tip" => "true"}
+                                    / react-text: 383
+                                    株式会社マネジメントソリューションズ
+                                    / /react-text
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text 株式会社マネジメントソリューションズ
+                                .recommended-reason.ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionReason39696925218", "data-tip" => "true"}
+                                  / react-text: 387
+                                  / /react-text
+                                  .__react_component_tooltip{"data-id" => "tooltip"}
+                                    .elltip-text
+                            .recommended_people-follow_button
+                              .follow-button-container
+                                %button.common-button.theme-primary.l-mini-button.follow-button
+                                  %span 追加
+                                .dialog-position
+                                  %div
+                            %i.fe.fe-close
+                          %li.recommended_people-recommended_person
+                            .clickable
+                              %img.common-avatar.people-avatar.tmb{:src => "https://graph.facebook.com/v2.8/100001983081417/picture"}/
+                              %dl.profile-info
+                                %dt
+                                  .full-name 播信太郎
+                                  .ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionCompanyName_9942173016", "data-tip" => "true"}
+                                    / react-text: 404
+                                    WeWork
+                                    / /react-text
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text WeWork
+                                .recommended-reason.ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionReason9942173016", "data-tip" => "true"}
+                                  / react-text: 408
+                                  / /react-text
+                                  .__react_component_tooltip{"data-id" => "tooltip"}
+                                    .elltip-text
+                            .recommended_people-follow_button
+                              .follow-button-container
+                                %button.common-button.theme-primary.l-mini-button.follow-button
+                                  %span 追加
+                                .dialog-position
+                                  %div
+                            %i.fe.fe-close
+                          %li.recommended_people-recommended_person
+                            .clickable
+                              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/5b827bd91ecd1545cab3e1fa7b3ca2c0da473f8cce752dc054356527305e9d7271072678_76.jpg"}/
+                              %dl.profile-info
+                                %dt
+                                  .full-name 志賀由美子
+                                  .ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionCompanyName_1896294008", "data-tip" => "true"}
+                                    / react-text: 425
+                                    Sansan株式会社
+                                    / /react-text
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text Sansan株式会社
+                                .recommended-reason.ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionReason1896294008", "data-tip" => "true"}
+                                  / react-text: 429
+                                  / /react-text
+                                  .__react_component_tooltip{"data-id" => "tooltip"}
+                                    .elltip-text
+                            .recommended_people-follow_button
+                              .follow-button-container
+                                %button.common-button.theme-primary.l-mini-button.follow-button
+                                  %span 追加
+                                .dialog-position
+                                  %div
+                            %i.fe.fe-close
+                          %li.recommended_people-recommended_person
+                            .clickable
+                              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/f72a7c1c844c684e5aa1dda37c6e1d73dbd06fa23bd40bfacab06c2509f3d2bf936c4f5b2_76.jpg"}/
+                              %dl.profile-info
+                                %dt
+                                  .full-name 宇田川元一
+                                  .ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionCompanyName_39573583282", "data-tip" => "true"}
+                                    / react-text: 446
+                                    埼玉大学
+                                    / /react-text
+                                    .__react_component_tooltip{"data-id" => "tooltip"}
+                                      .elltip-text 埼玉大学
+                                .recommended-reason.ell{:currentitem => "false", "data-for" => "recommendedPersonDescriptionReason39573583282", "data-tip" => "true"}
+                                  / react-text: 450
+                                  / /react-text
+                                  .__react_component_tooltip{"data-id" => "tooltip"}
+                                    .elltip-text
+                            .recommended_people-follow_button
+                              .follow-button-container
+                                %button.common-button.theme-primary.l-mini-button.follow-button
+                                  %span 追加
+                                .dialog-position
+                                  %div
+                            %i.fe.fe-close
+              / react-empty: 333
+        / react-empty: 334
+        / react-empty: 335
+        / react-empty: 336
+    :javascript
+      //<![CDATA[
+      window.gon={};gon.language="ja";gon.facebook_application_id=165066846847451;gon.config={"hosts":{"www":"https:\/\/8card.net","message":"8card.net","message_hook":"message-hook.8card.net","i0":"i0.8card.net"},"contents_url":"https:\/\/contents.8card.net","materials_url":"https:\/\/materials.8card.net"};gon.login_user={"id":308703081,"person_id":39687685458,"language":"ja","premium":1,"photo_url":"https:\/\/upload-contents.8card.net\/profiles\/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg"};gon.accessible_companies=[];gon.company_accounts=[];gon.facet={"id":49018502,"created_at":"2017-12-18T09:15:02+09:00","updated_at":"2017-12-20T10:12:19+09:00","eight_user_id":308703081,"person_id":39687685458,"cards_count":3,"links_count":3,"transcribing_cards_count":0,"refreshed_at":"2017-12-20T10:12:19+09:00","transcribed_cards_count":0,"following_people_count":0,"recent_count":3};gon.my_profile_json="{\"person_id\":39687685458,\"facebook\":{\"social_account_id\":864532244,\"address\":\"1777716882281176\"},\"photo_url\":\"https:\/\/upload-contents.8card.net\/profiles\/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg\",\"full_name_reading\":\"\u30b3\u30b5\u30ab\",\"entry_status\":40,\"address\":\"\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u6e0b\u8c37\",\"full_name\":\"\u5c0f\u5742 \u4f73\u88d5\",\"email\":\"kothaka@hotmail.com\",\"gender\":1,\"postal_code\":\"1500002\",\"careers\":[{\"career\":{\"full_name\":\"\u5c0f\u5742 \u4f73\u88d5\",\"full_name_reading\":\"\u30b3\u30b5\u30ab\",\"email\":\"kothaka@hotmail.com\",\"postal_code\":\"1500002\",\"address\":\"\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u6e0b\u8c37\",\"entry_status\":40,\"id\":313503909,\"display_order\":1,\"career_date_to\":\"2017-11-30\",\"career_date_from\":\"2017-11-01\",\"company_id\":\"\"}}],\"birthday\":\"1987-08-02\",\"job_description\":\"IT\u7cfb\u306e\u30a8\u30f3\u30b8\u30cb\u30a2\u3092\u3057\u3066\u3044\u307e\u3059\u3002\",\"profile_url\":{\"identifier\":\"39687685458\",\"manually\":0},\"display_card_conditions\":[],\"has_activated_email_ever\":true,\"is_public\":true,\"is_premium\":false,\"company_id\":\"\"}";gon.policy={"profile_url":10,"career_image":30,"company_name":10,"department":10,"title":10,"email":30,"company_phone_number":30,"department_number":30,"direct_line_number":30,"company_fax_number":30,"mobile_phone_number":30,"postal_code":30,"address":30,"url":30,"careers":10,"job_description":10,"career_summary":10,"educational_records":10,"facebook":10,"links":10,"birthday":40,"gender":40,"job_change_intention":40,"transaction_id":3,"person_id":39687685458,"created_at":"2017-11-16T18:51:10+09:00","updated_at":"2017-12-20T10:12:44+09:00"};gon.is_timeline_enabled=false;
+      //]]>
+    %script{:src => "https://assets.8card.net/assets/bundle-a7d86aa9b51fe6ff1a1494437a1a1500.js"}
+    %script{:id => "", :type => "text/javascript"}
+      :cdata
+        \!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1897823920502053");fbq("track","PageView");
+    %noscript &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1897823920502053&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+    %script#tagjs{:type => "text/javascript"}
+      :cdata
+        (function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="//s.yjtag.jp/tag.js#site\x3d5IrR4px";b.parentNode.insertBefore(a,b)})();
+    %noscript
+      \&lt;iframe src="//b.yjtag.jp/iframe?c=5IrR4px" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&gt;&lt;/iframe&gt;
+    %script{:id => "", :type => "text/javascript"}
+      :cdata
+        \!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","159046491375784");fbq("track","PageView");
+    %noscript &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=159046491375784&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;

@@ -125,7 +125,7 @@
                       %nav
                         .common-back_button
                           %span.common-text_button.prev
-                            %i.fe.fe-back.fe-fw
+                            %i.fa.fa-arrow-left.fe-fw
                             %span
                               %span 戻る
                     %header.profile-my_profile-head.prof-head.hover{"data-ctltg" => "prof-head"}
@@ -317,17 +317,17 @@
                               %span 基本情報
                             .action-icons
                               %a.profile-edit_button{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
-                                %i.fe.fe-edit
+                                %i.fa.fa-pencil-square-o
                               / react-empty: 228
                           .profile-profile_info.hover.info-table
                             %ul.tbl
                               %li
                                 %h2.title
                                   %div{:currentitem => "false", "data-for" => "profile-info-tooltip-companyName", "data-tip" => "true"}
-                                    %i.fe.fe-company{"aria-hidden" => "true"}
+                                    %i.fa.fa-building{"aria-hidden" => "true"}
                                     .__react_component_tooltip{"data-id" => "tooltip"}
-                                      .elltip-text 会社名
-                                    %span.sr-only 会社名
+                                    /   .elltip-text 会社名
+                                    / %span.sr-only 会社名
                                 %h3.contents
                                 .policy
                                   %span.icos
@@ -337,10 +337,10 @@
                               %li
                                 %h2.title
                                   %div{:currentitem => "false", "data-for" => "profile-info-tooltip-email", "data-tip" => "true"}
-                                    %i.fe.fe-mail{"aria-hidden" => "true"}
+                                    %i.fa.fa-envelope-o{"aria-hidden" => "true"}
                                     .__react_component_tooltip{"data-id" => "tooltip"}
-                                      .elltip-text メールアドレス
-                                    %span.sr-only メールアドレス
+                                    /   .elltip-text メールアドレス
+                                    / %span.sr-only メールアドレス
                                 %h3.contents
                                   .profile_mailto
                                     %a{:href => "mailto:kothaka@hotmail.com", :rel => "nofollow", :target => "_blank"} kothaka@hotmail.com
@@ -352,10 +352,10 @@
                               %li
                                 %h2.title
                                   %div{:currentitem => "false", "data-for" => "profile-info-tooltip-postalCode", "data-tip" => "true"}
-                                    %i.fe.fe-postal-code{"aria-hidden" => "true"}
+                                    %i.fa.fa-archive{"aria-hidden" => "true"}
                                     .__react_component_tooltip{"data-id" => "tooltip"}
-                                      .elltip-text 郵便番号
-                                    %span.sr-only 郵便番号
+                                    /   .elltip-text 郵便番号
+                                    / %span.sr-only 郵便番号
                                 %h3.contents
                                 %p.text-block 1500002
                                 .policy
@@ -366,9 +366,9 @@
                               %li
                                 %h2.title
                                   %div{:currentitem => "false", "data-for" => "profile-info-tooltip-address", "data-tip" => "true"}
-                                    %i.fe.fe-map{"aria-hidden" => "true"}
+                                    %i.fa.fa-address-book-o{"aria-hidden" => "true"}
                                     .__react_component_tooltip{"data-id" => "tooltip"}
-                                      .elltip-text 住所
+                                      / .elltip-text 住所
                                     %span.sr-only 住所
                                 %h3.contents
                                 %p.text-block 東京都渋谷区渋谷
@@ -380,9 +380,9 @@
                               %li
                                 %h2.title
                                   %div{:currentitem => "false", "data-for" => "profile-info-tooltip-profileUrl", "data-tip" => "true"}
-                                    %i.fe.fe-profile-url{"aria-hidden" => "true"}
+                                    %i.fa.fa-user-circle{"aria-hidden" => "true"}
                                     .__react_component_tooltip{"data-id" => "tooltip"}
-                                      .elltip-text プロフィールURL
+                                      / .elltip-text プロフィールURL
                                     %span.sr-only プロフィールURL
                                 %h3.contents
                                   %a.text-block{:href => "https://8card.net/p/39687685458", :target => "_blank"} https://8card.net/p/39687685458
@@ -394,9 +394,9 @@
                               %li
                                 %h2.title
                                   %div{:currentitem => "false", "data-for" => "profile-info-tooltip-facebook", "data-tip" => "true"}
-                                    %i.fe.fe-facebook{"aria-hidden" => "true"}
+                                    %i.fa.fa-facebook{"aria-hidden" => "true"}
                                     .__react_component_tooltip{"data-id" => "tooltip"}
-                                      .elltip-text facebook
+                                      / .elltip-text facebook
                                     %span.sr-only facebook
                                 %h3.contents
                                   %a.text-block{:href => "https://www.facebook.com/1777716882281176", :rel => "nofollow", :target => "_blank"} https://www.facebook.com/1777716882281176

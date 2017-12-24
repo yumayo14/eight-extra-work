@@ -132,7 +132,7 @@
                       %section.profile-theme
                         .background-image{:style => "background-image: url(\"/eight_users/me/theme?1514010087035\");"}
                           %span.theme-picture-button{:style => "display: block;"}
-                            %i.fe.fe-2x.fe-photo
+                            %i.fa.fa-camera
                             %span.desc カバー写真を変更
                         / react-empty: 44
                       .profile-card
@@ -151,7 +151,8 @@
                         %dt.thumbnail
                           %img.common-avatar.people-avatar.face{:src => "https://upload-contents.8card.net/profiles/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg?1514010086751"}/
                           %span.thumbnail-edit-icon
-                            / %a.camera-button{"data-ctl" => "prof-head", "data-dir" => "edit", :href => "javascript:void(0)"}カメラアイコンをコメントアウト
+                            %a.camera-button{"data-ctl" => "prof-head", "data-dir" => "edit", :href => "javascript:void(0)"}
+                              %i.fa.fa-camera
                         %dd.text-field
                           %dl
                             %dt
@@ -159,13 +160,13 @@
 
                             %dd.description
                               %span.text-part{"data-for" => "jobDescription", "data-tip" => "true"} IT系のエンジニアをしています。
-                              / %span.description-edit-icon
-                              /   %a.profile-edit_button.edit-link{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
-                              /     %i.fe.fe-edit
-                              /   %span.profile-policy_icon.policy-in-head{"data-ctl" => "crr"}
-                              /     %span.common-text_button.policy-icon-field
-                              /       %i.policy-icon.editable.fe.fe-public-open
-                              /       %i.fe.fe-fw.fe-down-arrow.select-btn
+                              %span.description-edit-icon
+                                %a.profile-edit_button.edit-link{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
+                                  %i.fa.fa-pencil
+                                %span.profile-policy_icon.policy-in-head{"data-ctl" => "crr"}
+                                  %span.common-text_button.policy-icon-field
+                                    %i.fa.fa-globe
+                                    %i.fa.fa-arrow-down.select-btn
                               / Jsのhoverを使ってアイコンを表示させていた箇所を消去
                     %aside.profile-my_profile-my_profile__profile-aside
                       .profile-my_profile-my_profile__profile-aside-inner
@@ -259,7 +260,7 @@
                               %span 非公開
                             %span.icons
                               %a.profile-edit_button.basic-edit{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
-                                %i.fe.fe-edit
+                                %i.fa.fa-pencil
                           %dd.cts
                             %dl.tbl
                               %dt
@@ -277,7 +278,7 @@
                             %span 非公開
                           %span.icons
                             %a.profile-edit_button.components-profile-my_profile-career_status__edit-btn{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
-                              %i.fe.fe-edit
+                              %i.fa.fa-pencil
                         .components-profile-my_profile-career_status__status 未設定
                       %footer.footer.copy
                         %nav.nav-c
@@ -317,7 +318,7 @@
                               %span 基本情報
                             .action-icons
                               %a.profile-edit_button{"data-ctl" => "crr", "data-dir" => "edit", :href => "javascript:void(0)"}
-                                %i.fa.fa-pencil-square-o
+                                %i.fa.fa-pencil
                               / react-empty: 228
                           .profile-profile_info.hover.info-table
                             %ul.tbl

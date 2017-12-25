@@ -1,0 +1,937 @@
+// .company_account-company_premium_registration-appeal_dialog{padding:40px}
+// .company_account-company_premium_registration-appeal_dialog .title{color:#000000;font-size:1.6rem;font-weight:bold}
+// .company_account-company_premium_registration-appeal_dialog .description{font-size:1.4rem;margin:20px 0}
+// .company_account-company_premium_registration-appeal_dialog .container-pane{align-items:flex-start;display:flex}
+// .company_account-company_premium_registration-appeal_dialog .box{display:flex;flex-direction:column;align-items:left;width:100%;margin:8px 18px 12px}
+// .company_account-company_premium_registration-appeal_dialog .box .before-image{position:relative;background:url(https://assets.8card.net/assets/company_network/premium-dialog-img-1-790610d82f6f39cf29ca2f2edb1919a5.svg) center center no-repeat}
+// .company_account-company_premium_registration-appeal_dialog .box .before-image .arrow-box{position:absolute;transform:translate(0, -50%);top:50%;left:100%;margin:0 36px}
+// .company_account-company_premium_registration-appeal_dialog .box .before-image .arrow{border-left:15px solid #48a1e3;border-top:20px solid transparent;border-bottom:20px solid transparent}
+// .company_account-company_premium_registration-appeal_dialog .box .after-image{background:url(https://assets.8card.net/assets/company_network/premium-dialog-img-2-c9cb694c992aa2736fb99e34fd82344c.svg) center center no-repeat}
+// .company_account-company_premium_registration-appeal_dialog .box .image{width:100%;min-width:200px;padding-top:100%;background-size:contain}
+// .company_account-company_premium_registration-appeal_dialog .box .text{font-size:1.4rem;margin:14px 0 24px;line-height:2rem;font-weight:bold}
+// .company_account-company_premium_registration-appeal_dialog .box .before-text{color:#595959}
+// .company_account-company_premium_registration-appeal_dialog .box .after-text{color:#48a1e3}
+// .company_account-company_premium_registration-appeal_dialog .arrow-box-space{margin:0 18px}
+// .company_account-company_premium_registration-appeal_dialog .arrow-box-space .arrow{width:15px}
+// .company_account-company_premium_registration-appeal_dialog .button-pane{display:flex;flex-direction:column;align-items:center}
+// .company_account-company_premium_registration-appeal_dialog .button-pane .show-link{background-color:#48a1e3;border-radius:2px;box-sizing:border-box;color:#ffffff;display:inline-block;font-size:1.4rem;font-weight:bold;height:38px;padding:12px 0;text-align:center;text-decoration:none;width:208px}
+// .company_account-company_premium-card_number_form{min-width:421px}
+// .company_account-company_premium-card_number_form a{color:#307caf;text-decoration:underline}
+// .company_account-company_premium-card_number_form a:hover{color:#307caf;text-decoration:none}
+// .company_account-company_premium-card_number_form a:hover img{opacity:.7}
+// .company_account-company_premium-card_number_form a:focus{color:#307caf}
+// .company_account-company_premium-card_number_form h1{font-size:1.6rem;color:#595959;position:relative;top:-5px}
+// .company_account-company_premium-card_number_form form .form-row{margin-top:32px}
+// .company_account-company_premium-card_number_form form .form-row label{display:table-cell;min-width:200px;font-size:1.4rem}
+// .company_account-company_premium-card_number_form form .form-row>div{padding-left:10px;display:table-cell;font-size:1.2rem;width:288px}
+// .company_account-company_premium-card_number_form form .form-row:first-of-type>div{position:relative;top:15px}
+// .company_account-company_premium-card_number_form form .button-row{margin-top:36px;position:relative;top:4px}
+// .company_account-company_premium-card_number_form form .card-errors{position:absolute;color:#f16671;font-weight:bold;padding-top:2px}
+// .company_account-company_premium-card_number_form form input[type=text].error{background-color:#ffe5e5}
+// .company_account-company_premium-card_number_form form input[name=cardOwnerName]{text-transform:uppercase}
+// .company_account-company_premium-card_number_form button{margin-right:9px}
+// .company_account-company_premium-card_number_form button.theme-primary{background-color:#48a1e3;border-color:#48a1e3}
+// .company_account-company_premium-card_number_form button.theme-secondary{color:#8c8c8c}
+// .company_account-company_premium_registration-card .add-payment-method{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;height:132px;margin:auto;color:#48a1e3;font-size:1.5rem;font-weight:bold;border-radius:2px;border:dashed 1px #48a1e3;background:#f6fafd;display:flex;justify-content:center;align-items:center}
+// .company_account-company_premium_registration-card .plus-icon{font-size:2.6rem;margin-right:8px}
+// .company_account-company_premium_registration-card .update-card-button{border-radius:2px;background-color:#ffffff;border:solid 1px #48a1e3;color:#48a1e3}
+// .company_account-company_premium_registration-card .delete-card-button{border-radius:2px;background-color:#ffffff;border:solid 1px #a6a6a6;color:#a6a6a6}
+// .company_account-company_premium_registration-card .payment-method{border-radius:2px;border:solid 1px #a6a6a6}
+// .company_account-company_premium_registration-card .card-loader{margin:40px 0}
+// .company_account-company_premium_registration-card .clickable{cursor:pointer;display:flex;justify-content:center;align-items:center}
+// .company_account-company_premium_registration-card .card-info{background-color:#fbfbfb;padding:24px 22.5px 0}
+// .company_account-company_premium_registration-card .card-strong-text{font-size:1.5rem;color:#595959;font-weight:bold}
+// .company_account-company_premium_registration-card .card-row{*zoom:1;height:40px}
+// .company_account-company_premium_registration-card .card-row:after{content:" ";display:block;height:0;clear:both;overflow:hidden;visibility:hidden}
+// .company_account-company_premium_registration-card .card-left-column{float:left;text-align:left}
+// .company_account-company_premium_registration-card .card-right-column{position:absolute;margin-left:144px;text-align:left}
+// .company_account-company_premium_registration-card .button-area{background-color:#ffffff;border-top:solid 1px #a6a6a6;padding:15px 22.5px;text-align:center}
+// .company_account-company_premium_registration-card .buttons{display:inline-block;margin:auto}
+// .company_account-company_premium_registration-card .button-icon{font-size:1.6rem}
+// .company_account-company_premium_registration-card .button-space{margin-left:20px}
+// .company_account-company_premium_registration-cvc_help{width:466px;background:#f1f1f1;padding:20px 16px;margin-top:20px}
+// .company_account-company_premium_registration-cvc_help .cvc_help-card_img{background:url(https://assets.8card.net/assets/company_account/company_premium_registration/credit-card-img-84ed662c3255c001f4df3d1a53c4a368.png) no-repeat;background-size:100% auto;display:inline-block;width:85px;height:58px}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_registration-cvc_help .cvc_help-card_img{background:url(https://assets.8card.net/assets/company_account/company_premium_registration/credit-card-img@2x-5dd93e33b482231c677430673c5cbf59.png) no-repeat;background-size:100% auto}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_registration-cvc_help .cvc_help-card_img{background:url(https://assets.8card.net/assets/company_account/company_premium_registration/credit-card-img@3x-94a8683a69a4a67922952cb801c06fce.png) no-repeat;background-size:100% auto}}
+// .company_account-company_premium_registration-cvc_help .cvc_help-description{display:inline-block;vertical-align:top;width:350px;margin-left:16px;line-height:1.8;font-size:1.3rem;color:#262626}
+// .company_account-company_premium_registration-mail_registration .form-row{margin-top:6px;margin-bottom:16px}
+// .company_account-company_premium_registration-mail_registration .form-row .left{min-width:200px}
+// .company_account-company_premium_registration-mail_registration .form-row .left .spacer{display:inline-block;width:25px}
+// .company_account-company_premium_registration-mail_registration .form-row .right{width:555px}
+// .company_account-company_premium_registration-mail_registration .form-row .strong{font-weight:bold}
+// .company_account-company_premium_registration-mail_registration .form-row .error{position:absolute;margin-top:8px;font-size:1.3rem;font-weight:bold;color:#f16671}
+// .company_account-company_premium_registration-mail_registration .form-column{display:table-cell;font-size:1.3rem}
+// .company_account-company_premium_registration-mail_registration .form-column .common-form-radio_button label{font-size:1.3rem}
+// .company_account-company_premium_registration-mail_registration .form-column .common-form-text_input{padding:6px 12px}
+// .company_account-company_premium_registration-mail_registration .form-column input[type="email"][disabled]{background-color:#ededed}
+// .company_account-company_premium_registration-mail_registration .form-column input[type="checkbox"]{opacity:.001;position:absolute;left:0;top:0;height:0;width:0;overflow:hidden;z-index:-999}
+// .company_account-company_premium_registration-mail_registration .form-column input[type="checkbox"]+label{display:inline-block;height:auto;position:relative;user-select:none;width:auto}
+// .company_account-company_premium_registration-mail_registration .form-column input[type="checkbox"]+label::before{background-color:#ffffff;border:1px solid #b4b4b4;box-sizing:border-box;content:'';display:inline-block;height:16px;margin-right:8px;position:relative;vertical-align:middle;width:16px}
+// .company_account-company_premium_registration-mail_registration .form-column input[type="checkbox"]:checked+label::after{background-color:transparent;border-bottom:2px solid #307caf;border-right:2px solid #307caf;box-sizing:border-box;content:'';display:inline-block;height:20px;left:2px;margin-top:-17px;vertical-align:middle;position:absolute;top:50%;transform:rotate(45deg);width:12px}
+// .company_account-company_premium_registration-mail_registration .mail_address-loader.react-spinner.loader{max-height:62px;margin-top:30px}
+// .company_account-company_premium_registration-registration{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0 12px 0 20px;height:100%}
+// .company_account-company_premium_registration-registration a{color:#307caf;text-decoration:underline}
+// .company_account-company_premium_registration-registration a:hover{color:#307caf;text-decoration:none}
+// .company_account-company_premium_registration-registration a:hover img{opacity:.7}
+// .company_account-company_premium_registration-registration a:focus{color:#307caf}
+// .company_account-company_premium_registration-registration .row{display:block;position:relative;*zoom:1;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+// .company_account-company_premium_registration-registration .row:after{content:" ";display:block;height:0;clear:both;overflow:hidden;visibility:hidden}
+// .company_account-company_premium_registration-registration .main-contents{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;background-color:#ffffff;padding:32px 24px;min-height:100%}
+// .company_account-company_premium_registration-registration .main-contents form{text-align:center}
+// .company_account-company_premium_registration-registration .main-contents form button{width:210px}
+// .company_account-company_premium_registration-registration .title{height:72px;font-size:1.9rem;text-align:left;color:#262626}
+// .company_account-company_premium_registration-registration .label{height:32px;text-align:left;font-weight:bold}
+// .company_account-company_premium_registration-registration .rect{border-radius:2px;background-color:#fbfbfb;border:solid 1px #a6a6a6;padding:24px 22.5px}
+// .company_account-company_premium_registration-registration .text{font-size:1.5rem;color:#595959}
+// .company_account-company_premium_registration-registration .strong-text{font-size:1.5rem;color:#262626;font-weight:bold}
+// .company_account-company_premium_registration-registration .sub-strong-text{font-size:1.3rem;color:#262626}
+// .company_account-company_premium_registration-registration .warning-label{font-size:1.3rem;color:#8c8c8c;font-weight:bold}
+// .company_account-company_premium_registration-registration .warning-text{font-size:1.3rem;color:#8c8c8c}
+// .company_account-company_premium_registration-registration .terms-warning-text{font-size:1.1rem;color:#8c8c8c;line-height:2.2rem}
+// .company_account-company_premium_registration-registration .important-text{font-size:1.5rem;color:#ff6752;font-weight:bold}
+// .company_account-company_premium_registration-registration .merchandise-line{height:28px}
+// .company_account-company_premium_registration-registration .catch-copy{height:46px}
+// .company_account-company_premium_registration-registration .warning-label-line{height:30px}
+// .company_account-company_premium_registration-registration .warning-text-line{line-height:2.2rem;list-style:initial}
+// .company_account-company_premium_registration-registration .warning-text-line li{margin-left:1em}
+// .company_account-company_premium_registration-registration .terms-warning-block{height:42px;margin-bottom:16px}
+// .company_account-company_premium_registration-registration .row{*zoom:1}
+// .company_account-company_premium_registration-registration .row:after{content:" ";display:block;height:0;clear:both;overflow:hidden;visibility:hidden}
+// .company_account-company_premium_registration-registration .tri-left-column{text-align:left;float:left;width:40%}
+// .company_account-company_premium_registration-registration .tri-center-column{text-align:center;float:left;width:20%}
+// .company_account-company_premium_registration-registration .tri-right-column{text-align:right;float:left;width:40%}
+// .company_account-company_premium_registration-registration .left-column{text-align:left;float:left}
+// .company_account-company_premium_registration-registration .right-column{text-align:right;float:right}
+// .company_account-company_premium_registration-registration .divider{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-top:solid 1px #595959;height:1px;width:100%;margin:16px 0 20px}
+// .company_account-company_premium_registration-registration .purchase-content{margin-bottom:52px}
+// .company_account-company_premium_registration-registration .payment-content{margin-bottom:52px}
+// .company_account-company_premium_registration-registration .email-content{margin-bottom:44px}
+// .company_account-company_premium_registration-registration .email-content .rect{font-size:1.4rem;padding-top:12px;padding-bottom:12px}
+// .company_account-company_premium_registration-registration .notice{border-radius:2px;background-color:#fbfbfb;margin-bottom:48px;padding:24px}
+// .company_account-company_premium_registration-registration .notice-header{color:#ff6752;font-size:1.4rem;font-weight:300;margin-bottom:24px}
+// .company_account-company_premium_registration-registration .notice-content .content-header{font-size:1.4rem;color:#262626;margin-bottom:16px}
+// .company_account-company_premium_registration-registration .notice-content .content-body{font-size:1.2rem;color:#595959;margin-bottom:24px;line-height:2rem}
+// .company_account-company_premium_registration-registration .notice-content .content-body ol{list-style:decimal}
+// .company_account-company_premium_registration-registration .notice-content .content-body li{margin-left:1.2em}
+// .company_account-company_premium_registration-registration .notice-content .content-body .content-line{display:table}
+// .company_account-company_premium_registration-registration .notice-content .content-body .content-line-left{display:table-cell;width:15px}
+// .company_account-company_premium_registration-registration .notice-content .content-body .content-line-right{display:table-cell}
+// .company_account-company_premium_registration-registration .notice-content:last-child .content-body{margin-bottom:0}
+// .company_account-company_premium_registration-registration .registration-button{color:#ffffff;background-color:#ff6752;border-color:#ff6752}
+// .company_account-company_premium_registration-registration .registration-errors{font-size:1.3rem;margin-top:14px;position:absolute;color:#f16671;font-weight:bold;padding-top:2px}
+// .company_account-company_premium_registration-registration .form-button{width:206px}
+// .company_account-company_premium_registration-registration .confirm-button{width:136px}
+// .company_account-company_premium_registration-registration .confirm-button-space{margin-left:20px}
+// .company_account-company_premium_registration-registration .success-block{margin-bottom:36px}
+// .company_account-company_premium_registration-registration .success-text{font-size:2.2rem;color:#262626;line-height:3.6rem;text-align:center;font-weight:bold}
+// .company_account-company_premium_registration-registration .step-bar{margin:0 auto 47px;width:448px;height:61px;background-size:448px 61px}
+// .company_account-company_premium_registration-registration .step-bar-1{background:url(https://assets.8card.net/assets/company_network/premium-step-1-icon-8247b27ca600e72961b25c6a9e690a9d.png) no-repeat;background-size:448px 61px;background-position:center center}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_registration-registration .step-bar-1{background:url(https://assets.8card.net/assets/company_network/premium-step-1-icon@2x-eac141332a6c450bbc9bfd0246ab39ba.png) no-repeat;background-size:448px 61px}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_registration-registration .step-bar-1{background:url(https://assets.8card.net/assets/company_network/premium-step-1-icon@3x-c42f13dd4251b82df36878e01671bd3f.png) no-repeat;background-size:448px 61px}}
+// .company_account-company_premium_registration-registration .step-bar-2{background:url(https://assets.8card.net/assets/company_network/premium-step-2-icon-bbc3764eb771c619e3abef3c370ae99c.png) no-repeat;background-size:448px 61px;background-position:center center}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_registration-registration .step-bar-2{background:url(https://assets.8card.net/assets/company_network/premium-step-2-icon@2x-a141179889e0a2302faa9e87cd2a7e6b.png) no-repeat;background-size:448px 61px}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_registration-registration .step-bar-2{background:url(https://assets.8card.net/assets/company_network/premium-step-2-icon@3x-8d927b3a5771140193564daa764c3f85.png) no-repeat;background-size:448px 61px}}
+// .company_account-company_premium_registration-registration .step-bar-3{background:url(https://assets.8card.net/assets/company_network/premium-step-3-icon-d3cee49fc1319afc9981f8aa43bac4d3.png) no-repeat;background-size:448px 61px;background-position:center center}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_registration-registration .step-bar-3{background:url(https://assets.8card.net/assets/company_network/premium-step-3-icon@2x-60cf4f439885b629a9c95c5ce02e0390.png) no-repeat;background-size:448px 61px}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_registration-registration .step-bar-3{background:url(https://assets.8card.net/assets/company_network/premium-step-3-icon@3x-867423256876ca7c5258389427134065.png) no-repeat;background-size:448px 61px}}
+// .StripeElement{background-color:#ffffff;border:1px solid #d5d5d5;padding:6px 8px;border-radius:2px}
+// .StripeElement--invalid{background-color:#ffe5e5}
+// .StripeElement--webkit-autofill{background-color:#f6fafd}
+// .company_account-company_premium_registration-success .success-image{background:url(https://assets.8card.net/assets/company_network/premium-consent-img-2-35e6909c0a8d46cdd4078ef811c30d27.png) no-repeat;background-size:100% auto;width:591px;height:345px;margin:0 auto 36px}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_registration-success .success-image{background:url(https://assets.8card.net/assets/company_network/premium-consent-img-2@2x-fd0d801f9e421a4fbe60fe21db94b204.png) no-repeat;background-size:100% auto}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_registration-success .success-image{background:url(https://assets.8card.net/assets/company_network/premium-consent-img-2@3x-d3a0d417c364cec20df67dc7f61db005.png) no-repeat;background-size:100% auto}}
+// .company_account-company_premium_registration-success .success-introduction{margin-bottom:36px;text-align:center;line-height:2rem;font-size:1.3rem;color:#262626}
+// .company_account-company_premium_registration-success .invitation-button{display:block;margin:0 auto;width:256px;height:48px;font-size:1.8rem}
+// .company_account-company_premium_ticket-card_info{background-color:#fbfbfb;border-radius:2px;border:solid 1px #a6a6a6;color:#595959;font-family:'HiraKakuPro-W6';font-size:1.6rem;font-weight:600;padding:24px 0 24px 17px;position:relative;width:741px}
+// .company_account-company_premium_ticket-card_info .card_content{align-items:center;display:flex}
+// .company_account-company_premium_ticket-card_info .card_content .payment_type{width:507px}
+// .company_account-company_premium_ticket-card_info .card_content .brand{width:111px}
+// .company_account-company_premium_ticket-card_info .card_content .digit{margin-right:24px;width:108px}
+// .company_account-company_premium_ticket-card_info .card-loader.react-spinner{margin:0;position:absolute}
+// .company_account-company_premium_ticket-confirm .terms-warning-text{margin-top:70px;margin-bottom:32px;font-size:1.5rem;color:#262626;text-align:center}
+// .company_account-company_premium_ticket-confirm .payment-button{width:136px;background-color:#ff6752;border-color:#ff6752}
+// .company_account-company_premium_ticket-confirm .cancel-button{width:136px;background-color:#ededed;border-color:#ededed;color:#a6a6a6;margin-left:20px;border:0}
+// .company_account-company_premium_ticket-confirm .merchandise-content{margin-top:64px}
+// .company_account-company_premium_ticket-confirm .credit_card-content,.company_account-company_premium_ticket-confirm .mail-address-content{margin-top:44px}
+// .company_account-company_premium_ticket-confirm .credit_card-content .label,.company_account-company_premium_ticket-confirm .mail-address-content .label{color:#595959;font-size:1.6rem;font-weight:bold;margin-bottom:16px}
+// .company_account-company_premium_ticket-confirm .credit_card-content .card-info,.company_account-company_premium_ticket-confirm .credit_card-content .mail-info,.company_account-company_premium_ticket-confirm .mail-address-content .card-info,.company_account-company_premium_ticket-confirm .mail-address-content .mail-info{font-size:1.6rem}
+// .company_account-company_premium_ticket-confirm .credit_card-content .strong-text.card-right-column,.company_account-company_premium_ticket-confirm .credit_card-content .strong-text.mail-info-right-column,.company_account-company_premium_ticket-confirm .mail-address-content .strong-text.card-right-column,.company_account-company_premium_ticket-confirm .mail-address-content .strong-text.mail-info-right-column{font-weight:bold}
+// .company_account-company_premium_ticket-form .payment_ticket-button{width:206px;color:#ffffff;margin-top:120px;background-color:#ff6752;border-color:#ff6752}
+// .company_account-company_premium_ticket-mail_info{background-color:#fbfbfb;border-radius:2px;border:solid 1px #a6a6a6;color:#595959;font-family:'HiraKakuPro-W3';font-size:1.4rem;font-weight:300;min-height:1.4rem;padding:12px 0 12px 16px;position:relative;width:741px}
+// .company_account-company_premium_ticket-mail_info .mail-loader.react-spinner{margin:0;position:absolute}
+// .company_account-company_premium_ticket-main{background-color:#ffffff;height:auto;margin:0 12px 0 20px;min-height:100%;padding:0 20px;width:768px}
+// .company_account-company_premium_ticket-main .main-contents{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:24px 4px 80px}
+// .company_account-company_premium_ticket-main .main-contents form{text-align:center}
+// .company_account-company_premium_ticket-main .title{font-size:2rem;text-align:left;color:#262626;line-height:1;margin-bottom:54px}
+// .company_account-company_premium_ticket-merchandise .merchandise-line{margin-bottom:12px}
+// .company_account-company_premium_ticket-merchandise .label{text-align:left;font-weight:bold;margin-bottom:16px}
+// .company_account-company_premium_ticket-merchandise .text{font-size:1.6rem;color:#595959}
+// .company_account-company_premium_ticket-merchandise .rect{border-radius:2px;border:solid 1px #a6a6a6;padding:32px 24px}
+// .company_account-company_premium_ticket-merchandise .strong-text{font-size:1.6rem;color:#262626;font-weight:bold}
+// .company_account-company_premium_ticket-merchandise .sub-strong-text{font-size:1.4rem;color:#262626}
+// .company_account-company_premium_ticket-merchandise .tri-left-column{display:inline-block;text-align:left;width:50%}
+// .company_account-company_premium_ticket-merchandise .tri-right-column{display:inline-block;font-size:1.4rem;color:#ff6752;text-align:right;width:50%}
+// .company_account-company_premium_ticket-merchandise .catch-copy{padding-bottom:32px;border-bottom:solid 1px #a6a6a6}
+// .company_account-company_premium_ticket-merchandise .warning-label-line{margin-top:32px}
+// .company_account-company_premium_ticket-merchandise .warning-label{font-size:1.4rem;color:#8c8c8c;font-weight:bold;margin-bottom:16px}
+// .company_account-company_premium_ticket-merchandise .warning-text{font-size:1.3rem;color:#8c8c8c}
+// .company_account-company_premium_ticket-merchandise .warning-text-line{line-height:2.2rem;list-style:initial;margin-left:8px;font-size:1.4rem}
+// .company_account-company_premium_ticket-merchandise .warning-text-line li{margin-left:1em}
+// .company_account-company_premium_ticket-merchandise .warning-text-line a{color:#48a1e3}
+// .company_account-company_premium_ticket-merchandise .warning-text-line a:visited{color:#48a1e3}
+// .company_account-company_premium_ticket-merchandise .terms-warning-text{margin-top:70px;margin-bottom:32px;font-size:1.5rem;color:#262626;text-align:center}
+// .company_account-company_premium_ticket-merchandise .important-text{font-size:1.5rem;color:#ff6752;font-weight:bold}
+// .company_account-company_premium_ticket-premium_ticket_form{text-align:left}
+// .company_account-company_premium_ticket-premium_ticket_form .subtitle{font-size:1.6rem;font-family:'HiraKakuPro-W6';font-weight:bold;color:#595959;margin-bottom:20px}
+// .company_account-company_premium_ticket-premium_ticket_form .description{font-size:1.2rem;margin-bottom:20px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .header{font-size:1rem;color:#595959;margin-bottom:12px;width:100%}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .header>div{color:#8c8c8c}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .header .product{padding-left:8px;width:212px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .content{box-sizing:border-box;font-size:1.4rem;color:#262626;width:100%}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .content .product{font-weight:bold}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .content .product-sub{display:inline-block;font-size:1.2rem;font-weight:normal;padding-top:8px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .content .amount{font-size:1.2rem}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .form{border-top:solid 2px #a6a6a6;border-bottom:solid 2px #a6a6a6;padding:20px 8px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .form input{width:75px;height:36px;border:1px solid #cccccc;color:#000000;border-radius:2px;text-align:right;padding-right:5px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .tax{padding:17px 8px 0}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .total{font-size:1.6rem;padding:25px 8px 0}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .total .amount{font-size:1.6rem}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content div{display:table}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content div div{display:table-cell;vertical-align:middle}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .product{width:220px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .price{width:120px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .quantity{width:130px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .amount{font-size:1.2rem;width:190px}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .amount .caption{font-size:1.1rem}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .result{width:100px;text-align:right;white-space:nowrap}
+// .company_account-company_premium_ticket-premium_ticket_form .purchase-content .result .total_price{font-family:'HiraKakuPro-W6';font-weight:bold;color:#ff6752}
+// .company_account-company_premium_ticket-main .main-contents .step-bar{margin:0 0 52px 131px;width:455px;height:59px}
+// .company_account-company_premium_ticket-main .main-contents .step-bar-1{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-1-0f893fefb75d1b09b7cbeaedf378f976.png) no-repeat;background-size:100% auto}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_ticket-main .main-contents .step-bar-1{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-1@2x-4febb642e90d862c3c1882cb810910a5.png) no-repeat;background-size:100% auto}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_ticket-main .main-contents .step-bar-1{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-1@3x-4678b2df25901ec3d6bc661b77f30e2e.png) no-repeat;background-size:100% auto}}
+// .company_account-company_premium_ticket-main .main-contents .step-bar-2{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-2-3f79eef380a221d6a00157893e839d90.png) no-repeat;background-size:100% auto}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_ticket-main .main-contents .step-bar-2{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-2@2x-4d3fb4ec4ee70e945d683d580f860a03.png) no-repeat;background-size:100% auto}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_ticket-main .main-contents .step-bar-2{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-2@3x-9b3c85d1b3a987e59c59695ff26e08d8.png) no-repeat;background-size:100% auto}}
+// .company_account-company_premium_ticket-main .main-contents .step-bar-3{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-3-f09225d7c389f4bda58a43801d0cd1a4.png) no-repeat;background-size:100% auto}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_ticket-main .main-contents .step-bar-3{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-3@2x-a4d3df29d297e6390919c6d7a56281f6.png) no-repeat;background-size:100% auto}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_ticket-main .main-contents .step-bar-3{background:url(https://assets.8card.net/assets/company_network/premium-ticket-step-3@3x-7a69fae80822f0d69fb7817f6049d8e0.png) no-repeat;background-size:100% auto}}
+// .company_account-company_premium_ticket-success .thanks-content .premium-ticket-image{background:url(https://assets.8card.net/assets/company_network/premium-ticket-img-2bd2b5f7a2ddddd87bbf14642d2647f8.png) no-repeat;background-size:479px 264px;height:264px;width:476px;background-position:center center;margin:32px auto}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium_ticket-success .thanks-content .premium-ticket-image{background:url(https://assets.8card.net/assets/company_network/premium-ticket-img@2x-48c09b1c2148828802792205494ed94b.png) no-repeat;background-size:479px 264px}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium_ticket-success .thanks-content .premium-ticket-image{background:url(https://assets.8card.net/assets/company_network/premium-ticket-img@3x-f02626ce3f0071ef5cc298ad3df446ed.png) no-repeat;background-size:479px 264px}}
+// .company_account-company_premium_ticket-success .thanks-content .subtitle{text-align:center;font-size:2.2rem;font-weight:bold;color:#262626}
+// .company_account-company_premium_ticket-success .thanks-content .comment{text-align:center;font-size:1.6rem;color:#262626}
+// .company_account-company_premium_ticket-success .thanks-content .comment p{margin-bottom:12px}
+// .company_account-company_premium_ticket-success .thanks-content .comment .paragraph{margin-bottom:24px}
+// .company_account-company_premium_ticket-success .thanks-content .payment_ticket-button{margin-top:32px;width:290px;background-color:#ff6752;border-color:#ff6752}
+// .company_account-connection_count{color:#262626;font-size:1.2rem}
+// .company_account-connection_count .connection-count{font-size:1.8rem}
+// .company_account-connection_count .connection-count.normal{color:#48a1e3}
+// .company_account-connection_count .connection-count.active{color:#ff6752}
+// .company_account-connection_count .fe-down-arrow{color:#8c8c8c;vertical-align:baseline}
+// .company_account-connection_count:hover .fe-down-arrow{color:inherit}
+// .company_account-already_registered_dialog{padding:36px 24px;font-size:1.4rem}
+// .company_account-already_registered_dialog button.theme-primary{background:#48a1e3;border-color:#48a1e3;display:block;margin:24px auto 0;padding:12px 0;width:200px}
+// .company_account-dialog-service_appeal_dialog{padding:40px}
+// .company_account-dialog-service_appeal_dialog .title{color:#000000;font-size:1.6rem;font-weight:bold}
+// .company_account-dialog-service_appeal_dialog .description{font-size:1.4rem;margin:24px 0}
+// .company_account-dialog-service_appeal_dialog .container-pane{align-items:center;display:flex}
+// .company_account-dialog-service_appeal_dialog .box{align-items:center;display:flex;flex-direction:column;height:190px;width:152px}
+// .company_account-dialog-service_appeal_dialog .box>h3{font-size:1.4rem;font-weight:bold;margin-bottom:16px;margin-top:24px}
+// .company_account-dialog-service_appeal_dialog .box>img{height:90px;width:105px}
+// .company_account-dialog-service_appeal_dialog .box .sub-description{line-height:1.5;padding:0 8px}
+// .company_account-dialog-service_appeal_dialog .show-link{background-color:#ff6752;border-radius:1.7px;box-sizing:border-box;color:#ffffff;display:inline-block;font-size:1.2rem;font-weight:bold;height:32px;margin-top:40px;padding:8px 0;text-align:center;text-decoration:none;width:148px}
+// .company_account-dialog-service_appeal_dialog .about-cvc{margin-top:12px;font-size:1.2rem}
+// .company_account-filters-message_status_table_header_cell .dialog_content{overflow-x:hidden;overflow-y:visible;max-height:none}
+// .company_account-filters-message_status_table_header_cell .dialog_content .title{border-bottom:1px solid #d7d7d7;box-sizing:border-box;cursor:pointer;font-size:1.15rem;line-height:2.1rem;padding:16px 40px 16px 44px;position:relative;width:100%}
+// .company_account-filters-message_status_table_header_cell .dialog_content .title.selected::before{color:#307caf;content:'\EA4C';font-family:'EightSymbols';left:18px;margin-top:-10px;position:absolute;top:50%}
+// .company_account-filters-message_status_table_header_cell .dialog_content .title:hover{background-color:#f6fafd}
+// .company_account-filters-requirement_table_header_cell .dialog_content{overflow-x:hidden;overflow-y:auto}
+// .company_account-filters-requirement_table_header_cell .dialog_content .title{border-bottom:1px solid #d7d7d7;box-sizing:border-box;cursor:pointer;font-size:1.15rem;line-height:2.1rem;padding:16px 16px 16px 44px;position:relative;width:100%}
+// .company_account-filters-requirement_table_header_cell .dialog_content .title.selected::before{color:#307caf;content:'\EA4C';font-family:'EightSymbols';left:18px;margin-top:-10px;position:absolute;top:50%}
+// .company_account-filters-requirement_table_header_cell .dialog_content .title:hover{background-color:#f6fafd}
+// .company_account-filters-selection_status_table_header_cell .dialog_content{overflow-x:hidden;overflow-y:visible;max-height:none}
+// .company_account-filters-selection_status_table_header_cell .dialog_content .title{border-bottom:1px solid #d7d7d7;box-sizing:border-box;cursor:pointer;font-size:1.15rem;line-height:1rem;padding:16px 28px 16px 44px;position:relative;width:100%}
+// .company_account-filters-selection_status_table_header_cell .dialog_content .title.selected::before{color:#307caf;content:'\EA4C';font-family:'EightSymbols';left:18px;margin-top:-6px;position:absolute;top:50%}
+// .company_account-filters-selection_status_table_header_cell .dialog_content .title:hover{background-color:#f6fafd}
+// .company_account-staff_member_table_header_cell .dialog_content{overflow-x:hidden;overflow-y:visible;max-height:none}
+// .company_account-staff_member_table_header_cell .dialog_content .staff-info{display:flex;border-bottom:1px solid #d7d7d7;box-sizing:border-box;cursor:pointer;font-size:1.15rem;line-height:2.1rem;padding:6px 0 6px 44px;position:relative;width:320px}
+// .company_account-staff_member_table_header_cell .dialog_content .staff-info .person-avatar{border:solid 1px #ededed;height:30px;width:30px;margin-top:6px}
+// .company_account-staff_member_table_header_cell .dialog_content .staff-info .staff-profile{margin:0 12px}
+// .company_account-staff_member_table_header_cell .dialog_content .staff-info .staff-name,.company_account-staff_member_table_header_cell .dialog_content .staff-info .staff-position{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;max-width:220px}
+// .company_account-staff_member_table_header_cell .dialog_content .staff-info .staff-name{font-weight:bold}
+// .company_account-staff_member_table_header_cell .dialog_content .staff-info.selected::before{color:#307caf;content:'\EA4C';font-family:'EightSymbols';left:18px;margin-top:-10px;position:absolute;top:50%}
+// .company_account-staff_member_table_header_cell .dialog_content .staff-info:hover{background-color:#f6fafd}
+// .company_account-header .container{*zoom:1;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:relative;max-width:1090px;width:100%;margin-left:auto;margin-right:auto}
+// .company_account-header .container:after{content:" ";display:block;height:0;clear:both;overflow:hidden;visibility:hidden}
+// .company_account-header .menu-button{margin:0 12px;position:relative}
+// .company_account-header .fe-personal_icon{font-size:2.5rem;width:19px}
+// .company_account-hiring_management-cell a{color:#307caf;text-decoration:underline}
+// .company_account-hiring_management-cell a:hover{color:#307caf;text-decoration:none}
+// .company_account-hiring_management-cell a:hover img{opacity:.7}
+// .company_account-hiring_management-cell a:focus{color:#307caf}
+// .company_account-hiring_management-cell .user-cell{padding-right:8px}
+// .company_account-hiring_management-cell .personal-info{display:flex}
+// .company_account-hiring_management-cell .personal-info .person-avatar{border:solid 1px #ededed;height:40px;margin-right:12px;width:40px}
+// .company_account-hiring_management-cell .personal-info .basic-info{display:flex;flex-direction:column;justify-content:space-around}
+// .company_account-hiring_management-cell .personal-info .basic-info .person-name{font-size:1.2rem;font-weight:bold}
+// .company_account-hiring_management-cell .personal-info .basic-info .person-profile{font-size:1.1rem}
+// .company_account-hiring_management-cell .job-info>div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:1.1rem;margin:8px 0;width:144px}
+// .company_account-hiring_management-cell .job-info>div:last-child{margin-bottom:0}
+// .company_account-hiring_management-cell .message-page-link{background:#ffffff;border-radius:2px;border:1px solid #48a1e3;box-sizing:border-box;color:#48a1e3;font-size:1rem;font-weight:normal;padding:12px 6px;min-height:32px;min-width:80px;height:32px;padding:6px;width:80px;display:block;line-height:1.6;text-align:center;text-decoration:none}
+// .company_account-hiring_management-cell .message-page-link:disabled{background:#ededed;border:1px solid #ededed;cursor:inherit;color:#a6a6a6}
+// .company_account-hiring_management-cell .message-page-link:not(:disabled):focus{opacity:.8}
+// .company_account-hiring_management-cell .message-page-link:not(:disabled):hover{opacity:.8;box-shadow:0 0 2px 0 rgba(72,161,227,0.35)}
+// .company_account-hiring_management-cell .message-page-link:not(:disabled):active{opacity:1}
+// .company_account-hiring_management-cell .remove-button{background:#ffffff;border-radius:2px;border:1px solid #8c8c8c;box-sizing:border-box;color:#8c8c8c;font-size:1rem;font-weight:normal;padding:12px 6px;min-height:32px;min-width:80px;height:32px;padding:6px;width:80px;margin-top:12px}
+// .company_account-hiring_management-cell .remove-button:disabled{background:#ededed;border:1px solid #ededed;cursor:inherit;color:#a6a6a6}
+// .company_account-hiring_management-cell .remove-button:not(:disabled):focus{opacity:.8}
+// .company_account-hiring_management-cell .remove-button:not(:disabled):hover{opacity:.8;box-shadow:0 0 2px 0 rgba(72,161,227,0.35)}
+// .company_account-hiring_management-cell .remove-button:not(:disabled):active{opacity:1}
+// .company_account-hiring_management-cell.selectable{cursor:pointer}
+// .company_account-hiring_management-cell.selectable .fe-down-arrow{color:#8c8c8c}
+// .company_account-hiring_management-employment_candidate_header{height:140px}
+// .company_account-hiring_management-employment_candidate_header .scout-transaction{position:absolute;top:20px;right:28px}
+// .company_account-hiring_management-employment_candidate_header .page-title{color:#262626;font-size:2rem;font-weight:bold;margin:8px 0}
+// .company_account-hiring_management-employment_candidate_header .tab-selector{display:flex;margin-top:40px}
+// .company_account-hiring_management-employment_candidate_header .tab-selector .flex{flex-grow:1}
+// .company_account-hiring_management-employment_candidate_header .tab-button{color:#cccccc;padding:12px}
+// .company_account-hiring_management-employment_candidate_header .tab-button.selected{border-bottom:solid 2px #48a1e3;color:#262626}
+// .company_account-hiring_management-employment_candidate_header .tab-button,.company_account-hiring_management-employment_candidate_header .flex{border-bottom:solid 2px #ededed}
+// .company_account-hiring_management-employment_candidates_table{font-size:1.4rem}
+// .company_account-hiring_management-inbox .header-field{height:64px}
+// .company_account-hiring_management-inbox .header-field .page-title{color:#262626;font-size:2rem;font-weight:bold;margin:8px 0}
+// .company_account-hiring_management-message{background-color:#ffffff;height:100%;margin:0 20px}
+// .company_account-hiring_management-message__avatar{height:40px;width:40px}
+// .company_account-hiring_management-recommended_person_list{height:auto;min-height:100%}
+// .company_account-hiring_management-recommended_person_list .page-title{color:#262626;font-size:2rem;margin:8px 0}
+// .company_account-hiring_management-recommended_person_list .company_account-table{margin-top:40px}
+// .company_account-hiring_management-recommended_person_list .common-button.more{align-items:center;background-color:#ffffff;border-radius:2px;border:solid 1px #48a1e3;color:#48a1e3;display:flex;font-size:1.3rem;height:37px;justify-content:center;width:280px}
+// .company_account-hiring_management-recommended_person_list .common-button.more:hover{opacity:1;color:#ffffff;background-color:#48a1e3}
+// .company_account-hiring_management-recommended_person_list .common-button.more .fe{margin-right:5px}
+// .company_account-hiring_management-recommended_person_list .footer{display:flex;justify-content:center;padding:24px 0 0}
+// .company_account-hiring_management-recommended_person_list .thr-empty{color:#cccccc;margin-top:92px;text-align:center}
+// .company_account-hiring_management-recommended_person_list .thr-empty .alt{margin-top:0;text-align:center;display:block;font-size:1.5rem;line-height:1.56;font-weight:bold}
+// .company_account-hiring_management-recommended_person_list .thr-empty .fe{font-size:11rem}
+// .company_account-hiring_management-scout_transaction_section{display:flex}
+// .company_account-hiring_management-scout_transaction_section .qty{color:#262626;font-weight:bold}
+// .company_account-hiring_management-scout_transaction_section .balance{color:#48a1e3;font-size:1.4rem}
+// .company_account-hiring_management-scout_transaction_section dl{align-items:baseline;background-color:#fbfbfb;border-radius:2px;border:1px solid #d7d7d7;display:flex;flex-wrap:wrap;justify-content:space-between;margin:0 6px;max-width:168px;padding:6px 8px}
+// .company_account-hiring_management-scout_transaction_section dd,.company_account-hiring_management-scout_transaction_section dt{margin:3px 0}
+// .company_account-hiring_management-scout_transaction_section dd{text-align:right;width:94px}
+// .company_account-hiring_management-scout_transaction_section dt{width:74px}
+// .company_account-hiring_management-scout{background-color:#ffffff;height:100%;margin:0 20px}
+// .company_account-hiring_management-scout__avatar{height:40px;width:40px}
+// .company_account-hiring-employment_candidates-inbox_candidates{background-color:#ffffff;height:100%;margin:0 20px}
+// .company_account-hiring-employment_candidates-inbox_candidates__avatar{height:45px;width:45px}
+// .company_account-hiring-employment_candidates-remind_candidates{background-color:#ffffff;height:100%;margin:0 20px}
+// .company_account-hiring-employment_candidates-remind_candidates__avatar{height:45px;width:45px}
+// .company_account-hiring-employment_candidates-scout_candidates{background-color:#ffffff;height:100%;margin:0 20px}
+// .company_account-hiring-employment_candidates-scout_candidates__avatar{height:45px;width:45px}
+// .company_account-hiring-message_template-editor{background-color:#ffffff;height:fit-content;margin:0 20px;min-height:100%}
+// .company_account-hiring-message_template-editor__template-content:disabled,.company_account-hiring-message_template-editor__template-title:disabled{background:#f1f1f1}
+// .company_account-hiring-message_template-editor__template-title{min-height:38px}
+// .company_account-hiring-message_template-editor__template-content{min-height:320px;width:100%;resize:vertical;line-height:1.2;box-sizing:border-box;border-radius:2px;border:1px solid #d5d5d5;padding:8px}
+// .company_account-hiring-message_template-editor__tag-btn{font-size:1.2rem;text-align:right;color:#48a1e3;padding-right:8px}
+// .company_account-hiring-message_template-list{background-color:#ffffff;height:fit-content;margin:0 20px;min-height:100%}
+// .company_account-hiring-message_template-list__selector-title{color:#8c8c8c}
+// .company_account-hiring-message_template-main{background-color:#ffffff;height:fit-content;margin:0 20px;min-height:100%}
+// .company_account-hiring-recommended_reople-index{background-color:#ffffff;height:100%;margin:0 20px}
+// .company_account-hiring-recommended_reople-index__avatar{height:45px;width:45px}
+// .company_account-hiring-ui-elements-atomic-atom{display:block;font-size:1.2rem;margin:0;padding:0}
+// .company_account-hiring-ui-elements-atomic-atom--component{padding:4px}
+// .company_account-hiring-ui-elements-atomic-atom--component.company_account-hiring-ui-elements-atomic-atom--outline{outline:4px solid rgba(191,255,255,0.7);outline-offset:-4px}
+// .company_account-hiring-ui-elements-atomic-atom--component.company_account-hiring-ui-elements-atomic-atom--outline>.company_account-hiring-ui-elements-atomic-atom--component.company_account-hiring-ui-elements-atomic-atom--outline{outline:4px solid rgba(255,191,191,0.7)}
+// .company_account-hiring-ui-elements-atomic-atom--container{padding:8px}
+// .company_account-hiring-ui-elements-atomic-atom--container.company_account-hiring-ui-elements-atomic-atom--outline{outline:8px solid rgba(63,191,255,0.7);outline-offset:-8px}
+// .company_account-hiring-ui-elements-table-table_header_cell .company_account-hiring-ui-elements-atomic-atom--container{padding-bottom:0;padding-top:0}
+// .company_account-hiring-ui-elements-atomic-atom--outline{outline:1px solid rgba(0,127,255,0.7);outline-offset:-1px}
+// .company_account-hiring-ui-elements-atomic-molecule{display:block;margin:0;padding:0}
+// .company_account-hiring-ui-elements-atomic-molecule--outline{outline:3px dashed rgba(0,191,0,0.7);outline-offset:-3px}
+// .company_account-hiring-ui-elements-atomic-molecule--outline .company_account-hiring-ui-elements-atomic-molecule--outline{outline:3px solid rgba(255,0,0,0.7)}
+// .company_account-hiring-ui-elements-button-button{border-radius:2px;cursor:pointer;display:block;font-weight:bold;width:100%;font-size:1.2rem;padding:12px 20px;background-color:#48a1e3;border:1px solid #48a1e3;color:#ffffff}
+// .company_account-hiring-ui-elements-button-button:hover{background-color:#32709e;border-color:#32709e}
+// .company_account-hiring-ui-elements-button-button--large{font-size:1.4rem;padding:12px 32px}
+// .company_account-hiring-ui-elements-button-button--small{font-size:1.2rem;padding:8px 16px}
+// .company_account-hiring-ui-elements-button-button--flat{background-color:transparent;border:0;color:#48a1e3;padding:0}
+// .company_account-hiring-ui-elements-button-button--flat:focus,.company_account-hiring-ui-elements-button-button--flat:hover{background-color:transparent;color:#32709e;outline:none}
+// .company_account-hiring-ui-elements-button-button--secondary{background-color:#ffffff;color:#48a1e3}
+// .company_account-hiring-ui-elements-button-button--secondary:hover{background-color:#ecf5fd}
+// .company_account-hiring-ui-elements-button-button--disabled{background-color:#d7d7d7;border:1px solid #cccccc;color:#ffffff;cursor:not-allowed}
+// .company_account-hiring-ui-elements-button-button--disabled[disabled]{cursor:not-allowed}
+// .company_account-hiring-ui-elements-button-button--disabled:hover{background-color:#d7d7d7;border-color:#cccccc}
+// .company_account-hiring-ui-elements-button-button--progress{cursor:progress}
+// .company_account-hiring-ui-elements-button-button--progress[disabled]{cursor:progress}
+// .company_account-hiring-ui-elements-div-div--center{text-align:center}
+// .company_account-hiring-ui-elements-div-div--line{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+// .company_account-hiring-ui-elements-filters-filter_base__select_menu{width:400px}
+// .company_account-hiring-ui-elements-focusable_table-table_row--focusable{cursor:pointer}
+// .company_account-hiring-ui-elements-focusable_table-table_row--focusable:hover{background-color:#f6fafd}
+// .company_account-hiring-ui-elements-focusable_table-table_row--focused{background-color:#f6fafd}
+// .company_account-hiring-ui-elements-focusable_table-table_row:focus{background-color:#f6fafd}
+// .company_account-hiring-ui-elements-heading-heading__type--h1{font-size:2rem;padding:20px 0}
+// .company_account-hiring-ui-elements-heading-heading__type--h2{font-size:1.5rem}
+// .company_account-hiring-ui-elements-heading-heading__type--h3{font-size:1.4rem}
+// .company_account-hiring-ui-elements-heading-heading__type--h4{font-size:1.3rem}
+// .company_account-hiring-ui-elements-heading-heading__type--h5{font-size:1.2rem}
+// .company_account-hiring-ui-elements-heading-heading__type--h6{font-size:1.1rem}
+// .company_account-hiring-ui-elements-hr-hr{border-top:1px solid #d7d7d7;margin:16px 0;padding:0}
+// .company_account-hiring-ui-elements-pager-pager{overflow:hidden}
+// .company_account-hiring-ui-elements-pager-pager__list{list-style:none;position:relative;left:50%;float:left}
+// .company_account-hiring-ui-elements-pager-pager__page{margin:0 1px;position:relative;left:-50%;float:left}
+// .company_account-hiring-ui-elements-pager-pager__current-page{display:block;font-size:1.3rem;margin:0 8px;color:#cccccc}
+// .company_account-hiring-ui-elements-pager-pager__page-link,.company_account-hiring-ui-elements-pager-pager__prev-page,.company_account-hiring-ui-elements-pager-pager__next-page{display:block;font-size:1.3rem;color:#595959;text-decoration:none}
+// .company_account-hiring-ui-elements-pager-pager__page-link:hover,.company_account-hiring-ui-elements-pager-pager__prev-page:hover,.company_account-hiring-ui-elements-pager-pager__next-page:hover{color:#48a1e3}
+// .company_account-hiring-ui-elements-pager-pager__page-link{margin:0 8px}
+// .company_account-hiring-ui-elements-pager-pager__prev-page,.company_account-hiring-ui-elements-pager-pager__next-page{margin:-1px 12px}
+// .company_account-hiring-ui-elements-pager-pager__prev-page--disable,.company_account-hiring-ui-elements-pager-pager__next-page--disable{display:block;margin:-1px 12px;font-size:1.3rem;text-decoration:none;color:#cccccc}
+
+// .company_account-hiring-ui-elements-select_menu-select_menu{display:block;margin:0;padding:0}
+// .company_account-hiring-ui-elements-select_menu-select_menu__overlay{background-color:transparent;bottom:0;display:block;left:0;margin:0;padding:0;position:fixed;right:0;top:0;z-index:-1}
+// .company_account-hiring-ui-elements-select_menu-select_menu.common-dialog{background-color:transparent;border:0;box-shadow:none;transform:none;z-index:auto}
+// .company_account-hiring-ui-elements-select_menu-select_menu__base{background-color:#ffffff;border-radius:2px;box-shadow:2px 2px 7px 0 rgba(0,0,0,0.35)}
+// .company_account-hiring-ui-elements-select_menu-select_menu__base--stickyBottom{bottom:0;position:fixed}
+// .company_account-hiring-ui-elements-select_menu-select_menu__base--stickyLeft{left:0;position:fixed}
+// .company_account-hiring-ui-elements-select_menu-select_menu__base--stickyRight{right:0;position:fixed}
+// .company_account-hiring-ui-elements-select_menu-select_menu__base--stickyTop{top:0;position:fixed}
+// .company_account-hiring-ui-elements-select_menu-select_menu__header{border-bottom:1px solid #d7d7d7;display:flex;justify-content:flex-end;margin:0;padding:3px}
+// .company_account-hiring-ui-elements-select_menu-select_menu__close{color:#cccccc;cursor:pointer;font-size:1rem}
+// .company_account-hiring-ui-elements-select_menu-select_menu__close:hover{left:1px;position:relative;top:1px}
+// .company_account-hiring-ui-elements-select_menu-select_menu__content{max-height:300px;overflow-y:auto;padding:0}
+// .company_account-hiring-ui-elements-select-select__body{border:1px solid #d7d7d7}
+// .company_account-hiring-ui-elements-select-select__body>.company_account-hiring-ui-elements-select-option{border-bottom:1px solid #d7d7d7}
+// .company_account-hiring-ui-elements-select-select__body>.company_account-hiring-ui-elements-select-option:last-child{border-bottom:0}
+// .company_account-hiring-ui-elements-select-option{align-items:center;cursor:pointer;display:flex}
+// .company_account-hiring-ui-elements-select-option--selected .company_account-hiring-ui-elements-select-option__mark{visibility:visible}
+// .company_account-hiring-ui-elements-select-option:hover{background-color:#f6fafd}
+// .company_account-hiring-ui-elements-select-option:hover .company_account-hiring-ui-elements-select-option__mark{visibility:visible}
+// .company_account-hiring-ui-elements-select-option__content,.company_account-hiring-ui-elements-select-option__mark{border:0;display:block;margin:0}
+// .company_account-hiring-ui-elements-select-option__content{padding:3px 10px 3px 0}
+// .company_account-hiring-ui-elements-select-option__mark{padding:3px 6px;visibility:hidden}
+// .company_account-hiring-ui-elements-select-option__mark .company_account-hiring-ui-elements-select-option__icon{color:#307caf;font-size:1.2rem}
+// .company_account-hiring-ui-elements-table-table{border:0;display:flex;flex-flow:column nowrap;justify-content:space-between;line-height:1.5}
+// .company_account-hiring-ui-elements-table-table_data_cell,.company_account-hiring-ui-elements-table-table_header_cell{border:0;flex-basis:0;flex-flow:row nowrap;flex-grow:1}
+// .company_account-hiring-ui-elements-table-table_data_cell--fgrow_1,.company_account-hiring-ui-elements-table-table_header_cell--fgrow_1{flex:1}
+// .company_account-hiring-ui-elements-table-table_data_cell--fgrow_2,.company_account-hiring-ui-elements-table-table_header_cell--fgrow_2{flex:2}
+// .company_account-hiring-ui-elements-table-table_data_cell--fgrow_3,.company_account-hiring-ui-elements-table-table_header_cell--fgrow_3{flex:3}
+// .company_account-hiring-ui-elements-table-table_data_cell--fgrow_4,.company_account-hiring-ui-elements-table-table_header_cell--fgrow_4{flex:5}
+// .company_account-hiring-ui-elements-table-table_data_cell--fgrow_5,.company_account-hiring-ui-elements-table-table_header_cell--fgrow_5{flex:8}
+// .company_account-hiring-ui-elements-table-table_data_cell--fgrow_6,.company_account-hiring-ui-elements-table-table_header_cell--fgrow_6{flex:13}
+// .company_account-hiring-ui-elements-table-table_data_cell{align-items:center;color:#262626;display:flex;justify-content:start;overflow:hidden}
+// .company_account-hiring-ui-elements-table-table_data_cell>.company_account-hiring-ui-elements-table-table_data_cell__inner{border:0;display:block;overflow:hidden;width:100%}
+// .company_account-hiring-ui-elements-table-table_data_cell--center{justify-content:center}
+// .company_account-hiring-ui-elements-table-table_data_cell--center>.company_account-hiring-ui-elements-table-table_data_cell__inner{width:auto}
+// .company_account-hiring-ui-elements-table-table_header_cell{color:#8c8c8c;display:block;font-size:1rem;font-weight:normal}
+// .company_account-hiring-ui-elements-table-table_row{border:0;border-bottom:1px solid #ededed;display:flex;flex-wrap:nowrap;min-height:min-content}
+// .company_account-hiring-ui-elements-table-table_row:last-child{border-bottom:0}
+// .company_account-hiring-ui-elements-table-table_section{border:0;display:flex;flex-flow:column nowrap;justify-content:start}
+// .company_account-hiring-ui-elements-table-table_section--vscroll{overflow-y:auto}
+// .company_account-hiring-ui-elements-table-table_section--t_body{border-bottom:1px solid #d7d7d7;border-top:1px solid #d7d7d7}
+// .company_account-hiring-ui-elements-tag{align-items:center;border-radius:3px;border:1px solid #d7d7d7;cursor:pointer;display:inline-flex;font-size:1.1rem;margin:3px;padding:3px}
+// .company_account-hiring-ui-elements-tag .company_account-hiring-ui-elements-tag__content{margin:0 3px;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+// .company_account-hiring-ui-elements-tag .company_account-hiring-ui-elements-tag__icon{font-size:1.1rem}
+// .company_account-hiring-ui-elements-tag .company_account-hiring-ui-elements-tag__close{cursor:pointer;font-size:1rem}
+// .company_account-hiring-ui-elements-tag .company_account-hiring-ui-elements-tag__close:hover{left:1px;position:relative;top:1px}
+// .company_account-hiring-ui-units-basic_profile{color:#262626;line-height:1.5}
+// .company_account-hiring-ui-units-basic_profile .company_account-hiring-ui-units-basic_profile__avatar{height:40px;width:40px}
+// .company_account-hiring-ui-units-basic_profile__name{font-weight:bold;font-size:1.2rem;padding:8px, 0}
+// .company_account-hiring-ui-units-basic_profile__line{font-size:1.2rem}
+// .company_account-hiring-ui-units-basic_profile__profile_top_right{padding:0 16px}
+// .company_account-hiring-ui-units-basic_profile__profile_bottom{padding:12px 12px 0 0}
+// .company_account-hiring-ui-units-connection_count{color:#262626}
+// .company_account-hiring-ui-units-connection_count .company_account-hiring-ui-units-connection_count__count{color:#48a1e3;font-size:2rem;font-weight:bold}
+// .company_account-hiring-ui-units-connection_count .company_account-hiring-ui-units-connection_count__count_unit{font-size:1.3rem;font-weight:bold}
+// .company_account-hiring-ui-units-person_info{-webkit-transition:all 0.8s;-moz-transition:all 0.8s;-o-transition:all 0.8s;transition:all 0.8s;display:block;padding:0}
+// .company_account-hiring-ui-units-person_info--loading{opacity:.3}
+// .company_account-hiring-ui-units-person_info__item:not(:last-child){border-bottom:solid 1px #ededed;margin-bottom:16px;padding-bottom:20px}
+// .company_account-hiring-ui-units-person_info__subject{color:#8c8c8c;display:block;font-size:1.4rem;font-weight:bold;margin:0 0 26px;padding:0}
+// .company_account-hiring-ui-units-requirement__title{color:#262626}
+// .company_account-hiring-ui-units-staff__name{color:#262626;font-size:1.4rem;font-weight:bold}
+// .company_account-home{margin:0 12px 0 20px}
+// .company_account-home .header-field{background-color:#ffffff;margin-bottom:12px}
+// .company_account-home .bg{background-size:contain;height:207px;width:808px}
+// .company_account-home .company{width:100%}
+// .company_account-home .company-info{align-items:center;display:flex;font-size:1.1rem;width:100%}
+// .company_account-home h1{color:#585858;font-size:1.7rem;margin-bottom:13px}
+// .company_account-home .logo{padding:24px}
+// .company_account-home .logo-image{width:103.5px;height:103.5px;border-radius:2.1px;background-color:#ffffff;border:solid 1px #cccccc}
+// .company_account-home .merger-company{background-color:#f4f4f4;border-radius:2px;color:#585858;display:table;font-size:1.1rem;font-stretch:normal;font-style:normal;font-weight:normal;margin-top:8px;padding:5px 8px;width:auto}
+// .company_account-home .merger-company>a{color:#585858;text-decoration:none}
+// .company_account-home .main-contents{display:flex;justify-content:space-between}
+// .company_account-home .contents-block{border-radius:2px;background-color:#ffffff;border:solid 1px #e8e8e8}
+// .company_account-home .left-pane{width:480px}
+// .company_account-home .right-pane{margin-left:12px;width:318px}
+// .company_account-home .company-account-timeline{margin-top:12px}
+// .company_account-home-post_form{border-radius:2px;background-color:#ffffff;border:solid 1px #e8e8e8}
+// .company_account-home-post_form .company_page .close-button{left:408px}
+// .company_account-home-stats_panel{background-color:#ffffff;border:solid 1px #e8e8e8;border-radius:2px;padding:16px}
+// .company_account-home-stats_panel .stat-title{color:#262626;font-size:1.4rem;margin-bottom:30px}
+// .company_account-home-stats_panel .stats-list{display:flex;justify-content:space-around}
+// .company_account-home-stats_panel .stats-list .stats-item{flex-grow:1}
+// .company_account-home-stats_panel .stats-list .stats-item:not(:first-child){border-left:solid 1px #ededed}
+// .company_account-home-stats_panel .stats-list .info{text-align:center;font-size:3.2rem;font-weight:bold;color:#48a1e3;margin-bottom:12px}
+// .company_account-home-stats_panel .stats-list .label{color:#595959;font-size:1rem;text-align:center}
+// .company_account-home-timeline{position:relative}
+// .company_account-main{height:100%}
+// .company_account-main .container{*zoom:1;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:relative;max-width:1090px;width:100%;margin-left:auto;margin-right:auto}
+// .company_account-main .container:after{content:" ";display:block;height:0;clear:both;overflow:hidden;visibility:hidden}
+// .company_account-main .contents{height:100%;padding-top:55px}
+// .company_account-main .side-pane{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:#454545;border-radius:0 0 3px 3px;color:#ffffff;height:calc(100% - 55px);margin-left:20px;position:fixed;width:238px;overflow:auto}
+// .company_account-main .main-pane{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;height:100%;margin-left:258px;position:relative;width:840px}
+// .company_account-member_management-assignment_header{color:#262626}
+// .company_account-member_management-assignment_header .page-title{padding-bottom:48px}
+// .company_account-member_management-assignment_header .table-title{font-size:1.4rem;margin-bottom:16px}
+// .company_account-member_management-assignment_header .table-title .main-title{font-weight:bold}
+// .company_account-table_page_container.company_account-member_management-assignment .header-field{height:auto}
+// .company_account-table_page_container.company_account-member_management-assignment .table-title{font-size:1.4rem;position:relative;height:80px}
+// .company_account-table_page_container.company_account-member_management-assignment .table-title .title{position:absolute;bottom:0}
+// .company_account-table_page_container.company_account-member_management-assignment .table-title .common-pagination{position:absolute;float:right;bottom:-7px;right:3px}
+// .company_account-table_page_container.company_account-member_management-assignment .submit-btn{height:36px;width:106px;font-size:1.2rem;background-color:#48a1e3;border-color:#48a1e3}
+// .company_account-member_management-candidate_search_form h3{font-size:1.4rem;padding-bottom:16px}
+// .company_account-member_management-candidate_search_form .description{font-size:1.2rem;color:#8c8c8c;padding-bottom:16px}
+// .company_account-member_management-candidate_search_form .search-form{display:flex}
+// .company_account-member_management-candidate_search_form .search-form .btn{padding-left:24px}
+// .company_account-member_management-candidate_search_form .search-member-candidate{width:320px}
+// .company_account-member_management-main .submit-btn{display:table-cell;vertical-align:middle;width:106px;height:32px;border-radius:2px;background-color:#48a1e3;border-color:#48a1e3;font-size:1.2rem}
+// .company_account-member_management-member_table{color:#262626}
+// .company_account-member_management-member_table .company_account-cell{font-size:1.4rem}
+// .company_account-member_management-member_table .full_name-cell{font-weight:bold}
+// .company_account-member_management-member_table .remove-button{background:#ffffff;border-radius:2px;border:1px solid #8c8c8c;box-sizing:border-box;color:#8c8c8c;font-size:1rem;font-weight:normal;padding:12px 6px;padding:10px 6px;height:32px;width:106px}
+// .company_account-member_management-member_table .remove-button:disabled{background:#ededed;border:1px solid #ededed;cursor:inherit;color:#a6a6a6}
+// .company_account-member_management-member_table .remove-button:not(:disabled):focus{opacity:.8}
+// .company_account-member_management-member_table .remove-button:not(:disabled):hover{opacity:.8;box-shadow:0 0 2px 0 rgba(72,161,227,0.35)}
+// .company_account-member_management-member_table .remove-button:not(:disabled):active{opacity:1}
+// .company_account-member_management-member_table .person-avatar{border:1px solid #e8e8e8}
+// .company_account-member_management-member_table .block-with-text{background:#ffffff;overflow:hidden;width:100%}
+// .company_account-member_management-member_table .block-with-text p{max-height:38px;position:relative}
+// .company_account-member_management-member_table .block-with-text p::before,.company_account-member_management-member_table .block-with-text p::after{background:#ffffff;position:absolute}
+// .company_account-member_management-member_table .block-with-text p::before{content:'...';top:14px;right:0}
+// .company_account-member_management-member_table .block-with-text p::after{content:'';height:100%;width:100%}
+// .company_account-member_management-member_table .fixedDataTableRowLayout_rowWrapper{line-height:1.4}
+// .company_account-member_management-member_table .fixedDataTableRowLayout_rowWrapper:last-child .company_account-cell{border-width:1px;border-color:#a6a6a6}
+// .company_account-member_management-services_table .company_account-cell{padding-left:0}
+// .company_account-member_management-services_table .service-cell{font-size:1.4rem;font-weight:bold}
+// .company_account-member_management-services_table .fixedDataTableRowLayout_rowWrapper:last-child .company_account-cell{border-width:1px;border-color:#a6a6a6}
+// .company_account-network_csv_download-main{background-color:#ffffff;height:auto;margin:0 12px 0 20px;min-height:100%;padding:0 20px;width:768px}
+// .company_account-network_csv_download-main a{color:#307caf;text-decoration:underline}
+// .company_account-network_csv_download-main a:hover{color:#307caf;text-decoration:none}
+// .company_account-network_csv_download-main a:hover img{opacity:.7}
+// .company_account-network_csv_download-main a:focus{color:#307caf}
+// .company_account-network_csv_download-main .header-field{margin-bottom:12px;padding-top:24px}
+// .company_account-network_csv_download-main .header-field h2.page-title{color:#262626;font-size:2rem;margin:8px 0}
+// .company_account-network_csv_download-main .body-field{padding-bottom:12px}
+// .company_account-network_csv_download-main .guide{font-size:1.4rem;margin-bottom:72px}
+// .company_account-network_csv_download-main .guide h2{color:#48a1e3;font-size:2.1rem;margin:44px 0 32px;text-align:center}
+// .company_account-network_csv_download-main .guide h2 .downloadable-cards-count{margin-left:40px}
+// .company_account-network_csv_download-main .guide h3{font-size:1.4rem;margin-bottom:12px}
+// .company_account-network_csv_download-main .guide .introduction{margin-top:48px;line-height:2.2rem}
+// .company_account-network_csv_download-main .guide .description{background-color:#f6fafd;border-radius:4px;margin-bottom:32px;padding:32px 24px}
+// .company_account-network_csv_download-main .guide ul{margin-left:1.4rem}
+// .company_account-network_csv_download-main .guide li{line-height:1.9rem;margin-bottom:2px}
+// .company_account-network_csv_download-main .guide li::before{content:'\30FB';margin-left:-1.4rem}
+// .company_account-network_csv_download-main .guide a.faq{margin-left:12px}
+// .company_account-network_csv_download-main .guide .info{margin-bottom:44px;font-size:1.2rem;color:#ff6752}
+// .company_account-network_csv_download-main .guide .info div{padding-top:16px}
+// .company_account-network_csv_download-main .guide .info .loading{display:inline-block;height:20px;width:20px;background:url(https://assets.8card.net/assets/company_network/loading-c33dd824c834c4e71b3b536530ae934b.gif) no-repeat center center}
+// .company_account-network_csv_download-main .guide .info .loading+span{line-height:2rem;margin-left:8px;vertical-align:top}
+// .company_account-network_csv_download-main .guide .info span{line-height:2rem}
+// .company_account-network_csv_download-main .guide .info span+span{margin-left:8px}
+// .company_account-network_csv_download-main .guide .button{text-align:center}
+// .company_account-network_csv_download-main .guide .button button{background-color:#48a1e3;border-color:#48a1e3;width:262px;height:38px}
+// .company_account-network_csv_download-main .guide .button button.is-disabled{background:#d7d7d7;border-color:#d7d7d7}
+// .company_account-network_csv_download-main .list{font-size:1.4rem}
+// .company_account-network_csv_download-main .list h2{font-size:1.9rem;margin-bottom:16px}
+// .company_account-network_csv_download-main .list .introduction{line-height:2.2rem}
+// .company_account-network_csv_download-main .list .company_account-table{font-size:1.4rem;margin-top:36px;margin-bottom:24px}
+// .company_account-network_csv_download-main .list .note p{margin-bottom:12px}
+// .company_account-network_csv_download-main .list .datetime{display:block;font-size:1.4rem;text-align:left}
+// .company_account-network_csv_download-main .list .datetime .date{display:inline-block;margin-right:1rem;width:85px}
+// .company_account-network_csv_download-main .list .datetime .time{display:inline-block;width:45px}
+// .company_account-network_csv_download-main .list .card-count{display:inline-block;font-size:1.4rem;width:65px}
+// .company_account-network_csv_download-main .list .button{display:block;margin-bottom:8px;padding-right:8px;text-align:center}
+// .company_account-network_csv_download-main .list button{background-color:#48a1e3;border-color:#48a1e3;font-size:1.2rem;min-height:32px;padding:0;width:112px}
+// .company_account-network_csv_download-main .list .utf8-navigation{font-size:1rem;display:block;padding-right:8px;text-align:center}
+// .company_account-network_management-cell .user-cell{padding-right:8px}
+// .company_account-network_management-cell .personal-info{display:flex;flex-direction:column}
+// .company_account-network_management-cell .personal-info .person-avatar{border:solid 1px #ededed;height:40px;width:40px;margin-right:12px;margin-bottom:12px}
+// .company_account-network_management-cell .personal-info .person-name{font-size:1.2rem;font-weight:bold}
+// .company_account-network_management-cell .text{font-size:1.2rem}
+// .company_account-network_management-cell .premium-user-text{font-size:1.2rem;font-weight:bold;color:#e2be00}
+// .company_account-network_management-cell .status-not-invited-text{margin-bottom:11px;min-width:102px;text-align:center;width:102px;font-size:1.2rem}
+// .company_account-network_management-cell .status-not-invited-text i{color:#a6a6a6;font-size:1.4rem;margin-right:4px;vertical-align:text-top}
+// .company_account-network_management-cell .status-inviting-text{margin-bottom:11px;min-width:102px;text-align:center;width:102px;font-size:1.2rem;color:#a6a6a6}
+// .company_account-network_management-cell .status-inviting-text i{color:#a6a6a6;font-size:1.4rem;margin-right:4px;vertical-align:text-top}
+// .company_account-network_management-cell .status-joined-text{margin-bottom:11px;min-width:102px;text-align:center;width:102px;font-size:1.2rem;font-weight:bold}
+// .company_account-network_management-cell .status-joined-text i{color:#a6a6a6;font-size:1.4rem;margin-right:4px;vertical-align:text-top}
+// .company_account-network_management-cell .status-joined-text i{color:#48a1e3}
+// .company_account-network_management-cell .only-premium-text{font-size:1.1rem;font-weight:bold;text-align:left;line-height:1.5rem;color:#cccccc}
+// .company_account-network_management-cell .invite-button{background:#ffffff;border-radius:2px;border:1px solid #48a1e3;box-sizing:border-box;color:#48a1e3;font-size:1rem;font-weight:normal;padding:12px 6px;min-height:30px;min-width:102px;height:30px;padding:6px;width:102px;display:block;line-height:1.6rem;font-size:1.2rem;text-align:center;text-decoration:none;font-weight:bold}
+// .company_account-network_management-cell .invite-button:disabled{background:#ededed;border:1px solid #ededed;cursor:inherit;color:#a6a6a6}
+// .company_account-network_management-cell .invite-button:not(:disabled):focus{opacity:.8}
+// .company_account-network_management-cell .invite-button:not(:disabled):hover{opacity:.8;box-shadow:0 0 2px 0 rgba(72,161,227,0.35)}
+// .company_account-network_management-cell .invite-button:not(:disabled):active{opacity:1}
+// .company_account-network_management-cell .invite-button:disabled{opacity:.5}
+// .company_account-network_management-cell .remove-button{background:#ffffff;border-radius:2px;border:1px solid #8c8c8c;box-sizing:border-box;color:#8c8c8c;font-size:1rem;font-weight:normal;padding:12px 6px;min-height:30px;min-width:102px;height:30px;padding:6px;width:102px;font-size:1.2rem;font-weight:bold}
+// .company_account-network_management-cell .remove-button:disabled{background:#ededed;border:1px solid #ededed;cursor:inherit;color:#a6a6a6}
+// .company_account-network_management-cell .remove-button:not(:disabled):focus{opacity:.8}
+// .company_account-network_management-cell .remove-button:not(:disabled):hover{opacity:.8;box-shadow:0 0 2px 0 rgba(72,161,227,0.35)}
+// .company_account-network_management-cell .remove-button:not(:disabled):active{opacity:1}
+// .company_account-network_management-cell .remove-button:disabled{opacity:.5}
+// .company_account-network_management-cell .cancel-button{background:#ffffff;border-radius:2px;border:1px solid #ffffff;box-sizing:border-box;color:#ffffff;font-size:1rem;font-weight:normal;padding:12px 6px;min-height:30px;min-width:102px;height:30px;padding:6px;width:102px;background-color:#d7d7d7;border-color:#d7d7d7;font-size:1.2rem;font-weight:bold}
+// .company_account-network_management-cell .cancel-button:disabled{background:#ededed;border:1px solid #ededed;cursor:inherit;color:#a6a6a6}
+// .company_account-network_management-cell .cancel-button:not(:disabled):focus{opacity:.8}
+// .company_account-network_management-cell .cancel-button:not(:disabled):hover{opacity:.8;box-shadow:0 0 2px 0 rgba(72,161,227,0.35)}
+// .company_account-network_management-cell .cancel-button:not(:disabled):active{opacity:1}
+// .company_account-network_management-cell .cancel-button:disabled{opacity:.5}
+// .company_account-table_page_container.company_account-network_management-members{height:auto;min-height:100%}
+// .company_account-table_page_container.company_account-network_management-members .page-title{color:#262626;font-size:2rem;margin:8px 0}
+// .company_account-table_page_container.company_account-network_management-members .common-button.more{align-items:center;background-color:#ffffff;border-radius:2px;border:solid 1px #48a1e3;color:#48a1e3;display:flex;font-size:1.3rem;height:37px;justify-content:center;width:280px}
+// .company_account-table_page_container.company_account-network_management-members .common-button.more:hover{opacity:1;color:#ffffff;background-color:#48a1e3}
+// .company_account-table_page_container.company_account-network_management-members .common-button.more:disabled{opacity:.5}
+// .company_account-table_page_container.company_account-network_management-members .common-button.more .fe{margin-right:5px}
+// .company_account-table_page_container.company_account-network_management-members .footer{display:flex;justify-content:center;padding:40px 0 0}
+// .company_account-page_management-follower_list .header-field{height:64px}
+// .company_account-page_management-follower_list .header-field .page-title{color:#262626;font-size:2rem;font-weight:bold;margin:8px 0}
+// .company_account-page_management-followers_table .inner{width:90%}
+// .company_account-page_management-followers_table .user-cell{display:flex;flex-direction:column}
+// .company_account-page_management-followers_table .user-cell .person-avatar{border:solid 1px #ededed;height:40px;width:40px}
+// .company_account-page_management-followers_table .user-cell .person-name{font-size:1.2rem;font-weight:bold;margin:8px 0 4px}
+// .company_account-page_management-followers_table .company-info-cell,.company_account-page_management-followers_table .education-info-cell{font-size:1.2rem}
+// .company_account-page_management-followers_table .department{margin:8px 0}
+// .company_account-page_management-followers_table .faculty{margin-top:8px}
+// .company_account-page_management-followers_table .fe-hint_icon{cursor:pointer;margin-left:4px}
+// .company_account-page_setting_edit{margin:0 12px 0 20px}
+// .company_account-page_setting_edit .row{display:block;position:relative;*zoom:1;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+// .company_account-page_setting_edit .row:after{content:" ";display:block;height:0;clear:both;overflow:hidden;visibility:hidden}
+// .company_account-page_setting_edit .e-txt{display:inline-block;color:#f16671;font-weight:bold;margin-bottom:4px;font-size:1.2rem;line-height:1.2}
+// .company_account-page_setting_edit .main-contents{background-color:#ffffff;padding:32px 24px}
+// .company_account-page_setting_edit h1{color:#585858;font-size:1.7rem;margin-bottom:50px}
+// .company_account-page_setting_edit h2{color:#585858;font-size:1.5rem;margin-bottom:16px}
+// .company_account-page_setting_edit h2 .required{font-weight:normal;font-size:1rem;color:#ff6752;padding-left:4px}
+// .company_account-page_setting_edit .note{font-size:1.2rem;color:#a0a0a0}
+// .company_account-page_setting_edit .company-theme{margin-bottom:32px}
+// .company_account-page_setting_edit .company-theme h2{margin-bottom:5px}
+// .company_account-page_setting_edit .company-theme .bg{background-size:contain;background-repeat:no-repeat;width:758px;height:calc(200px * calc(758 / 780));border-radius:2px;text-align:center;margin-bottom:11px}
+// .company_account-page_setting_edit .company-theme .bg .shadow{position:absolute;background-color:#000000;opacity:.4;border-radius:2px;width:758px;height:calc(200px * calc(758 / 780))}
+// .company_account-page_setting_edit .company-theme .bg .common-text_button{display:table-cell;font-size:1.5rem;font-weight:bold;padding-top:10px;width:758px;height:calc(200px * calc(758 / 780));text-align:center;vertical-align:middle;position:relative;color:#ffffff}
+// .company_account-page_setting_edit .company-logo{margin-bottom:48px}
+// .company_account-page_setting_edit .company-logo .logo{margin-bottom:8px}
+// .company_account-page_setting_edit .company-logo .logo-image{height:103px;width:103px;border:1px solid #d5d5d5;border-radius:2px}
+// .company_account-page_setting_edit .company-logo .common-text_button{font-size:1.5rem;padding:9.5px 30px 6.5px;border:1px solid #48a1e3;border-radius:3px;color:#48a1e3}
+// .company_account-page_setting_edit .company-logo .common-text_button .fe{position:relative;top:-2px}
+// .company_account-page_setting_edit .company-logo .note{margin-left:24px}
+// .company_account-page_setting_edit .row{margin-bottom:32px}
+// .company_account-page_setting_edit .row .e-txt{display:block;position:relative;top:-7px}
+// .company_account-page_setting_edit .row textarea{line-height:1.5}
+// .company_account-page_setting_edit .row button.theme-primary{background-color:#48a1e3;border-color:#48a1e3;min-height:36px;min-width:106px;padding-top:4px;padding-bottom:4px}
+// .company_account-page_setting_edit .address input[type=text]{width:213px}
+// .company_account-page_setting_edit .address .note{display:block;margin-top:12px}
+// .company_account-page_setting_edit-modal{padding:17px}
+// .company_account-page_setting_edit-modal h2{margin-top:6px;margin-bottom:12px}
+// .company_account-page_setting_edit-modal canvas{cursor:move}
+// .company_account-page_setting_edit-modal div.slider{text-align:center;margin-top:12px;margin-bottom:12px}
+// .company_account-page_setting_edit-modal div.slider input[type=range]{width:260px}
+// .company_account-page_setting_edit-modal div.selector-footer{margin-top:18px;margin-bottom:6px}
+// .company_account-page_setting_edit-modal div.selector-footer button.save-button{margin-right:8px}
+// .company_account-page_management-scout_target_button{background:#ffffff;border-radius:2px;border:1px solid #48a1e3;box-sizing:border-box;color:#48a1e3;font-size:1rem;font-weight:normal;padding:12px 6px;width:104px}
+// .company_account-page_management-scout_target_button:disabled{background:#ededed;border:1px solid #ededed;cursor:inherit;color:#a6a6a6}
+// .company_account-page_management-scout_target_button:not(:disabled):focus{opacity:.8}
+// .company_account-page_management-scout_target_button:not(:disabled):hover{opacity:.8;box-shadow:0 0 2px 0 rgba(72,161,227,0.35)}
+// .company_account-page_management-scout_target_button:not(:disabled):active{opacity:1}
+// .company_account-payment_history-main{margin-left:20px;padding:32px 24px;width:758px;min-height:100%;background-color:#ffffff}
+// .company_account-payment_history-main a{color:#307caf;text-decoration:underline}
+// .company_account-payment_history-main a:hover{color:#307caf;text-decoration:none}
+// .company_account-payment_history-main a:hover img{opacity:.7}
+// .company_account-payment_history-main a:focus{color:#307caf}
+// .company_account-payment_history-main header{margin-bottom:48px}
+// .company_account-payment_history-main header h1{font-size:2rem;color:#262626}
+// .company_account-payment_history-main a{color:#48a1e3;text-decoration:underline}
+// .company_account-payment_history-main a:hover{color:#48a1e3;text-decoration:none}
+// .company_account-payment_history-main a:hover img{opacity:.7}
+// .company_account-payment_history-main a:focus{color:#48a1e3}
+// .company_account-payment_history-main .label{margin:16px 0;font-size:1.6rem}
+// .company_account-payment_history-main .payment_subscription-section_title{font-weight:600}
+// .company_account-payment_history-main .billing_notice{background-color:#fbfbfb;color:#595959;font-size:1.4rem;margin-top:44px;padding:24px 32px;width:702px}
+// .company_account-payment_history-main .billing_notice .notice-title{font-weight:600;margin-bottom:16px}
+// .company_account-payment_history-main .billing_notice .notice-text{line-height:2.2rem;margin-left:1em;text-indent:-1em}
+// .company_account-payment_history-main .billing_notice .notice-text::before{content:'\30FB'}
+// .company_account-payment_history-payment_history{margin-top:80px}
+// .company_account-payment_history-payment_history .label{margin:16px 0;font-size:1.6rem}
+// .company_account-payment_history-payment_history .section_header{position:relative}
+// .company_account-payment_history-payment_history .payment_history-section_title{font-weight:600;line-height:3.2rem}
+// .company_account-payment_history-payment_history .payment_history-pagination{position:absolute;top:0;right:0}
+// .company_account-payment_history-payment_history .payment_history-table{margin-top:32px}
+// .company_account-payment_history-payment_history .payment_history-cell-amount{padding-right:16px;text-align:right}
+// .company_account-payment_history-payment_history .fixedDataTableRowLayout_rowWrapper:last-child .company_account-cell{border-bottom:solid 1px #a6a6a6}
+// .company_account-payment_history-payment_history .date{font-size:1.4rem}
+// .company_account-payment_history-payment_history .payment_history-service_name{color:#262626;font-size:1.4rem;font-weight:600;margin-bottom:8px}
+// .company_account-payment_history-payment_history .payment_history-service_info{font-size:1.2rem}
+// .company_account-payment_history-payment_history .price{font-size:1.4rem;font-weight:600}
+// .payment_history-service_company_premium{position:relative;margin:24px 0;padding:32px 24px;border-radius:2px;border:solid 1px #a6a6a6}
+// .payment_history-service_company_premium .service_name{color:#595959;font-size:1.6rem;font-weight:600;margin-bottom:8px}
+// .payment_history-service_company_premium .service_name .fe{color:#48a1e3;font-size:2rem;padding:0 8px 4px 0}
+// .payment_history-service_company_premium .payment_type{color:#595959;font-size:1.4rem;font-weight:600}
+// .payment_history-service_company_premium .line{margin:32px 0;border-top:solid 1px #a6a6a6}
+// .payment_history-service_company_premium .subscription_period,.payment_history-service_company_premium .subscription_next_update{margin-top:24px;font-size:1.4rem}
+// .payment_history-service_company_premium .subscription_period .title,.payment_history-service_company_premium .subscription_next_update .title{width:100px}
+// .payment_history-service_company_premium .subscription_period p,.payment_history-service_company_premium .subscription_next_update p{display:inline-block}
+// .payment_history-service_company_premium .subscription_next_update{margin-top:8px;color:#ff6752}
+// .payment_history-service_company_premium .notice{font-size:1.4rem;color:#8c8c8c}
+// .payment_history-service_company_premium .notice .notice-title{font-weight:600;margin-bottom:16px}
+// .payment_history-service_company_premium .notice .notice-text{line-height:2.2rem;margin-left:1em;text-indent:-1em}
+// .payment_history-service_company_premium .notice .notice-text::before{content:'\30FB'}
+// .payment_history-service_premium_ticket{position:relative;margin:44px 0 0;padding:32px 24px;border-radius:2px;border:solid 1px #a6a6a6}
+// .payment_history-service_premium_ticket .service_name{color:#595959;font-size:1.6rem;font-weight:600;margin-bottom:8px}
+// .payment_history-service_premium_ticket .service_name .fe{color:#48a1e3;font-size:2rem;padding:0 8px 4px 0}
+// .payment_history-service_premium_ticket .payment_type{color:#595959;font-size:1.4rem;font-weight:600}
+// .payment_history-service_premium_ticket .line{margin:32px 0;border-top:solid 1px #a6a6a6}
+// .payment_history-service_premium_ticket .history_items{margin-top:24px}
+// .payment_history-service_premium_ticket .history_items .item{margin-bottom:8px;font-size:1.4rem}
+// .payment_history-service_premium_ticket .history_items .item .title{width:100px}
+// .payment_history-service_premium_ticket .history_items .item p{display:inline-block}
+// .payment_history-service_premium_ticket .history_items .item.next_update{margin-bottom:0;color:#ff6752}
+// .payment_history-service_premium_ticket .notice{font-size:1.4rem;color:#8c8c8c}
+// .payment_history-service_premium_ticket .notice .notice-title{font-weight:600;margin-bottom:16px}
+// .payment_history-service_premium_ticket .notice .notice-text{line-height:2.2rem;margin-left:1em;text-indent:-1em}
+// .payment_history-service_premium_ticket .notice .notice-text::before{content:'\30FB'}
+// .company_account-company_premium-card_number_form-cvc_help{width:466px;background:#f1f1f1;padding:20px 16px;margin-top:20px}
+// .company_account-company_premium-card_number_form-cvc_help .cvc_help-card_img{background:url(https://assets.8card.net/assets/company_account/payment_management/credit-card-img-84ed662c3255c001f4df3d1a53c4a368.png) no-repeat;background-size:100% auto;display:inline-block;width:85px;height:58px}@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){.company_account-company_premium-card_number_form-cvc_help .cvc_help-card_img{background:url(https://assets.8card.net/assets/company_account/payment_management/credit-card-img@2x-5dd93e33b482231c677430673c5cbf59.png) no-repeat;background-size:100% auto}}@media only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx){.company_account-company_premium-card_number_form-cvc_help .cvc_help-card_img{background:url(https://assets.8card.net/assets/company_account/payment_management/credit-card-img@3x-94a8683a69a4a67922952cb801c06fce.png) no-repeat;background-size:100% auto}}
+// .company_account-company_premium-card_number_form-cvc_help .cvc_help-description{display:inline-block;vertical-align:top;width:350px;margin-left:16px;line-height:1.8;font-size:1.3rem;color:#262626}
+// .company_account-payment_management-mail_address_form h1{font-size:1.6rem}
+// .company_account-payment_management-mail_address_form form{margin-top:40px}
+// .company_account-payment_management-mail_address_form .form-row label{display:table-cell;font-size:1.4rem;min-width:164px}
+// .company_account-payment_management-mail_address_form .form-row>div{display:table-cell;font-size:1.4rem;width:263px}
+// .company_account-payment_management-mail_address_form .mail-error{position:absolute;color:#f16671;font-size:1.2rem;font-weight:bold;padding-top:2px}
+// .company_account-payment_management-mail_address_form .button-row{margin-top:40px}
+// .company_account-payment_management-mail_address_form button{margin-right:9px}
+// .company_account-payment_management-mail_address_form button.theme-primary{background-color:#48a1e3;border-color:#48a1e3}
+// .company_account-payment_management-mail_address_form button.theme-secondary{color:#8c8c8c}
+// .company_account-payment_management-mail_registration .add-mail-container{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;height:132px;margin:auto;color:#48a1e3;font-size:1.5rem;font-weight:bold;border-radius:2px;border:solid 1px #a6a6a6;display:flex;justify-content:center;align-items:center}
+// .company_account-payment_management-mail_registration .add-mail-container .mail-loader-container{margin-top:-60px}
+// .company_account-payment_management-mail_registration .mail-container{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:766px;border-radius:2px;border:solid 1px #a6a6a6}
+// .company_account-payment_management-mail_registration .mail-container .mail-info{background-color:#fbfbfb;padding:32px 22.5px}
+// .company_account-payment_management-mail_registration .mail-container .mail-info .mail-info-row{display:inline-block}
+// .company_account-payment_management-mail_registration .mail-container .mail-info .mail-info-left-column{float:left;width:200px}
+// .company_account-payment_management-mail_registration .mail-container .mail-info .mail-info-right-column{float:left}
+// .company_account-payment_management-mail_registration .mail-container .button-area{background-color:#ffffff;border-top:solid 1px #a6a6a6;padding:15px 22.5px;text-align:center}
+// .company_account-payment_management-mail_registration .mail-container .button-area .button-space{margin-left:20px}
+// .company_account-payment_management-mail_registration .mail-container .button-area .button-icon{font-size:1.6rem}
+// .company_account-payment_management-mail_registration .mail-container .button-area .buttons{display:inline-block;margin:auto}
+// .company_account-payment_management-mail_registration .mail-container .button-area .update-mail-button{border-radius:2px;background-color:#ffffff;border:solid 1px #48a1e3;color:#48a1e3}
+// .company_account-payment_management-mail_registration .mail-container .button-area .delete-mail-button{border-radius:2px;background-color:#ffffff;border:solid 1px #a6a6a6;color:#a6a6a6}
+// .company_account-payment_management-mail_registration .plus-icon{font-size:2.6rem;margin-right:8px}
+// .company_account-payment_management-mail_registration .clickable{cursor:pointer;display:flex;justify-content:center;align-items:center}
+// .company_account-payment_management-main{margin:0 12px 0 20px;padding:0 24px;width:766px;min-height:100%;background-color:#ffffff}
+// .company_account-payment_management-main header{padding-top:32px;margin-bottom:50px}
+// .company_account-payment_management-main header h1{font-size:1.7rem;text-align:left;color:#262626}
+// .company_account-payment_management-main .mail-address-content{margin-bottom:52px}
+// .company_account-payment_management-main .purchase-content{margin-bottom:32px}
+// .company_account-payment_management-main .text{font-size:1.5rem;color:#262626}
+// .company_account-payment_management-main .strong-text{font-size:1.5rem;color:#262626;font-weight:bold}
+// .company_account-payment_management-main .label{height:32px;text-align:left;font-weight:bold}
+// .company_account-payment_management-main .card-left-column{float:left;text-align:left}
+// .company_account-payment_management-main .error>span{color:#f16671;display:block;font-size:1.4rem;font-weight:bold;margin-top:16px}
+// .company_accont-premium_ticket-code_list{margin:44px 0 64px}
+// .company_accont-premium_ticket-code_list .company_account-table .company_account-cell{font-size:1.4rem}
+// .company_accont-premium_ticket-code_list .public_fixedDataTableCell_main{overflow:visible}
+// .company_accont-premium_ticket-code_list .code_list-row-expird .company_account-cell{color:#8c8c8c}
+// .company_accont-premium_ticket-code_list .code_list-notice_text{font-size:1rem;margin-top:10px;position:absolute;white-space:nowrap}
+// .company_accont-premium_ticket-code_list .notice_text-expired_soon{color:#ff6752;font-weight:600}
+// .company_accont-premium_ticket-code_list .notice_text-expired_soon .fe{font-size:1.3rem}
+// .company_accont-premium_ticket-code_list .notice_text-link{color:#8c8c8c}
+// .company_accont-premium_ticket-code_list .usage_status-consumed{font-weight:600}
+// .company_accont-premium_ticket-expiry_alert{background:#ffefed;border:1px solid #ff6752;border-radius:2px;box-sizing:border-box;color:#ff6752;margin-bottom:44px;padding:24px;width:100%}
+// .company_accont-premium_ticket-expiry_alert .fe{font-size:2rem;margin-right:8px;vertical-align:bottom}
+// .company_accont-premium_ticket-expiry_alert .title{font-size:1.6rem;font-weight:bold;line-height:1.2}
+// .company_accont-premium_ticket-expiry_alert .content{margin-top:12px;font-size:1.4rem;line-height:1.4}
+// .company_accont-premium_ticket-main{margin:0 12px 0 20px;padding:32px 24px;width:766px;min-height:100%;background-color:#ffffff}
+// .company_accont-premium_ticket-main h1{color:#262626;margin-bottom:48px}
+// .company_accont-premium_ticket-main .usage-detail.no_contents .description{line-height:1.6;font-size:1.4rem;color:#262626}
+// .company_accont-premium_ticket-main .usage-detail.no_contents .premium_ticket-info-title{margin:72px 0 24px;font-size:1.6rem;color:#595959;font-weight:bold}
+// .company_accont-premium_ticket-main .sub-title{font-weight:600;margin:16px 0;font-size:1.6rem}
+// .company_accont-premium_ticket-main .guide-links{display:flex;justify-content:space-around}
+// .company_accont-premium_ticket-main .guide-link{padding:4px;width:344px;display:block;font-size:1.2rem;margin:0}
+// .company_accont-premium_ticket-main .guide-link .secondary-style{background-color:#ffffff;color:#48a1e3;border-radius:5px;cursor:pointer;display:block;font-weight:bold;font-size:1.6rem;border:2px solid #48a1e3;text-decoration:none}
+// .company_accont-premium_ticket-main .guide-with-icon{display:flex;height:72px;align-items:center;justify-content:center}
+// .company_accont-premium_ticket-main .guide-with-icon .label{padding-left:13px}
+// .company_accont-premium_ticket-main .ticket-use-icon{display:inline-block;width:44px;height:47px;background:url(https://assets.8card.net/assets/components/company_account/premium_tickets/main/ticket-use-icon-0a7b27acf9c887299d41aeec7a530a0d.svg) no-repeat}
+// .company_accont-premium_ticket-main .ticket-plus-icon{display:inline-block;width:45px;height:43px;background:url(https://assets.8card.net/assets/components/company_account/premium_tickets/main/ticket-plus-icon-899b2bdc9b3e7d954a8944dbb606026d.svg) no-repeat}
+// .company_accont-premium_ticket-main .guide-buttons{display:flex;justify-content:space-around}
+// .fixedDataTableLayout_rowsContainer>div:last-child>div:last-child .company_account-cell{border-bottom:1px solid #a6a6a6}
+// .company_accont-premium_ticket-list{margin-top:32px}
+// .company_accont-premium_ticket-list .company_accont-premium_ticket-list-select .Select-menu-outer{z-index:100}
+// .company_accont-premium_ticket-list .company_accont-premium_ticket-list-select .Select-control{height:38px}
+// .company_accont-premium_ticket-list .company_accont-premium_ticket-list-select .Select-control .Select-value{line-height:3.6rem;padding-left:19px}
+// .company_accont-premium_ticket-list .company_accont-premium_ticket-list-select .Select-control .Select-input{padding-left:19px}
+// .company_accont-premium_ticket-list .company_accont-premium_ticket-list-select .Select-arrow-zone{display:none}
+// .company_accont-premium_ticket-list .company_accont-premium_ticket-list-select .Select-menu{border-bottom-right-radius:4px;border-bottom-left-radius:4px}
+// .company_accont-premium_ticket-list .company_accont-premium_ticket-list-select .Select-menu .Select-option{padding-left:19px}
+// .company_accont-premium_ticket-list .company_accont-premium_ticket-list-select.Select--single .Select-control .Select-value-label{color:#595959}
+// .company_accont-premium_ticket-list .content{width:100%}
+// .company_accont-premium_ticket-list .content dt,.company_accont-premium_ticket-list .content dd{color:#595959;display:inline-block;font-size:1.4rem;vertical-align:middle}
+// .company_accont-premium_ticket-list .content dt{padding-left:8px;width:100px}
+// .company_accont-premium_ticket-list .content dd{font-weight:bold}
+// .company_accont-premium_ticket-list .name dd{position:relative;width:calc(100% - 108px)}
+// .company_accont-premium_ticket-list .name .fe{color:#8c8c8c;position:absolute;top:12px;right:12px;transform:rotate(90deg);z-index:10}
+// .company_accont-premium_ticket-list .created_at{padding:20px 0 32px}
+// .company_accont-premium_ticket-list .created_at dd{padding-left:20px}
+// .company_accont-premium_ticket-list .expired_at dd{padding-left:20px}
+// .company_accont-premium_ticket-list .expired_at .fe{color:#a6a6a6;font-size:1.6rem;margin-left:8px;vertical-align:bottom;cursor:pointer}
+// .company_accont-premium_ticket-list .expired_at .text-period{font-weight:normal;padding-left:8px}
+// .company_accont-premium_ticket-list .common-tooltip::after{content:none}
+// .company_accont-premium_ticket-list .common-tooltip.show{opacity:1}
+// .company_accont-premium_ticket-list .common-tooltip .elltip-text{background:#ffffff;border:1px solid #d7d7d7;border-radius:2px;font-size:1.2rem;padding:16px;width:212px}
+// .company_accont-premium_ticket-list .common-tooltip .tooltip-title{font-weight:bold;margin-bottom:12px}
+// .company_accont-premium_ticket-list .common-tooltip .tooltip-content{line-height:1.4}
+// .company-account #c-wrap{height:100%}
+// .company_account-selectors-selection_status_selector.selector{border-radius:2px;box-shadow:0 2px 4px 0 rgba(0,0,0,0.2);border:solid 1px #d7d7d7}
+// .company_account-selectors-selection_status_selector .selected-icon{position:absolute;left:7px;color:#48a1e3}
+// .company_account-selectors-selection_status_selector .overlay{background-color:rgba(255,255,255,0)}
+// .company_account-selectors-selection_status_selector .options_header{width:84px;height:35px;border-radius:1px;text-align:center;vertical-align:middle;position:relative;display:table-cell;flex-direction:column;font-size:1.1rem;font-family:HiraginoSans-W6;color:#000000;background-color:#fbfbfb;border-bottom:solid 1px #d7d7d7;padding:0 8px}
+// .company_account-selectors-selection_status_selector .options{width:84px;display:flex;flex-direction:column}
+// .company_account-selectors-selection_status_selector .selection_status{color:#000000}
+// .company_account-selectors-selection_status_selector .selection_status_options{width:100px;height:36px;display:flex;align-items:center;color:#000000;position:relative;border-bottom:solid 1px #d7d7d7}
+// .company_account-selectors-selection_status_selector .selection_status_options span{font-size:1.1rem;margin-left:32px}
+// .company_account-selectors-selection_status_selector .selection_status_options:hover{background-color:#f6fafd}
+// .company_account-selectors-selection_status_selector .arrow{padding-left:4px}
+// .company_account-side_bar{padding:16px 0 16px 16px}
+// .company_account-side_bar .company-info{margin-bottom:28px}
+// .company_account-side_bar .company-info .company-icon{display:block;width:50px;height:50px;border-radius:2px;background-color:#ffffff;border:solid 1px #d7d7d7;margin-bottom:16px}
+// .company_account-side_bar .company-info .company-name{font-size:1.6rem;font-weight:bold;line-height:1.5;word-wrap:break-word}
+// .company_account-side_bar a{color:#ffffff;display:inline-block;text-decoration:none;width:100%}
+// .company_account-side_bar li{font-size:1.1rem}
+// .company_account-side_bar .group-label{align-items:center;display:flex;height:30px}
+// .company_account-side_bar .group-label .logo-icon{margin-right:8px}
+// .company_account-side_bar .group-label .main-label{flex-grow:1}
+// .company_account-side_bar .group-label .fe{font-size:1.5rem}
+// .company_account-side_bar .group-label .help-icon{margin-right:16px}
+// .company_account-side_bar .group-label .help-icon .fe{color:#ffffff;font-size:1.5rem}
+// .company_account-side_bar .menu{height:30px;display:flex;align-items:center}
+// .company_account-side_bar .menu>a{margin-left:12px}
+// .company_account-side_bar .menu.disabled{margin-left:12px;color:#8c8c8c}
+// .company_account-side_bar .home-label{margin-left:-4px;padding-left:4px}
+// .company_account-side_bar .group-label,.company_account-side_bar .home-label{font-size:1.2rem;font-weight:bold}
+// .company_account-side_bar .menu-list{margin-left:16px}
+// .company_account-side_bar .selected{border-radius:2px;background-color:#307caf}
+// .company_account-side_bar .group-menu.disabled{color:#8c8c8c}
+// .company_account-table_header_cell.common-dialog{border:1px solid #d7d7d7}
+// .company_account-table_header_cell.header .filter{cursor:pointer;display:inline;margin-left:4px}
+// .company_account-table_header_cell.header .content{display:inline}
+// .company_account-table_header_cell .dialog_content{display:block;max-height:400px;max-width:348px}
+// .company_account-table_page_container{background-color:#ffffff;box-sizing:border-box;margin:0 12px 0 20px;height:100%;padding:24px 20px}
+// .company_account-table_page_container .header-field{height:64px}
+// .company_account-table_page_container .header-field.no-table-header{height:70px}
+// .company_account-table_page_container .header-field .page-title{color:#262626;font-size:2rem;font-weight:bold;margin:8px 0}
+// .company_account-table{background-color:#ffffff}
+// .company_account-table .company_account-cell{box-sizing:border-box;border-bottom:solid 1px #d7d7d7;height:100%;padding-left:8px;width:100%;color:#262626;font-size:1.1rem}
+// .company_account-table .company_account-header{box-sizing:border-box;border-bottom:solid 1px #a6a6a6;height:100%;padding-left:8px;width:100%;background-color:#ffffff;color:#8c8c8c;font-size:.9rem}
+// .company_account-table .fixedDataTableCellLayout_main,.company_account-table .fixedDataTableLayout_main,.company_account-table .fixedDataTableLayout_header,.company_account-table .fixedDataTableLayout_hasBottomBorder,.company_account-table .fixedDataTableRowLayout_fixedColumnsDivider,.company_account-table .fixedDataTableColumnResizerLineLayout_main,.company_account-table .fixedDataTableLayout_footer .public_fixedDataTableCell_main{border-style:none}
+// .company_account-table .public_Scrollbar_main.public_Scrollbar_mainActive,.company_account-table .public_Scrollbar_main,.company_account-table .public_Scrollbar_main:hover{background-color:rgba(255,255,255,0.8)}
+// .company_account-table .public_Scrollbar_mainOpaque,.company_account-table .public_Scrollbar_mainOpaque.public_Scrollbar_mainActive,.company_account-table .public_Scrollbar_mainOpaque:hover{background-color:#ffffff}
+// .company_account-table .public_Scrollbar_face::after{background-color:#cccccc}
+// .company_account-table .public_Scrollbar_main:hover .public_Scrollbar_face::after,.company_account-table .public_Scrollbar_mainActive .public_Scrollbar_face::after,.company_account-table .public_Scrollbar_faceActive::after{background-color:#8c8c8c}
+// .company-company_description{padding-bottom:24px;padding-left:24px;padding-right:24px}
+// .company-company_description .content{border-radius:2px;padding:24px;background-color:#f8f8f8;position:relative}
+// .company-company_description .txt{font-size:1.2rem;line-height:1.8rem;white-space:pre-wrap}
+// .company-company_description .txt a{color:#307caf;text-decoration:underline}
+// .company-company_description .txt a:hover{color:#307caf;text-decoration:none}
+// .company-company_description .txt a:hover img{opacity:.7}
+// .company-company_description .txt a:focus{color:#307caf}
+// .company-company_description .omit{word-wrap:break-word;max-height:52px;overflow:hidden}
+// .company-company_description .txt-btn{font-size:1.2rem;text-decoration:none;background-color:#f8f8f8;position:absolute;padding-right:3px;right:24px;bottom:23px;color:#307caf}
+// .company-company_description .txt-btn:active{position:absolute;top:inherit}
+// .company-company_follow_info.company{padding-top:26px;display:flex;align-items:center;font-size:1.1rem}
+// .company-company_follow_info.company p{padding-left:12px}
+// .company-company_follow_info.requirement{font-size:1.1rem}
+// .company-company_follow_info.requirement p{padding-top:8px}
+// .company-company_follow_info .follow-button{width:104px;min-height:28px;font-size:1.1rem;text-align:center;padding:0}
+// .company-company_follow_info .follow-button:focus{border:1px solid #307caf}
+// .company-company_follow_info .unfollow{background:#ffffff;color:#307caf}
+// .company-company_header{background-color:#ffffff;border-radius:2px;min-height:200px;position:relative}
+// .company-company_header .bg{background-position-x:center;background-repeat:no-repeat;background-size:contain;height:200px}
+// .company-company_header .company-info{display:flex;align-items:center}
+// .company-company_header h1{color:#585858;font-size:1.7rem;margin-bottom:13px}
+// .company-company_header .logo{padding:24px}
+// .company-company_header .logo-image{width:103.5px;height:103.5px;border-radius:2.1px;background-color:#ffffff;border:solid 1px #cccccc}
+// .company-company_header .merger-company{background-color:#f4f4f4;border-radius:2px;color:#585858;display:table;font-size:1.1rem;font-stretch:normal;font-style:normal;font-weight:normal;margin-top:8px;padding:5px 8px;width:auto}
+// .company-company_header .merger-company>a{color:#585858;text-decoration:none}
+// .company-company_header .ctl{left:24px;position:absolute;top:24px;z-index:1}
+// .company-company_header .ctl .prev{border:1px solid transparent;border-radius:3px;background:rgba(244,244,244,0.8);color:#585858;font-size:1.4rem;max-width:100%;padding:7px;text-decoration:none}
+// .company-company_info{box-sizing:border-box;display:flex;width:610px}
+// .company-company_info .icon{padding-right:8px}
+// .company-company_info .address-info{display:flex;margin-right:24px;max-width:40%}
+// .company-company_info .url-info{display:flex;max-width:60%}
+// .company-company_info .url-info a{color:#585858;text-decoration:none}
+// .company-company_info .url-info a:hover{text-decoration:underline}
+// .company-company_info .ell{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+// .company-company_main .company_container{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin-left:auto;margin-right:auto;margin-top:55px;max-width:1090px;width:100%}
+// .company-company_main .company_main_components{float:left;margin-left:20px;width:780px}
+// .company-company_main .aside_recommendation{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float:right;margin-left:810px;padding-left:20px;padding-right:8px;position:fixed;width:300px}
+// .company-company_main .company-aside{width:278px;float:left}
+// .company-company_main .home-hiring-tab{background-color:#e8e8e8;line-height:1.8rem}
+// .company-company_main .tab-contents-area{min-height:100px;width:100%;padding:0}
+// .company-company_main .tab-title-area{background:#ffffff;display:flex;box-shadow:1px 1px 1px #d5d5d5}
+// .company-company_main .tab-title-area .tab-title{color:#8c8c8c;font-size:1.3rem;margin:-2px 8px 0 24px;font-weight:bold}
+// .company-company_main .tab-title-area .tab-title:not(.tab-selected):hover{opacity:.8;box-shadow:0 0 0 0 rgba(48,124,175,0.35)}
+// .company-company_main .tab-title-area .tab-selected{color:#307caf;border-bottom:2px solid #307caf}
+// .company-company_main .with-shadow{box-shadow:1px 1px 1px #d5d5d5}
+// .company-company{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;align-items:center;background-color:#ffffff;border-radius:3px;display:flex;height:60px;margin-bottom:5px;padding:11px 17px;position:relative}
+// .company-company:hover{opacity:.9}
+// .company-company .hitarea{display:block;height:60px;left:17px;position:absolute;top:0;width:503px}
+// .company-company .icon-shadow{border-radius:2px;height:36px;width:36px;border:solid 0.5px #ffffff;outline:solid 0.5px #e8e8e8}
+// .company-company .company-icon{background-color:#e8e8e8;border-radius:1px;height:34px;width:34px}
+// .company-company .company-icon .fe-company-icon{color:#ffffff;display:block;font-size:2rem;margin-top:6px;text-align:center}
+// .company-company .company-info{margin-left:18px}
+// .company-company .company-info .name{color:#191919;font-size:1.2rem;font-weight:bold;margin-bottom:8px}
+// .company-company .company-info .address{color:#585858;font-size:1.2rem}
+// .company-dialog-related_people_list_dialog .list{display:block;max-height:460px;overflow-y:auto;position:static}
+// .company-dialog-related_people_list_dialog .list .inner-container{align-items:center;color:#585858;display:flex;flex-grow:1;text-decoration:none}
+// .company-dialog-related_people_list_dialog .list .inner-container .fe-link{font-size:1.5rem;height:1.6rem;margin:0 5px}
+// .company-dialog-related_people_list_dialog .list .inner-container .fe-link.linked{color:#307caf}
+// .company-dialog-related_people_list_dialog .list .inner-container .avatar-field{text-align:center;width:60px}
+// .company-dialog-related_people_list_dialog .list .inner-container .avatar{background-color:#d5d5d5;border:solid 1px #e8e8e8;height:38px;width:38px}
+// .company-dialog-related_people_list_dialog .list .inner-container .ellip{white-space:nowrap;max-width:360px;overflow:hidden;text-overflow:ellipsis}
+// .company-dialog-related_people_list_dialog .list .inner-container .contents-field{max-width:400px;min-width:280px}
+// .company-dialog-related_people_list_dialog .list .inner-container .subject{margin:0 0 6px;font-size:1.3rem;font-weight:bold}
+// .company-dialog-related_people_list_dialog .list .inner-container .detail{font-size:1.1rem}
+// .company-dialog-related_people_list_dialog .list .item{align-items:center;display:flex;padding:14px 3px}
+// .company-dialog-related_people_list_dialog .list .item:not(:last-child){border-bottom:1px solid #d5d5d5}
+// .company-dialog-related_people_list_dialog .list .item .button-field{width:80px;margin-left:5px;margin-right:5px}
+// .company-dialog-related_people_list_dialog .list .fe-link{color:#a0a0a0}
+// .company-dialog-related_people_list_dialog .list .fe-link.linked{color:#307caf}
+// .company-dialog-related_people_list_dialog .list .company-follow_button .follow-button{min-width:70px}
+// .company-empty_requirement{margin-top:12px;background-color:#ffffff;width:780px;height:166px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-direction:column}
+// .company-empty_requirement .icon{padding-bottom:8px;font-size:3.4rem}
+// .company-follow_button .follow-button,.company-follow_button .unfollow-button{font-size:1rem;font-weight:normal;width:65%}
+// .company-hiring{margin-top:12px;display:flex;flex-direction:row;flex-wrap:wrap}
+// .company-hiring>div{margin-right:12px}
+// .company-hiring :nth-child(3n){margin-right:0}
+// .company-people{padding:24px 24px 16px}
+// .company-people .relation-title-field .relation-title{color:#a0a0a0;font-size:1.1rem;line-height:1.2}
+// .company-people .horizontal-field{display:flex}
+// .company-people .horizontal-field>*{width:20%}
+// .company-people .horizontal-field .related-person{display:flex;flex-direction:column;padding-right:15px;padding-left:5px}
+// .company-people .horizontal-field .related-person .clickable{flex-grow:1}
+// .company-people .remaining-people{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;align-self:center;color:#307caf;font-size:1rem;margin-top:4px;padding-top:14px;text-align:right}
+// .company-people .remaining-people .remaining-circle-icon{-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border-radius:50%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;align-items:center;border:1px solid #307caf;display:flex;font-weight:bold;justify-content:center;height:50px;margin:auto;overflow:hidden;width:50px}
+// .company-people .remaining-people .remaining-circle-icon .arrow-icon{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);border-top:1px solid #307caf;border-right:1px solid #307caf;height:8px;margin-left:-3px;width:8px}
+// .company-people .remaining-people .view-all{color:#307caf;margin-top:8px}
+// .company-person .item{padding-top:24px}
+// .company-person .txt{padding-top:8px;font-size:1rem;word-wrap:break-word}
+// .company-person .person-avatar{background-color:#d5d5d5;border:solid 1px #e8e8e8;height:40px;width:40px}
+// .company-related_people{background-color:#ffffff;border-radius:2px;margin-bottom:12px;float:left;width:278px;min-height:177px}
+// .company-related_people .relation-container:not(:last-child){border-bottom:solid 1px #e8e8e8}
+// .company-related_people .empty-related-people{height:177px;display:flex;align-items:center;padding-right:41px;padding-left:41px;text-align:center}
+// .company-related_people .empty-related-people .sub-title{color:#a0a0a0;font-size:1.4rem;font-weight:bold;font-style:normal;font-stretch:normal;line-height:1.8rem}
+// .company-related_people .empty-related-people .contents{display:inline-block;font-size:1.1rem;line-height:1.45;text-align:center;color:#a0a0a0;width:390px}
+// .company-requirement.home{width:242px;height:244px;border-radius:2px;background-color:#ffffff;padding:20px 18px 10px;margin-bottom:12px}
+// .company-requirement.home .pickup{width:80px;height:22px;border-radius:2px;background-color:#e2be00;display:flex;align-items:center;justify-content:center;color:#ffffff;font-weight:bold}
+// .company-requirement.home .main-contents{border-bottom:1px solid #d7d7d7;height:172px}
+// .company-requirement.home .main-contents>a{color:#307caf;text-decoration:none}
+// .company-requirement.home .main-contents .image{width:242px;height:110px;padding-top:8px;padding-bottom:18px}
+// .company-requirement.home .main-contents h4{font-size:1.4rem;word-wrap:break-word;max-height:36px;overflow:hidden}
+// .company-requirement.home .footer{padding-top:16px;display:flex;align-items:center}
+// .company-requirement.home .footer .logo{width:26.5px;height:26.5px;border-radius:1.7px;background-color:#ffffff;border:solid 0.7px #cccccc}
+// .company-requirement.home .footer .share{margin-left:auto;font-size:1.4rem;display:flex}
+// .company-requirement.home .footer .share-icon{padding-right:8px}
+// .company-requirement.hiring{width:220px;height:220px;border-radius:2px;background-color:#ffffff;padding:20px 16px 10px;margin-bottom:12px}
+// .company-requirement.hiring .main-contents{border-bottom:1px solid #d7d7d7;height:184px}
+// .company-requirement.hiring .main-contents>a{color:#307caf;text-decoration:none}
+// .company-requirement.hiring .main-contents .image{width:220px;height:100px;padding-top:8px;padding-bottom:16px}
+// .company-requirement.hiring .main-contents h4{font-size:1.2rem;word-wrap:break-word;max-height:56px;overflow:hidden}
+// .company-requirement.hiring .footer{padding-top:14px;display:flex;align-items:center}
+// .company-requirement.hiring .footer .logo{width:24px;height:24px;border-radius:1.2px;background-color:#ffffff;border:solid 0.6px #cccccc}
+// .company-requirement.hiring .footer .share{margin-left:auto;font-size:1.2rem;display:flex}
+// .company-requirement.hiring .footer .share-icon{padding-right:8px}
+// .company-send_message_button .message-button{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:#ffffff;border:1px solid #307caf;border-radius:2px;color:#307caf;font-size:1rem;font-weight:normal;min-height:22px;padding:5px 6px;width:65%}
+// .company-timeline{margin-top:12px;margin-left:290px;position:relative;width:490px}
+// .company-timeline .register-account{border-radius:2px;background-color:#ffffff;box-shadow:0 1px 4px 0 rgba(0,0,0,0.08);padding:24px}
+// .company-timeline .sub-title{font-size:1.3rem}
+// .company-timeline .contents{padding-top:12px;font-size:1.1rem;line-height:2}
+// .company-timeline .register{padding-top:20px}
+// .company-timeline .register-btn{font-weight:bold;font-size:1.3rem;display:block;color:#ffffff;padding-top:13px;padding-bottom:13px;width:194px;border-radius:2px;background-color:#307caf;text-align:center;text-decoration:none}
+// .company-timeline .empty-post{align-items:center;background-color:#ffffff;border-radius:2px;box-shadow:0 1px 4px 0 rgba(0,0,0,0.08);color:#a6a6a6;display:flex;flex-direction:column;font-size:1.4rem;height:187px;justify-content:center}
+// .company-timeline .empty-post .fe-feed_icon{font-size:4rem;margin-bottom:8px}
+// .core-person-career_summary{color:#262626;display:block;font-size:1.3rem;line-height:1.8rem;margin:0;overflow:hidden;padding:0;white-space:pre-wrap;word-wrap:break-word}
+

@@ -20,16 +20,16 @@
     %script{:async => "", :src => "//www.googleadservices.com/pagead/conversion_async.js", :type => "text/javascript"}
     %script{:async => "", :src => "https://www.google-analytics.com/analytics.js", :type => "text/javascript"}
     %script{:async => "", :src => "https://www.googletagmanager.com/gtm.js?id=GTM-M4FVTG6"}
-    :javascript
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-M4FVTG6');
-    :javascript
-      dataLayer.push({
-        'eight_dmp_cooperation_code': 'df18ee29e566a3234d472b0efecc8dd9c5a6494985dff37e2a8b569e3ae3c5ca'
-      })
+    / :javascript
+    /   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    /     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    /     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    /     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    /   })(window,document,'script','dataLayer','GTM-M4FVTG6');
+    / :javascript
+    /   dataLayer.push({
+    /     'eight_dmp_cooperation_code': 'df18ee29e566a3234d472b0efecc8dd9c5a6494985dff37e2a8b569e3ae3c5ca'
+    /   })
     / End Google Tag Manager
     = stylesheet_link_tag 'application', media: 'all'
     %style#react-tooltip
@@ -67,24 +67,28 @@
           'eucd' : 'df18ee29e566a3234d472b0efecc8dd9c5a6494985dff37e2a8b569e3ae3c5ca'
         }
       ];
+
+
+
+
     #c-wrap
       #wrap.my_profile_main.profile{"data-reactroot" => ""}
         %header.header-header.profile-header-container
           .container
             %h1.logo-title
               %a{:href => "/", :title => "Eight[エイト]"}
-                Eight
+                %i.fe.fe-eight-logo
               / 修正箇所、コピーをしてもロゴの情報が持ってこれなかったので現在、文字で代用
             %form.search-field
-              %input.srh-txt{:placeholder => "名前、会社を検索", :style => "color: rgb(160, 160, 160);", :type => "text"}/
+              %input.srh-txt{placeholder: "名前、会社を検索", style: "color: rgb(160, 160, 160);", type: "text"}/
               %span.common-text_button.search-button
                 %i.fe.fe-search
-            .spacer
-            .header-header_navi.header-navi
-              %span.common-text_button.menu-button
-                %i.fe.fe-setup_icon{:title => "設定"}
-              %a.help-btn.menu-button{:href => "https://eight.zendesk.com/", :target => "_blank", :title => "ヘルプ"}
-                %i.fe.fe-hint_icon
+            / .spacer
+            / .header-header_navi.header-navi
+            /   %span.common-text_button.menu-button
+            /     %i.fe.fe-setup_icon{:title => "設定"}
+            /   %a.help-btn.menu-button{:href => "https://eight.zendesk.com/", :target => "_blank", :title => "ヘルプ"}
+            /     %i.fe.fe-hint_icon
           / react-empty: 17
         %article.contents-pane
           %article.app_info{:style => "display: none;"}
@@ -179,7 +183,7 @@
                                   %span.common-text_button.policy-icon-field
                                     %i.policy-icon.editable.fe.fe-public-open
                                     %i.fe.fe-fw.fe-down-arrow.select-btn
-                                  %div
+                                  / %div
                             %dd.cts
                               .itms
                                 .profile-my_profile-careers
@@ -515,31 +519,31 @@
                                   .__react_component_tooltip{"data-id" => "tooltip"}
                                     .elltip-text
                             .recommended_people-follow_button
-                              .follow-button-container
-                                %button.common-button.theme-primary.l-mini-button.follow-button
-                                  %span 追加
-                                .dialog-position
-                                  %div
-                            %i.fe.fe-close
+                            /   .follow-button-container
+                            /     %button.common-button.theme-primary.l-mini-button.follow-button
+                            /       %span 追加
+                            /     .dialog-position
+                            /       %div
+                            / %i.fe.fe-close
               / react-empty: 333
         / react-empty: 334
         / react-empty: 335
         / react-empty: 336
-    :javascript
-      //<![CDATA[
-      window.gon={};gon.language="ja";gon.facebook_application_id=165066846847451;gon.config={"hosts":{"www":"https:\/\/8card.net","message":"8card.net","message_hook":"message-hook.8card.net","i0":"i0.8card.net"},"contents_url":"https:\/\/contents.8card.net","materials_url":"https:\/\/materials.8card.net"};gon.login_user={"id":308703081,"person_id":39687685458,"language":"ja","premium":1,"photo_url":"https:\/\/upload-contents.8card.net\/profiles\/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg"};gon.accessible_companies=[];gon.company_accounts=[];gon.facet={"id":49018502,"created_at":"2017-12-18T09:15:02+09:00","updated_at":"2017-12-20T10:12:19+09:00","eight_user_id":308703081,"person_id":39687685458,"cards_count":3,"links_count":3,"transcribing_cards_count":0,"refreshed_at":"2017-12-20T10:12:19+09:00","transcribed_cards_count":0,"following_people_count":0,"recent_count":3};gon.my_profile_json="{\"person_id\":39687685458,\"facebook\":{\"social_account_id\":864532244,\"address\":\"1777716882281176\"},\"photo_url\":\"https:\/\/upload-contents.8card.net\/profiles\/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg\",\"full_name_reading\":\"\u30b3\u30b5\u30ab\",\"entry_status\":40,\"address\":\"\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u6e0b\u8c37\",\"full_name\":\"\u5c0f\u5742 \u4f73\u88d5\",\"email\":\"kothaka@hotmail.com\",\"gender\":1,\"postal_code\":\"1500002\",\"careers\":[{\"career\":{\"full_name\":\"\u5c0f\u5742 \u4f73\u88d5\",\"full_name_reading\":\"\u30b3\u30b5\u30ab\",\"email\":\"kothaka@hotmail.com\",\"postal_code\":\"1500002\",\"address\":\"\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u6e0b\u8c37\",\"entry_status\":40,\"id\":313503909,\"display_order\":1,\"career_date_to\":\"2017-11-30\",\"career_date_from\":\"2017-11-01\",\"company_id\":\"\"}}],\"birthday\":\"1987-08-02\",\"job_description\":\"IT\u7cfb\u306e\u30a8\u30f3\u30b8\u30cb\u30a2\u3092\u3057\u3066\u3044\u307e\u3059\u3002\",\"profile_url\":{\"identifier\":\"39687685458\",\"manually\":0},\"display_card_conditions\":[],\"has_activated_email_ever\":true,\"is_public\":true,\"is_premium\":false,\"company_id\":\"\"}";gon.policy={"profile_url":10,"career_image":30,"company_name":10,"department":10,"title":10,"email":30,"company_phone_number":30,"department_number":30,"direct_line_number":30,"company_fax_number":30,"mobile_phone_number":30,"postal_code":30,"address":30,"url":30,"careers":10,"job_description":10,"career_summary":10,"educational_records":10,"facebook":10,"links":10,"birthday":40,"gender":40,"job_change_intention":40,"transaction_id":3,"person_id":39687685458,"created_at":"2017-11-16T18:51:10+09:00","updated_at":"2017-12-20T10:12:44+09:00"};gon.is_timeline_enabled=false;
-      //]]>
-    %script{:src => "https://assets.8card.net/assets/bundle-a7d86aa9b51fe6ff1a1494437a1a1500.js"}
-    %script{:id => "", :type => "text/javascript"}
-      :cdata
-        \!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1897823920502053");fbq("track","PageView");
-    %noscript &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1897823920502053&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
-    %script#tagjs{:type => "text/javascript"}
-      :cdata
-        (function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="//s.yjtag.jp/tag.js#site\x3d5IrR4px";b.parentNode.insertBefore(a,b)})();
-    %noscript
-      \&lt;iframe src="//b.yjtag.jp/iframe?c=5IrR4px" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&gt;&lt;/iframe&gt;
-    %script{:id => "", :type => "text/javascript"}
-      :cdata
-        \!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","159046491375784");fbq("track","PageView");
-    %noscript &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=159046491375784&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+    / :javascript
+    /   //<![CDATA[
+    /   window.gon={};gon.language="ja";gon.facebook_application_id=165066846847451;gon.config={"hosts":{"www":"https:\/\/8card.net","message":"8card.net","message_hook":"message-hook.8card.net","i0":"i0.8card.net"},"contents_url":"https:\/\/contents.8card.net","materials_url":"https:\/\/materials.8card.net"};gon.login_user={"id":308703081,"person_id":39687685458,"language":"ja","premium":1,"photo_url":"https:\/\/upload-contents.8card.net\/profiles\/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg"};gon.accessible_companies=[];gon.company_accounts=[];gon.facet={"id":49018502,"created_at":"2017-12-18T09:15:02+09:00","updated_at":"2017-12-20T10:12:19+09:00","eight_user_id":308703081,"person_id":39687685458,"cards_count":3,"links_count":3,"transcribing_cards_count":0,"refreshed_at":"2017-12-20T10:12:19+09:00","transcribed_cards_count":0,"following_people_count":0,"recent_count":3};gon.my_profile_json="{\"person_id\":39687685458,\"facebook\":{\"social_account_id\":864532244,\"address\":\"1777716882281176\"},\"photo_url\":\"https:\/\/upload-contents.8card.net\/profiles\/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg\",\"full_name_reading\":\"\u30b3\u30b5\u30ab\",\"entry_status\":40,\"address\":\"\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u6e0b\u8c37\",\"full_name\":\"\u5c0f\u5742 \u4f73\u88d5\",\"email\":\"kothaka@hotmail.com\",\"gender\":1,\"postal_code\":\"1500002\",\"careers\":[{\"career\":{\"full_name\":\"\u5c0f\u5742 \u4f73\u88d5\",\"full_name_reading\":\"\u30b3\u30b5\u30ab\",\"email\":\"kothaka@hotmail.com\",\"postal_code\":\"1500002\",\"address\":\"\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u6e0b\u8c37\",\"entry_status\":40,\"id\":313503909,\"display_order\":1,\"career_date_to\":\"2017-11-30\",\"career_date_from\":\"2017-11-01\",\"company_id\":\"\"}}],\"birthday\":\"1987-08-02\",\"job_description\":\"IT\u7cfb\u306e\u30a8\u30f3\u30b8\u30cb\u30a2\u3092\u3057\u3066\u3044\u307e\u3059\u3002\",\"profile_url\":{\"identifier\":\"39687685458\",\"manually\":0},\"display_card_conditions\":[],\"has_activated_email_ever\":true,\"is_public\":true,\"is_premium\":false,\"company_id\":\"\"}";gon.policy={"profile_url":10,"career_image":30,"company_name":10,"department":10,"title":10,"email":30,"company_phone_number":30,"department_number":30,"direct_line_number":30,"company_fax_number":30,"mobile_phone_number":30,"postal_code":30,"address":30,"url":30,"careers":10,"job_description":10,"career_summary":10,"educational_records":10,"facebook":10,"links":10,"birthday":40,"gender":40,"job_change_intention":40,"transaction_id":3,"person_id":39687685458,"created_at":"2017-11-16T18:51:10+09:00","updated_at":"2017-12-20T10:12:44+09:00"};gon.is_timeline_enabled=false;
+    /   //]]>
+    / %script{:src => "https://assets.8card.net/assets/bundle-a7d86aa9b51fe6ff1a1494437a1a1500.js"}
+    / %script{:id => "", :type => "text/javascript"}
+    /   :cdata
+    /     \!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1897823920502053");fbq("track","PageView");
+    / %noscript &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1897823920502053&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;
+    / %script#tagjs{:type => "text/javascript"}
+    /   :cdata
+    /     (function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="//s.yjtag.jp/tag.js#site\x3d5IrR4px";b.parentNode.insertBefore(a,b)})();
+    / %noscript
+    /   \&lt;iframe src="//b.yjtag.jp/iframe?c=5IrR4px" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&gt;&lt;/iframe&gt;
+    / %script{:id => "", :type => "text/javascript"}
+    /   :cdata
+    /     \!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","159046491375784");fbq("track","PageView");
+    / %noscript &lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=159046491375784&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;

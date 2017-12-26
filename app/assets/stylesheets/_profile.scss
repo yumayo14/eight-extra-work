@@ -2891,7 +2891,8 @@
   width: 780px;
   [data-ctltg] {
     [data-ctl] {
-      visibility: hidden;
+      // visibility: hidden;
+      // プロフィール欄の項目を表示するため一時的にコメントアウト
     }
     &.hover [data-ctl], &.edit [data-ctl] {
       visibility: visible;

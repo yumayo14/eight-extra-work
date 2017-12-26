@@ -68,3 +68,5 @@ gem "mini_magick"
 gem 'haml-rails'
 gem "font-awesome-rails"
 gem 'fog'
+gem 'feathericon-rails'
+gem 'feathericon-sass'

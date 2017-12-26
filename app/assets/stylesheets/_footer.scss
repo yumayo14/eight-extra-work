@@ -1,0 +1,92 @@
+.footer {
+  padding-top: 12px;
+  padding-bottom: 16px;
+  font-size: 1.1rem;
+  line-height: 1.36;
+  &.in-aside {
+    margin-left: 10px;
+  }
+  .nav-c > ul > li {
+    position: relative;
+    color: #a0a0a0;
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
+    > {
+      a, span {
+        color: #a0a0a0;
+        text-decoration: none;
+      }
+      a:hover, span:hover {
+        color: #585858;
+      }
+    }
+    &:hover > {
+      span {
+        cursor: pointer;
+        color: #585858;
+        &::after {
+          border-top: 4px solid #585858;
+        }
+      }
+      ul {
+        display: block;
+      }
+    }
+    > span {
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 0;
+        border-top: 4px solid #a0a0a0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        margin-left: 5px;
+        margin-top: -2px;
+      }
+      + ul {
+        display: none;
+        position: absolute;
+        right: 0;
+        padding-top: 4px;
+        > li {
+          white-space: nowrap;
+          background: #ffffff;
+          &:first-child {
+            border-top: 1px solid #307caf;
+            border-radius: 3px 3px 0 0;
+            > a {
+              border-radius: 3px 3px 0 0;
+              padding: 9px 9px 5px;
+            }
+          }
+          &:last-child {
+            border-bottom: 1px solid #307caf;
+            border-radius: 0 0 3px 3px;
+            > a {
+              border-radius: 0 0 3px 3px;
+              padding: 5px 9px 9px;
+            }
+          }
+          > a {
+            display: block;
+            border-left: 1px solid #307caf;
+            border-right: 1px solid #307caf;
+            padding: 5px 9px;
+            text-decoration: none;
+            color: #454545;
+            &:hover {
+              background: #f4f4f4;
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    color: #a0a0a0;
+  }
+}

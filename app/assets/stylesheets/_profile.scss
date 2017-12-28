@@ -1,3 +1,11 @@
+.logo-title{
+  font-size: 3rem;
+  color: white;
+  line-height: 5.6rem;
+  padding-right: 50px;
+
+}
+
 .main_container{
   display: flex;
   height: 100%;
@@ -35,6 +43,7 @@
 }
 a {
   color: #a0a0a0;
+  text-decoration: none;
 }
 
 .profile_preview {
@@ -137,6 +146,7 @@ a {
       margin-right: 10px;
       .profile-my_profile-career_summary {
         height: 252px;
+        padding-top: 20px;
         position: relative;
         background: #ffffff;
         border-bottom: 1px solid #e8e8e8;
@@ -156,6 +166,7 @@ a {
       }
       .profile-my_profile-careers_info{
         min-height: 250px;
+        padding-top: 20px;
         position: relative;
         background: #ffffff;
         border-bottom: 1px solid #e8e8e8;
@@ -188,6 +199,7 @@ a {
       }
       .profile-my_profile-educational_records_info.sec{
         min-height: 150px;
+        padding-top: 20px;
         position: relative;
         background: #ffffff;
         border-bottom: 1px solid #e8e8e8;
@@ -207,6 +219,7 @@ a {
       }
       .profile-my_profile-basic_info{
         height: 145px;
+        padding-top: 20px;
         margin-top: 10px;
         background: #ffffff;
         .profile-title{
@@ -226,6 +239,7 @@ a {
       .profile-career_status{
         height: 95px;
         margin-top: 10px;
+        padding-top: 20px;
         background-color: white;
         .profile-title{
           height: 35px;

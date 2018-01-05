@@ -1,0 +1,7 @@
+.form-user
+= form_for(@edit) do |f|
+  / -binding.pry
+  = f.text_field :birthday,class: "form-user__birthday", placeholder: "誕生日を入力してください";
+  = f.text_field :address,class: "form-user__address",placeholder: "住所を入力してください";
+  = f.text_field :facebook_url,class: "form-user__facebook-url",placeholder: "facebookのurlを入力してください";
+  = f.submit value: "登録する",class: "footer__content--button"

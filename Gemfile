@@ -67,7 +67,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'haml-rails'
 gem "font-awesome-rails"
-# gem 'fog'
+gem 'fog'
 # gem 'fog-aws'
 gem 'feathericon-rails'
 gem 'feathericon-sass'

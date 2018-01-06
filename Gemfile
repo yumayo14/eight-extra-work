@@ -70,3 +70,4 @@ gem "font-awesome-rails"
 gem 'fog'
 gem 'feathericon-rails'
 gem 'feathericon-sass'
+gem 'unf'

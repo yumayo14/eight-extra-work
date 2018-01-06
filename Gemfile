@@ -71,5 +71,4 @@ gem "font-awesome-rails"
 # gem 'fog-aws'
 gem 'feathericon-rails'
 gem 'feathericon-sass'
-gem 'unf'
 gem 'unf_ext'

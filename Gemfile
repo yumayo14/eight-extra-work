@@ -63,7 +63,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 gem 'devise'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
 gem "mini_magick"
 gem 'haml-rails'
 gem "font-awesome-rails"
@@ -72,3 +72,4 @@ gem "font-awesome-rails"
 gem 'feathericon-rails'
 gem 'feathericon-sass'
 gem 'unf'
+gem 'unf_ext'

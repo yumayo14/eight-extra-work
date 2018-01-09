@@ -1,0 +1,171 @@
+.my_profile_main
+  %header.header-header.profile-header-container
+    .container
+      = link_to root_path do
+        %h1.logo-title Eight
+      %form.search-field
+        %input.srh-txt{type: "text", placeholder: "名前、会社を検索"}
+        %button.common-text_button.search-button{type: "button"}
+          %i.fe.fe-search
+  .main_container
+    .profile_container
+      .profile_preview
+        .profile-article
+          .background_image_box
+          .profile-card
+            .ctrl-follow-section
+              %ul
+                %li
+                  .profile-eight_user-follow_section_button
+                    .button-field
+                      .dialog-button-container
+                        %button.common-button.theme-primary.l-mini-button.message-btn
+                          %span 名刺交換リクエストを送信
+                        .menu-position
+                          %div
+                    / react-empty: 53
+            .thumbnail
+              = link_to root_path do
+                %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+          .profile-title-field
+            .thumbnail
+              %img.people_avatar_face{src: "https://upload-contents.8card.net/profiles/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg?1514256011745"}
+              .profile-policy_icon
+                = link_to root_path do
+                  %i.fe.fe-camera
+            .text_field
+              %h2.user_name 小坂 佳裕
+              %p.text_part IT系のエンジニアをやっています
+
+
+      .flex_box
+        .my_profile__profile-aside
+          .profile-my_profile-career_summary
+            .box.crr
+              .profile-title
+                %span キャリアサマリー
+              .notfriend
+                %p あなたの経歴、スキル、受賞歴
+                %p 関わった主なプロジェクトなどを
+                %p 記載しましょう
+
+          .profile-my_profile-careers_info
+            .profile-title
+              %span 職歴
+            .merged-career
+              .career-piece - 2017/11/01 ~ 2017/11/30
+              .profile-card_thumbnail.tmb
+                = link_to root_path do
+                  %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+
+          .profile-my_profile-educational_records_info.sec
+            .profile-title
+              %span 学歴
+            .notfriend
+              %p あなたが通っと高校や大学を設定しましょう
+
+          .profile-my_profile-basic_info
+            .profile-title
+              %span.title 性別・生年月日
+            .cts
+              %table
+                %tr
+                  %td 性別
+                  %td 男性
+                %tr
+                  %td 生年月日
+                  %td 1987年08月02日
+
+          .profile-career_status
+            .profile-title
+              %span キャリアステータス
+            .my_profile_career_status
+              %p 未設定
+
+        .profile-my_profile-my_profile__profile-main
+          .inner-header
+            %p.base_info_title 基本情報
+          .profile-profile_info
+            %ul.tbl
+              %li
+                .title.icon_field
+                  %i.fe.fe-building
+                .contents
+                  %span 会社名
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-mail
+                .contents
+                  %span メールアドレス
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-postal-code
+                .contents
+                  %span 郵便番号
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-map
+                .contents
+                  %span 住所
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-profile-url
+                .contents
+                  %span プロフィールURL
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-facebook
+                .contents
+                  %span facebookURL
+                .policy
+                  %span.icons
+
+    .recomended_people
+      .guide_info
+        %p.guide_info__guidance お知り合いですか？
+        %p.guide_info__help 名刺リクエストを送信して、追加しましょう。
+      .scroll
+        %ul
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close

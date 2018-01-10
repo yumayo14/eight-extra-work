@@ -135,6 +135,77 @@
                   %span プロフィールURL
                 .policy
                   %span.icons
+          %section
+            %dl.box.binf
+              %dt.profile-title
+                %span 投稿
+              %dd
+                .timeline-timeline.profile-timeline
+                  %section.post-post.timeline-post
+                    .post-user_post_post.post-contents
+                      %header.post-head
+                        .post-ttl
+                          %img.common-avatar.people-avatar.post-avatar
+
+                          .txt
+                            .ttl
+                              %span.common-text_button.profile-link 真柴隆一
+                              %span.description
+                                株式会社Lorem Ipsum
+                            %a.link-to-detail{:href => "/myhome/posts/ebca62527d312f8cf98296c4eecd0ace998b198f041eacb3289b5ed4e0bf0825"}
+                              %span 2018年1月6日
+                        .post-ctrl
+                          %a.nav-btn{:href => "javascript:void(0)"}
+                            %span
+                          %div
+                      .post-body
+                        %p.text-contents test
+                        %figure.post-detail
+                      %footer.post-footer
+                        %ul.post-count
+                          %li.align-right.comment-count
+                            %span コメント 1件
+                        %ul.post-ctrl
+                          %li.align-left
+                            %span.common-text_button
+                              %i.fe.fe-like.fe-1-6x
+                              %span いいね
+                          %li.align-left
+                            %span.common-text_button
+                              %i.fe.fe-comment.fe-1-6x
+                              %span コメントする
+                        .dialogs
+                    %section.post-comments
+                      %ul.comment-list
+                        %li.comment-item
+                          %dl.post-comment
+                            %dt
+                              %img.common-avatar.people-avatar.comment-avatar
+                            %dd.txt
+                              .name
+                                .ttl
+                                  %span.profile-name 真柴隆一
+                                  %span.me
+                              .message comment
+                              .info
+                                %ul.comment-actions
+                                  %li.comment-date
+                                    %span.common-text_button
+                                      %span 5時間前
+                                  %li.comment-like
+                                    %span.common-text_button いいね
+                            .comment-ctrl
+                              %a.nav-btn{:href => "javascript:void(0)"}
+                                %span
+                              %div
+                                / react-empty: 327
+                      .comment-form-container
+                        .comment-form
+                          %img.common-avatar.people-avatar.owner-avatar
+                          %textarea.common-form-textarea{:cols => "30", :placeholder => "コメントする…", :rows => "2"}
+                        .submit-button
+                          %button.common-button.theme-primary.l-mini-button.comment-button
+                            %span コメントする
 
 
     .recomended_people

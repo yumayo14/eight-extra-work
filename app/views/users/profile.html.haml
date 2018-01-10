@@ -12,6 +12,14 @@
       .profile_preview
         .profile-article
           .background_image_box
+            .profile-eight_user-eight_user_profile__profile-nav
+              %nav
+                .common-back_button
+                  %span.common-text_button.prev
+                    = link_to "#" do
+                      %i.fe.fe-back.fe-fw
+                      %span
+                        %span 戻る
           .profile-card
             .ctrl-follow-section
               %ul
@@ -44,10 +52,8 @@
             .box.crr
               .profile-title
                 %span キャリアサマリー
-              .notfriend
-                %p あなたの経歴、スキル、受賞歴
-                %p 関わった主なプロジェクトなどを
-                %p 記載しましょう
+              %dd.cts
+                %p ここにキャリアサマリ引用、必要ならcss設定
 
           .profile-my_profile-careers_info
             .profile-title
@@ -61,8 +67,8 @@
           .profile-my_profile-educational_records_info.sec
             .profile-title
               %span 学歴
-            .notfriend
-              %p あなたが通っと高校や大学を設定しましょう
+            %dd.cts
+              %p ここに学歴、必要ならクラス
 
           .profile-my_profile-basic_info
             .profile-title
@@ -96,6 +102,20 @@
                   %span.icons
               %li
                 .title.icon_field
+                  %i.fe.fe-department
+                .contents
+                  %span 部署
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-title
+                .contents
+                  %span 役職
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
                   %i.fe.fe-mail
                 .contents
                   %span メールアドレス
@@ -103,16 +123,9 @@
                   %span.icons
               %li
                 .title.icon_field
-                  %i.fe.fe-postal-code
+                  %i.fe.fe-telephone
                 .contents
-                  %span 郵便番号
-                .policy
-                  %span.icons
-              %li
-                .title.icon_field
-                  %i.fe.fe-map
-                .contents
-                  %span 住所
+                  %span 会社電話
                 .policy
                   %span.icons
               %li
@@ -122,13 +135,7 @@
                   %span プロフィールURL
                 .policy
                   %span.icons
-              %li
-                .title.icon_field
-                  %i.fe.fe-facebook
-                .contents
-                  %span facebookURL
-                .policy
-                  %span.icons
+
 
     .recomended_people
       .guide_info

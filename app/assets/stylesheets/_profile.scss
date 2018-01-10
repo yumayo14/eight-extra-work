@@ -565,3 +565,98 @@ a {
   color: #585858;
   padding: 6px 10px;
 }
+
+// .profile-eight_user-head {
+//   -webkit-box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   box-sizing: border-box;
+//   margin-bottom: 10px;
+//   border-radius: 0 0 3px 3px;
+//   background: #ffffff;
+//   min-height: 246px;
+//   position: relative;
+//   .lnk {
+//     display: block;
+//     margin: 5px 28px;
+//   }
+  .profile-card {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    right: 20px;
+    bottom: 7px;
+    .thumbnail {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #a5a3a1;
+      display: inline-block;
+      position: relative;
+      vertical-align: bottom;
+    }
+    .ctrl, .ctrl-follow-section {
+      margin-left: 0;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .btn-smt {
+      font-size: 1.2rem;
+    }
+    .btn-dis {
+      background-color: #d5d5d5;
+      color: #ffffff;
+      display: block;
+      font-size: 1.2rem;
+      &:hover {
+        background-color: #d5d5d5;
+        color: #ffffff;
+      }
+    }
+  }
+//   .profile-title-field {
+//     position: absolute;
+//     left: 19px;
+//     bottom: 6px;
+//     .thumbnail {
+//       position: relative;
+//       float: left;
+//       vertical-align: middle;
+//       img {
+//         width: 46px;
+//         height: 46px;
+//       }
+//     }
+//   }
+//   .text-field {
+//     padding-left: 54px;
+//     .description {
+//       font-size: 1.1rem;
+//       font-weight: bold;
+//       height: 20px;
+//       line-height: 2rem;
+//       margin-top: 3px;
+//     }
+//     .user-name {
+//       font-size: 2.1rem;
+//       line-height: 1;
+//       font-weight: bold;
+//       color: #000000;
+//     }
+//     .text-part {
+//       display: inline-block;
+//       color: #307caf;
+//     }
+//   }
+//   .premium-icon {
+//     margin-left: 8px;
+//     display: inline-block;
+//     vertical-align: middle;
+//     background-image: url(https://assets.8card.net/assets/parts/ico-premium-56356e2bea0b7425f6e8374d045d517e.png);
+//     height: 18px;
+//     width: 60px;
+//   }
+// }
+

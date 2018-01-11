@@ -49,7 +49,7 @@
                 %span
                   あなたのネットワーク
                 %span.num
-                  0(style)
+                  0
             %li#js-network-menu.network-menu
               %ul
                 %li
@@ -72,20 +72,22 @@
                           つながっている人
                         %span.num
                           0
-                    %li
-                      %ul.tag_menu
-                        %li.menu-item
-                          = link_to "#" do
-                            %span.name
-                              %span
-                                ラベル
-                        %li.menu-item
-                          = link_to "#" do
-                            %span.name
-                              %span
-                                ラベルなし
-                        %li.menu-item
-                          = link_to "#" do
-                            %span.name
-                              %span
-                                ラベルを作成
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベル
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベルなし
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベル作成
+                        %span.num
+                          0
+

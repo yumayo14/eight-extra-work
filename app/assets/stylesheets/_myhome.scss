@@ -1,3 +1,6 @@
+html,body{
+  height:100%;
+}
   .side_bar-linked_menu_item {
     position: relative;
     border-radius: 3px 0 0 3px;
@@ -117,6 +120,8 @@
   }
 
   .side_bar-side_bar {
+    position: fixed;
+    height: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -135,7 +140,6 @@
   }
 
   .side_bar-menu {
-    height: 100%;
     .fe {
       margin-left: -1px;
       margin-right: 5px;
@@ -194,3 +198,4 @@
   position: relative;
   width: 100%;
 }
+

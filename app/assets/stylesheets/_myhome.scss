@@ -1,0 +1,196 @@
+  .side_bar-linked_menu_item {
+    position: relative;
+    border-radius: 3px 0 0 3px;
+    .link-component {
+      color: #ffffff;
+      display: block;
+      letter-spacing: -.05em;
+      line-height: 2.8;
+      padding: 0 12px 0 6px;
+      text-decoration: none;
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px 0 0 3px;
+      }
+    }
+    &.current {
+      background: #307caf;
+    }
+  }
+
+  .side_bar-my_profile_info {
+    .profiles {
+      padding: 20px 15px 24px;
+      background: #454545;
+      .profile__data{
+        display: block;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        .thumbnail{
+          float: left;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+          width: 40px;
+          height: 40px;
+          border-radius: 40px;
+          border: 2px solid #307caf;
+          overflow: hidden;
+          min-height: 1px;
+          display: block;
+          .image-box{
+            padding-left: 7px;
+            padding-top: 2px;
+          }
+        }
+        .text-field{
+          float: left;
+          .text-box{
+            height: 40px;
+            width: 162px;
+            color: white;
+            .text-name{
+              font-size: 14px;
+              max-width: 150px;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+              font-weight: bold;
+              height: 20px;
+            }
+            .text-company{
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              color: #ffffff;
+              font-size: 1.4rem;
+              line-height: 1.43;
+              max-width: 150px;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .card{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid #9b9b9b;
+        margin-top: 17px;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 60%;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .side_bar-profile_card_image--image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .side_bar-profile_card_image--no-image {
+    display: inline-block;
+    background-image: url(https://assets.8card.net/assets/components/side_bar/profile_card_image/no_image_bc-ae10df15297a8a7e333e385f92497b3d.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 178px;
+    height: 108px;
+  }
+
+  .side_bar-profile_card_image--portrait {
+    transform: rotate(-90deg) scaleX(0.60952) scaleY(1.65);
+  }
+
+  .side_bar-side_bar {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #454545;
+    border-radius: 0 0 3px 3px;
+    color: #ffffff;
+    // position: fixed;
+    float: left;
+    width: 238px;
+    > .navs {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-left: 9px;
+    }
+  }
+
+  .side_bar-menu {
+    height: 100%;
+    .fe {
+      margin-left: -1px;
+      margin-right: 5px;
+      line-height: 1.3rem;
+      font-size: 2rem;
+      height: 1.4rem;
+    }
+    .nav {
+      padding-bottom: 15px;
+      .sub-menu-items {
+        margin-left: 9px;
+        .sub-menu {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        .fe {
+          margin-right: 8px;
+          line-height: 1.1rem;
+          font-size: 1.8rem;
+        }
+      }
+      // .hidden {
+      //   visibility: hidden;
+      }
+      .title-menu {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .num {
+        display: inline-block;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        margin-top: -.7em;
+        line-height: 1.1;
+        font-weight: normal;
+        letter-spacing: -.05em;
+      }
+      &.menu .num {
+        font-size: 1rem;
+        color: #454545;
+        background: #ffffff;
+        border-radius: 100px;
+        padding: 1px 10px;
+      }
+      &.networks .num {
+        font-size: 1rem;
+        padding: 1px 0;
+      }
+    }
+.main{
+  margin-left: 172px;
+  margin-right: auto;
+  max-width: 1090px;
+  padding-left: 20px;
+  position: relative;
+  width: 100%;
+}

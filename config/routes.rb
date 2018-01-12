@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users do
+    collection do
+      get 'search'
+    end
     resources :academies
     resources :careers
     resources :companies

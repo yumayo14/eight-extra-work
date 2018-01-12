@@ -1,0 +1,246 @@
+.my_profile_main
+  %header.header-header.profile-header-container
+    .container
+      = link_to root_path do
+        %h1.logo-title Eight
+      %form.search-field
+        %input.srh-txt{type: "text", placeholder: "名前、会社を検索"}
+        %button.common-text_button.search-button{type: "button"}
+          %i.fe.fe-search
+  .main_container
+    .profile_container
+      .profile_preview
+        .profile-article
+          .background_image_box
+            .profile-eight_user-eight_user_profile__profile-nav
+              %nav
+                .common-back_button
+                  %span.common-text_button.prev
+                    = link_to "#" do
+                      %i.fe.fe-back.fe-fw
+                      %span
+                        %span 戻る
+          .profile-card
+            .ctrl-follow-section
+              %ul
+                %li
+                  .profile-eight_user-follow_section_button
+                    .button-field
+                      .dialog-button-container
+                        %button.common-button.theme-primary.l-mini-button.message-btn
+                          %span 名刺交換リクエストを送信
+                        .menu-position
+                          %div
+                    / react-empty: 53
+            .thumbnail
+              = link_to root_path do
+                %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+          .profile-title-field
+            .thumbnail
+              %img.people_avatar_face{src: "https://upload-contents.8card.net/profiles/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg?1514256011745"}
+            .text_field
+              %h2.user_name 小坂 佳裕
+              %p.text_part IT系のエンジニアをやっています
+
+
+      .flex_box
+        .my_profile__profile-aside
+          .profile-my_profile-career_summary
+            .box.crr
+              .profile-title
+                %span キャリアサマリー
+              %dd.cts
+                %p ここにキャリアサマリ引用、必要ならcss設定
+
+          .profile-my_profile-careers_info
+            .profile-title
+              %span 職歴
+            .merged-career
+              .career-piece - 2017/11/01 ~ 2017/11/30
+              .profile-card_thumbnail.tmb
+                = link_to root_path do
+                  %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+
+          .profile-my_profile-educational_records_info.sec
+            .profile-title
+              %span 学歴
+            %dd.cts
+              %p ここに学歴、必要ならクラス
+
+          .profile-my_profile-basic_info
+            .profile-title
+              %span.title 性別・生年月日
+            .cts
+              %table
+                %tr
+                  %td 性別
+                  %td 男性
+                %tr
+                  %td 生年月日
+                  %td 1987年08月02日
+
+          .profile-career_status
+            .profile-title
+              %span キャリアステータス
+            .my_profile_career_status
+              %p 未設定
+
+        .profile-my_profile-my_profile__profile-main
+          .inner-header
+            %p.base_info_title 基本情報
+          .profile-profile_info
+            %ul.tbl
+              %li
+                .title.icon_field
+                  %i.fe.fe-building
+                .contents
+                  %span 会社名
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-department
+                .contents
+                  %span 部署
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-title
+                .contents
+                  %span 役職
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-mail
+                .contents
+                  %span メールアドレス
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-telephone
+                .contents
+                  %span 会社電話
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-profile-url
+                .contents
+                  %span プロフィールURL
+                .policy
+                  %span.icons
+          %section
+            %dl.box.binf
+              %dt.profile-title
+                %span 投稿
+              %dd
+                .timeline-timeline.profile-timeline
+                  %section.post-post.timeline-post
+                    .post-user_post_post.post-contents
+                      %header.post-head
+                        .post-ttl
+                          %img.common-avatar.people-avatar.post-avatar
+
+                          .txt
+                            .ttl
+                              %span.common-text_button.profile-link 真柴隆一
+                              %span.description
+                                株式会社Lorem Ipsum
+                            %a.link-to-detail{:href => "/myhome/posts/ebca62527d312f8cf98296c4eecd0ace998b198f041eacb3289b5ed4e0bf0825"}
+                              %span 2018年1月6日
+                        .post-ctrl
+                          %a.nav-btn{:href => "javascript:void(0)"}
+                            %span
+                          %div
+                      .post-body
+                        %p.text-contents test
+                        %figure.post-detail
+                      %footer.post-footer
+                        %ul.post-count
+                          %li.align-right.comment-count
+                            / %span コメント 1件
+                        %ul.post-ctrl
+                          %li.align-left
+                            %span.common-text_button
+                              %i.fe.fe-like.fe-1-6x
+                              %span いいね
+                          %li.align-left
+                            %span.common-text_button
+                              %i.fe.fe-comment.fe-1-6x
+                              %span コメントする
+                        .dialogs
+                    / %section.post-comments
+                    /   %ul.comment-list
+                    /     %li.comment-item
+                    /       %dl.post-comment
+                    /         %dt
+                    /           %img.common-avatar.people-avatar.comment-avatar
+                    /         %dd.txt
+                    /           .name
+                    /             .ttl
+                    /               %span.profile-name 真柴隆一
+                    /               %span.me
+                    /           .message comment
+                    /           .info
+                    /             %ul.comment-actions
+                    /               %li.comment-date
+                    /                 %span.common-text_button
+                    /                   %span 5時間前
+                    /               %li.comment-like
+                    /                 %span.common-text_button いいね
+                    /         .comment-ctrl
+                    /           %a.nav-btn{:href => "javascript:void(0)"}
+                    /             %span
+                    /           %div
+                    /             / react-empty: 327
+                    /   .comment-form-container
+                    /     .comment-form
+                    /       %img.common-avatar.people-avatar.owner-avatar
+                    /       %textarea.common-form-textarea{:cols => "30", :placeholder => "コメントする…", :rows => "2"}
+                    /     .submit-button
+                    /       %button.common-button.theme-primary.l-mini-button.comment-button
+                    /         %span コメントする
+
+
+    .recomended_people
+      .guide_info
+        %p.guide_info__guidance お知り合いですか？
+        %p.guide_info__help 名刺リクエストを送信して、追加しましょう。
+      .scroll
+        %ul
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close

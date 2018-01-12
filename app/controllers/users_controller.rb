@@ -32,6 +32,12 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+      if @user.update(user_params)
+        redirect_to user_path(@user.id)
+      else
+        render "show"
+      end
+
     @company = @user.companies.last
     @career = @user.careers.last
 
@@ -58,6 +64,10 @@ private
 
   def user_set
     @user = User.find(params[:id])
+  end
+
+  def set_academy
+    @created_academy = Academy.find(params[:user_id])
   end
 
   def user_params

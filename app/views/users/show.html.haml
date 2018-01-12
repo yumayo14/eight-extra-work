@@ -26,8 +26,9 @@
                 = link_to root_path do
                   %i.fe.fe-camera
           .profile-title-field
-            .thumbnail
-              = image_tag current_user.avatar
+            - if current_user.try(:avatar)
+              .thumbnail
+                = image_tag(current_user.avatar)
             %span.common-text_button.policy-icon-field
               %a.modal_syncer{data: {target: "user_avatar"} }
                 %i.fe.fe-camera
@@ -35,10 +36,9 @@
               %h2.user_name
                 = current_user.name
               %p.text_part IT系のエンジニアをやっています
-              .profile_icon_field
-                .common-text_button.policy-icon-field
-                  = link_to root_path do
-                    %i.fe.fe-pencil
+              / .common-text_button.policy-icon-field
+              /   = link_to root_path do
+              /     %i.fe.fe-pencil
 
       .flex_box
         .my_profile__profile-aside
@@ -78,55 +78,68 @@
                           = career.from
                         %span.career_term__per
                           = career.to
-                      .department_info
-                        %span.department_info__content
-                          = career.department
-                      .position_info
-                        %span.position_info__content
-                          = career.position
+                      .set_career_detail
+                        .department_info
+                          %span.department_info__content
+                            = career.department
+                        .position_info
+                          %span.position_info__content
+                            = career.position
                     .profile_card_thumbnail_box
                       = link_to root_path do
                         %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
-          .profile-my_profile-educational_records_info.sec
+
+          .profile-my_profile_academy-info
             .profile-title
               %span 学歴
               %span.common-text_button.policy-icon-field
-                %a.modal_syncer{data: {target: "academic_info"} }
-                  %i.fe.fe-pencil
+                %a.modal_syncer{data: {target: "academic_info_add"} }
+                  %i.fe.fe-plus
             .academy
               - if current_user.academies.present?
                 - current_user.academies.each do |academy|
                   .academy_box
-                    %p.school_name
-                      = academy.name
-                    .set_academy_detail
-                      %p.school_term
-                        = academy.from
-                        = academy.to
-                      %p.school_major
-                        = academy.major
-                      %p.school_degree
-                        = academy.degree
+                    .school_name_box
+                      %span.school_name
+                        = academy.name
+                      %span.common-text_button.policy-icon-field
+                        .a.modal_syncer{data: {target: "academic_info_edit"} }
+                          %i.fe.fe-pencil
+                    .set_academy_content
+                      .school_term
+                        %p.school_term__per
+                          = academy.from
+                        %p.school_term__per
+                          = academy.to
+                      .set_academy_detail
+                        .school_major
+                          %p.school_major__content
+                            = academy.major
+                        .school_degree
+                          %p.school_degree__content
+                            = academy.degree
               - else
                 .notfriend
                   %p あなたが通っと高校や大学を設定しましょう
 
-          .profile-my_profile-basic_info
+          .profile-my_profile-private_info
             .profile-title
               %span 性別・生年月日
               %span.common-text_button.policy-icon-field
                 %a.modal_syncer{data: {target: "personal_info"} }
                   %i.fe.fe-pencil
-            .cts
+            .private_table_box
               %table
+                %tr.first_tr
+                  %td.label 性別
+                  %td.birthday
+                    %span.gender_content
+                      = current_user.gender
                 %tr
-                  %td 性別
-                  %td
-                    = current_user.gender
-                %tr
-                  %td 生年月日
-                  %td
-                    = current_user.birthday
+                  %td.label 生年月日
+                  %td.content
+                    %span.birthday_content
+                      = current_user.birthday
 
           .profile-career_status
             .profile-title
@@ -153,9 +166,15 @@
               %li
                 .title.icon_field
                   %i.fe.fe-building
+
                 .contents
-                  %span
-                    = current_user.companies.last.company_name
+                  - if current_user.companies
+                    - company = current_user.companies.last
+                    %span
+                      = company.try(:company_name)
+                  - else
+                    %p 会社情報は入力されていません
+
                 .policy
                   %span.icons
               %li
@@ -171,7 +190,10 @@
                   %i.fe.fe-postal-code
                 .contents
                   %span
-                    = current_user.post_code
+                    - if current_user.try(:post_code)
+                      = current_user.post_code
+                    - else
+                      %p 入力されていません
                 .policy
                   %span.icons
               %li
@@ -179,7 +201,10 @@
                   %i.fe.fe-map
                 .contents
                   %span
-                    = current_user.address
+                    - if current_user.address.try(:address)
+                      = current_user.address
+                    - else
+                      %p 入力されていません
                 .policy
                   %span.icons
               %li
@@ -187,7 +212,10 @@
                   %i.fe.fe-profile-url
                 .contents
                   %span
-                    = current_user.homepage_url
+                    - if current_user.homepage_url.try(:homepage_url)
+                      = current_user.homepage_url
+                    - else
+                      %p 入力されていません
                 .policy
                   %span.icons
               %li
@@ -195,7 +223,10 @@
                   %i.fe.fe-facebook
                 .contents
                   %span
-                    = current_user.facebook_url
+                    - if current_user.facebook_url.try(:facebook_url)
+                      = current_user.facebook_url
+                    - else
+                      %p 入力されていません
                 .policy
                   %span.icons
 
@@ -249,7 +280,7 @@
         %li
           = f.submit value: "保存",class: "common-button profile_edit_button";
         %li
-          %button.common-button.close_button
+          %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
   }
@@ -264,7 +295,7 @@
         %li
           = f.submit value: "保存",class: "common-button profile_edit_button";
         %li
-          %button.common-button.close_button
+          %button.common-button.close_button{ type: "button" }
             %a#modal_close.career_summary_button
               キャンセル
 
@@ -312,11 +343,11 @@
         %li
           = f.submit value: "保存",class: "common-button profile_edit_button";
         %li
-          %button.common-button.close_button
+          %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
 
-.modal_content#academic_info
+.modal_content#academic_info_add
   .modal_form_title
     %span 学歴を追加する
   .modal_content__academic_info
@@ -343,9 +374,41 @@
         %li
           = f.submit value: "保存",class: "common-button profile_edit_button";
         %li
-          %button.common-button.close_button
+          %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
+-current_user.academies.each do |academy|
+  .modal_content#academic_info_edit
+    .modal_form_title
+      %span 学歴を編集する
+    .modal_content__academic_info
+      = form_for [@user, @academy] do |f|
+        .field_set
+          = f.label :学校区分, class: "academic_info_label"
+        = f.select :school_type, [["高等学校", "高等学校"], ["高等専門学校", "高等専門学校"], ["専門学校", "専門学校"], ["短期大学", "短期大学"], ["大学", "大学"], ["大学院", "大学院"]]
+        .field_set
+          = f.label :学校名, class: "academic_info_label"
+        = f.text_field :name, class: "academic_info_text_field"
+        .field_set
+          = f.label :学部学科, class: "academic_info_label"
+        = f.text_field :major, class: "academic_info_text_field"
+        .field_set
+          = f.label :取得学位, class: "academic_info_label"
+        = f.text_field :degree, class: "academic_info_text_field"
+        = f.label :入学年と卒業月, class: "academic_info_label"
+        .field_set
+        = f.text_field :from, class: "academic_info_text_field"
+        .field_set
+          = f.label :卒業年と卒業月, class: "academic_info_label"
+        = f.text_field :to, class: "academic_info_text_field"
+        / = f.hidden_field :id
+        %ul.edit_buttons
+          %li
+            = f.submit value: "保存",class: "common-button profile_edit_button";
+          %li
+            %button.common-button.close_button{ type: "button" }
+              %a#modal_close.button_link
+                キャンセル
 
 .modal_content#personal_info
   .modal_form_title
@@ -368,7 +431,7 @@
         %li
           = f.submit value: "保存",class: "common-button profile_edit_button";
         %li
-          %button.common-button.close_button
+          %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
 
@@ -387,7 +450,7 @@
         %li
           = f.submit value: "保存",class: "common-button profile_edit_button";
         %li
-          %button.common-button.close_button
+          %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
 
@@ -431,7 +494,7 @@
         %li
           = f.submit value: "保存",class: "common-button profile_edit_button";
         %li
-          %button.common-button.close_button
+          %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
 

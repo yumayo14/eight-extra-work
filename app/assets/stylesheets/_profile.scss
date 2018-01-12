@@ -206,16 +206,19 @@ a {
                   padding-right: 8px;
                 }
               }
-              .department_info {
-                margin: 5px 0;
-                &__content {
-                  font-size: 12px;
+              .set_career_detail{
+                padding-left: 15px;
+                .department_info {
+                  margin: 5px 0;
+                  &__content {
+                    font-size: 12px;
+                  }
                 }
-              }
-              .position_info {
-                margin: 5px 0;
-                &__content {
-                  font-size: 12px;
+                .position_info {
+                  margin: 5px 0;
+                  &__content {
+                    font-size: 12px;
+                  }
                 }
               }
             }
@@ -230,18 +233,8 @@ a {
             }
           }
         }
-        .academy{
-          padding: 0 15px;
-          .school_name{
-            font-size: 14px;
-            font-weight: bold;
-          }
-          .set_academy_detail{
-
-          }
-        }
       }
-      .profile-my_profile-educational_records_info.sec{
+      .profile-my_profile_academy-info{
         min-height: 150px;
         padding-top: 20px;
         position: relative;
@@ -254,6 +247,48 @@ a {
           font-size: 1.6rem;
           font-weight: bold;
         }
+        .academy {
+          padding: 0 15px;
+          .academy_box {
+            padding-left: 10px;
+            .school_name_box{
+              display: flex;
+              .school_name {
+                font-size: 14px;
+                font-weight: bold;
+                padding-right: 15px;
+              }
+            }
+            .set_academy_content {
+              margin: 16px 0 18px;
+              .school_term {
+                position: relative;
+                vertical-align: middle;
+                padding-right: 10px;
+                display: flex;
+                &__per {
+                  font-size: 12px;
+                  padding-right: 8px;
+                }
+              }
+              .set_academy_detail{
+                padding-left: 20px;
+                .school_major {
+                  margin: 5px 0;
+                  &__content {
+                    font-size: 12px;
+                  }
+                }
+                .school_degree {
+                  margin: 5px 0;
+                  &__content {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+        }
         .notfriend{
           font-size: 1.2rem;
           line-height: 1.71;
@@ -261,7 +296,7 @@ a {
           color: #307caf;
         }
       }
-      .profile-my_profile-basic_info{
+      .profile-my_profile-private_info{
         height: 145px;
         padding-top: 20px;
         margin-top: 10px;
@@ -273,10 +308,30 @@ a {
           font-size: 1.6rem;
           font-weight: bold;
         }
-        .cts {
+        .private_table_box {
           padding:0px 13px;
-          tr{
-            padding-top:13px;
+          table {
+            width: 252px;
+            tr {
+              padding-top: 13px;
+              &.first_tr {
+                border-bottom: 1px solid #e5e5e5;
+              }
+              td {
+                padding: 14px;
+                &.label{
+                  font-size: 12px;
+                }
+                .gender_content {
+                  font-size: 13px;
+                  font-weight: bold;
+                }
+                .birthday_content {
+                  font-size: 13px;
+                  font-weight: bold;
+                }
+              }
+            }
           }
         }
       }

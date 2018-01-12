@@ -32,6 +32,12 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+      if @user.update(user_params)
+        redirect_to user_path(@user.id)
+      else
+        render "show"
+      end
+
     @company = @user.companies.last
     @career = @user.careers.last
 

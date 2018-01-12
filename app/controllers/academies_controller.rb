@@ -3,6 +3,14 @@ class AcademiesController < ApplicationController
   def create
     @academy = Academy.new(academy_params)
     @academy.save
+
+  end
+
+  def edit
+  end
+
+  def update
+    @academy.update(academy_params)
   end
 
 private

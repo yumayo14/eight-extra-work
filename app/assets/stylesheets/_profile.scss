@@ -156,6 +156,14 @@ a {
           font-size: 1.6rem;
           font-weight: bold;
         }
+        .career_summary{
+          max-height: 160px;
+          &__content{
+            font-size: 13px;
+            padding: 0px 13px;
+            line-height: 1.5;
+          }
+        }
         .notfriend{
           font-size: 1.2rem;
           line-height: 1.71;
@@ -163,36 +171,73 @@ a {
           color: #307caf;
         }
       }
-      .profile-my_profile-careers_info{
+      .profile-my_profile-careers_info {
         min-height: 250px;
         padding-top: 20px;
         position: relative;
         background: #ffffff;
         border-bottom: 1px solid #e8e8e8;
-        .profile-title{
+        .profile-title {
           height: 35px;
           margin-left: 10px;
           color: #a0a0a0;
           font-size: 1.6rem;
           font-weight: bold;
         }
-        .merged-career{
-          max-height: 40px;
-          display: flex;
-          padding-left: 10px;
-          .career-piece{
-            position: relative;
-            vertical-align: middle;
-            padding-right: 10px;
+        .career {
+          padding: 0 15px;
+          .company_name {
+            font-size: 14px;
+            font-weight: bold;
           }
-          .profile-card_thumbnail.tmb{
-            width: 60px;
-            height: 36px;
-            img.card{
-              width: 60px;
-              height: 36px;
-              vertical-align: middle;
+          .set_career_card {
+            display: flex;
+            margin: 16px 0 18px;
+            .career_box {
+              max-height: 40px;
+              padding-left: 10px;
+              .career_term {
+                position: relative;
+                vertical-align: middle;
+                padding-right: 10px;
+                display: flex;
+                &__per {
+                  font-size: 12px;
+                  padding-right: 8px;
+                }
+              }
+              .department_info {
+                margin: 5px 0;
+                &__content {
+                  font-size: 12px;
+                }
+              }
+              .position_info {
+                margin: 5px 0;
+                &__content {
+                  font-size: 12px;
+                }
+              }
             }
+            .profile_card_thumbnail_box{
+              width: 60px;
+              height: 40px;
+              img.card{
+                width: 60px;
+                height: 40px;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+        .academy{
+          padding: 0 15px;
+          .school_name{
+            font-size: 14px;
+            font-weight: bold;
+          }
+          .set_academy_detail{
+
           }
         }
       }

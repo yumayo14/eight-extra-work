@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171222015231) do
+ActiveRecord::Schema.define(version: 20180109081134) do
 
   create_table "academies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "school_type"
@@ -49,10 +49,11 @@ ActiveRecord::Schema.define(version: 20171222015231) do
   end
 
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name", null: false
+    t.string "company_name", null: false
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "company_phone_num"
   end
 
   create_table "telephone_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -93,6 +94,10 @@ ActiveRecord::Schema.define(version: 20171222015231) do
     t.string "facebook_url"
     t.text "summary"
     t.string "gender"
+    t.string "career_status"
+    t.string "timing"
+    t.integer "post_code"
+    t.string "homepage_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

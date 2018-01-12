@@ -22,17 +22,18 @@
             = link_to root_path do
               %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
             .profile-policy_icon
-              .profile-policy_icon__size
+              .profile-policy_icon
                 = link_to root_path do
                   %i.fe.fe-camera
           .profile-title-field
             .thumbnail
-              %img.people_avatar_face{src: "https://upload-contents.8card.net/profiles/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg?1514256011745"}
-              .profile-policy_icon
-                = link_to root_path do
-                  %i.fe.fe-camera
+              = image_tag current_user.avatar
+            %span.common-text_button.policy-icon-field
+              %a.modal_syncer{data: {target: "user_avatar"} }
+                %i.fe.fe-camera
             .text_field
-              %h2.user_name 小坂 佳裕
+              %h2.user_name
+                = current_user.name
               %p.text_part IT系のエンジニアをやっています
               .profile_icon_field
                 .common-text_button.policy-icon-field
@@ -46,63 +47,106 @@
               .profile-title
                 %span キャリアサマリー
                 %span.common-text_button.policy-icon-field
-                  = link_to root_path do
+                  %a.modal_syncer{data: {target: "career_summary"} }
                     %i.fe.fe-pencil
-              .notfriend
-                %p あなたの経歴、スキル、受賞歴
-                %p 関わった主なプロジェクトなどを
-                %p 記載しましょう
+              -if current_user.try(:summary)
+                .career_summary
+                  %p.career_summary__content
+                    = current_user.summary
+              - else
+                .notfriend
+                  %p あなたの経歴、スキル、受賞歴
+                  %p 関わった主なプロジェクトなどを
+                  %p 記載しましょう
 
           .profile-my_profile-careers_info
             .profile-title
               %span 職歴
               %span.common-text_button.policy-icon-field
-                = link_to root_path do
+                %a.modal_syncer{data: {target: "career_info"} }
                   %i.fe.fe-pencil
-            .merged-career
-              .career-piece - 2017/11/01 ~ 2017/11/30
-              .profile-card_thumbnail.tmb
-                = link_to root_path do
-                  %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
-
+            .career
+              - current_user.companies.each do |company|
+                .company_box
+                  %span.company_name
+                    = company.company_name
+                - company.careers.each do |career|
+                  .set_career_card
+                    .career_box
+                      .career_term
+                        %span.career_term__per
+                          = career.from
+                        %span.career_term__per
+                          = career.to
+                      .department_info
+                        %span.department_info__content
+                          = career.department
+                      .position_info
+                        %span.position_info__content
+                          = career.position
+                    .profile_card_thumbnail_box
+                      = link_to root_path do
+                        %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
           .profile-my_profile-educational_records_info.sec
             .profile-title
               %span 学歴
               %span.common-text_button.policy-icon-field
-                = link_to root_path do
+                %a.modal_syncer{data: {target: "academic_info"} }
                   %i.fe.fe-pencil
-            .notfriend
-              %p あなたが通っと高校や大学を設定しましょう
+            .academy
+              - if current_user.academies.present?
+                - current_user.academies.each do |academy|
+                  .academy_box
+                    %p.school_name
+                      = academy.name
+                    .set_academy_detail
+                      %p.school_term
+                        = academy.from
+                        = academy.to
+                      %p.school_major
+                        = academy.major
+                      %p.school_degree
+                        = academy.degree
+              - else
+                .notfriend
+                  %p あなたが通っと高校や大学を設定しましょう
 
           .profile-my_profile-basic_info
             .profile-title
-              %span.title 性別・生年月日
-              %span.policy-icon-field
-                = link_to root_path do
+              %span 性別・生年月日
+              %span.common-text_button.policy-icon-field
+                %a.modal_syncer{data: {target: "personal_info"} }
                   %i.fe.fe-pencil
             .cts
               %table
                 %tr
                   %td 性別
-                  %td 男性
+                  %td
+                    = current_user.gender
                 %tr
                   %td 生年月日
-                  %td 1987年08月02日
+                  %td
+                    = current_user.birthday
 
           .profile-career_status
             .profile-title
               %span キャリアステータス
-              %span.policy-icon-field
-                = link_to root_path do
+              %span.common-text_button.policy-icon-field
+                %a.modal_syncer{data: {target: "career_status"} }
                   %i.fe.fe-pencil
-            .my_profile_career_status
-              %p 未設定
+            - if current_user.try(:career_status)
+              .my_profile_career_status
+                %p
+                  = current_user.career_status
+            - else
+              .my_profile_career_status
+                %p 未設定
 
         .profile-my_profile-my_profile__profile-main
-          .inner-header
-            %p.base_info_title 基本情報
-            .action-icons
-              = link_to new_user_path do
+          .base_info_title
+            %span 基本情報
+            %span.common-text_button.policy-icon-field
+              %a.modal_syncer{data: {target: "basic_info"} }
                 %i.fe.fe-pencil
           .profile-profile_info
             %ul.tbl
@@ -110,42 +154,48 @@
                 .title.icon_field
                   %i.fe.fe-building
                 .contents
-                  %span 会社名
+                  %span
+                    = current_user.companies.last.company_name
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-mail
                 .contents
-                  %span メールアドレス
+                  %span
+                    = current_user.email
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-postal-code
                 .contents
-                  %span 郵便番号
+                  %span
+                    = current_user.post_code
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-map
                 .contents
-                  %span 住所
+                  %span
+                    = current_user.address
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-profile-url
                 .contents
-                  %span プロフィールURL
+                  %span
+                    = current_user.homepage_url
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-facebook
                 .contents
-                  %span facebookURL
+                  %span
+                    = current_user.facebook_url
                 .policy
                   %span.icons
 
@@ -188,3 +238,200 @@
                 %span 追加
                 .dialog-position
             %i.fe.fe-close
+
+.modal_content#user_avatar
+  .modal_avatar_form_title
+    %span プロフィール写真を編集
+  .modal_content__user_avatar
+    = form_for @user do |f|
+      = f.file_field :avatar
+      %ul.edit_buttons
+        %li
+          = f.submit value: "保存",class: "common-button profile_edit_button";
+        %li
+          %button.common-button.close_button
+            %a#modal_close.button_link
+              キャンセル
+  }
+
+.modal_content#career_summary
+  .modal_form_title
+    %span キャリアサマリー
+  .modal_content__summary
+    = form_for @user do |f|
+      = f.text_area :summary, class: "career_summary_form";
+      %ul.edit_buttons
+        %li
+          = f.submit value: "保存",class: "common-button profile_edit_button";
+        %li
+          %button.common-button.close_button
+            %a#modal_close.career_summary_button
+              キャンセル
+
+.modal_content#career_info
+  .modal_form_title
+    %span 職歴を編集する
+  .modal_content__career_info
+    = form_for @user do |f|
+      .field_set
+        = f.label :氏名, class: "career_info_label"
+      = f.text_field :name, class: "career_info_text_field"
+      .field_set
+        = f.label :メールアドレス, class: "career_info_label"
+      = f.text_field :email, class: "career_info_text_field"
+      .field_set
+        = f.label :郵便番号, class: "career_info_label"
+      = f.text_field :post_code, class: "career_info_text_field"
+      .field_set
+        = f.label :住所, class: "career_info_label"
+      = f.text_field :address, class: "career_info_text_field"
+      .field_set
+        = f.label :eightのホームページ, class: "career_info_label"
+      = f.text_field :homepage_url, class: "career_info_text_field"
+      = fields_for @company do |co|
+        .field_set
+          = co.label :会社名, class: "career_info_label"
+        = co.text_field :company_name, class: "career_info_text_field"
+        .field_set
+          = co.label :会社電話, class: "career_info_label"
+        = co.text_field :company_phone_num, class: "career_info_text_field"
+      = fields_for @career do |ca|
+        .field_set
+          = ca.label :部署, class: "career_info_label"
+        = ca.text_field :department, class: "career_info_text_field"
+        .field_set
+          = ca.label :役職, class: "career_info_label"
+        = ca.text_field :position, class: "career_info_text_field"
+        .field_set
+          = ca.label :入社時期, class: "career_info_label"
+        = ca.text_field :from, class: "career_info_text_field"
+        .field_set
+          = ca.label :退社時期, class: "career_info_label"
+        = ca.text_field :to, class: "career_info_text_field"
+      %ul.edit_buttons
+        %li
+          = f.submit value: "保存",class: "common-button profile_edit_button";
+        %li
+          %button.common-button.close_button
+            %a#modal_close.button_link
+              キャンセル
+
+.modal_content#academic_info
+  .modal_form_title
+    %span 学歴を追加する
+  .modal_content__academic_info
+    = form_for [@user, @academy] do |f|
+      .field_set
+        = f.label :学校区分, class: "academic_info_label"
+      = f.select :school_type, [["高等学校", "高等学校"], ["高等専門学校", "高等専門学校"], ["専門学校", "専門学校"], ["短期大学", "短期大学"], ["大学", "大学"], ["大学院", "大学院"]]
+      .field_set
+        = f.label :学校名, class: "academic_info_label"
+      = f.text_field :name, class: "academic_info_text_field"
+      .field_set
+        = f.label :学部学科, class: "academic_info_label"
+      = f.text_field :major, class: "academic_info_text_field"
+      .field_set
+        = f.label :取得学位, class: "academic_info_label"
+      = f.text_field :degree, class: "academic_info_text_field"
+      = f.label :入学年と卒業月, class: "academic_info_label"
+      .field_set
+      = f.text_field :from, class: "academic_info_text_field"
+      .field_set
+        = f.label :卒業年と卒業月, class: "academic_info_label"
+      = f.text_field :to, class: "academic_info_text_field"
+      %ul.edit_buttons
+        %li
+          = f.submit value: "保存",class: "common-button profile_edit_button";
+        %li
+          %button.common-button.close_button
+            %a#modal_close.button_link
+              キャンセル
+
+.modal_content#personal_info
+  .modal_form_title
+    %span 性別・生年月日の編集
+  .modal_content__personal_info
+    = form_for @user do |f|
+      .field_set
+        = f.label :性別, class: "personal_info_label"
+      %ul.gender
+        %li
+          = f.radio_button :gender, :男性
+          = f.label :男性, class: "radio_button_label"
+        %li
+          = f.radio_button :gender, :女性
+          = f.label :女性, class: "radio_button_label"
+      .field_set
+        = f.label :生年月日, class: "personal_info_label"
+      = f.text_field :birthday, class: "personal_info_text_field"
+      %ul.edit_buttons
+        %li
+          = f.submit value: "保存",class: "common-button profile_edit_button";
+        %li
+          %button.common-button.close_button
+            %a#modal_close.button_link
+              キャンセル
+
+.modal_content#career_status
+  .modal_form_title
+    %span キャリアステータス編集
+  .modal_content__career_status
+    = form_for @user do |f|
+      .field_set
+        = f.label :キャリアステータス, class: "career_status_label"
+      = f.select :career_status, [["転職活動をしている", "転職活動中"], ["転職を検討している", "検討中"], ["いい話があれば聞いてみたい", "話があれば聞いてみたい"], ["転職を機考えていない", "転職を考えていない"]]
+      .field_set
+        = f.label :転職したい時期, class: "career_status_label"
+      = f.text_field :timing, placeholder: "転職活動をしている、転職を検討していると回答した人のみ記入してください", class: "career_status_text_field"
+      %ul.edit_buttons
+        %li
+          = f.submit value: "保存",class: "common-button profile_edit_button";
+        %li
+          %button.common-button.close_button
+            %a#modal_close.button_link
+              キャンセル
+
+.modal_content#basic_info
+  .modal_form_title
+    %span 名刺情報の編集
+  .modal_content__basic_info
+    = form_for @user do |f|
+      .field_set
+        = f.label :氏名, class: "basic_info_label"
+      = f.text_field :name, class: "basic_info_text_field"
+      .field_set
+        = f.label :メールアドレス, class: "basic_info_label"
+      = f.text_field :email, class: "basic_info_text_field"
+      .field_set
+        = f.label :郵便番号, class: "basic_info_label"
+      = f.text_field :post_code, class: "basic_info_text_field"
+      .field_set
+        = f.label :住所, class: "basic_info_label"
+      = f.text_field :address, class: "basic_info_text_field"
+      .field_set
+        = f.label :eightのホームページurl, class: "basic_info_label"
+      = f.text_field :homepage_url, class: "basic_info_text_field"
+      = fields_for @company do |co|
+        .field_set
+          = co.label :会社名, class: "basic_info_label"
+        = co.text_field :company_name, class: "basic_info_text_field"
+        .field_set
+          = co.label :会社電話, class: "basic_info_label"
+        = co.text_field :company_phone_num, class: "basic_info_text_field"
+
+        = co.hidden_field :user_ids, value: current_user.id, multiple: true
+      = fields_for @career do |ca|
+        .field_set
+          = ca.label :部署, class: "basic_info_label"
+        = ca.text_field :department, class: "basic_info_text_field"
+        .field_set
+          = ca.label :役職, class: "basic_info_label"
+        = ca.text_field :position, class: "basic_info_text_field"
+      %ul.edit_buttons
+        %li
+          = f.submit value: "保存",class: "common-button profile_edit_button";
+        %li
+          %button.common-button.close_button
+            %a#modal_close.button_link
+              キャンセル
+

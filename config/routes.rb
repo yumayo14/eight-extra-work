@@ -4,8 +4,10 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :academies
+    resources :careers
+    resources :companies
   end
-  resources :companies
   resources :landings, only: :index
   root "landings#index"
 end

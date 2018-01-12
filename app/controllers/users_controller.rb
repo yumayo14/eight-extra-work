@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def search
     @user = User.where('name Like(?)',"%#{params[:keyword]}%").limit(30)
-    @company = Company.where('name Like(?)',"%#{params[:keyword]}%").limit(3)
+    @company = Company.where('company_name Like(?)',"%#{params[:keyword]}%").limit(3)
   end
 
   # def search_me

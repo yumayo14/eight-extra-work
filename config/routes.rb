@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get :profile
+    end
     resources :academies
     resources :careers
     resources :companies

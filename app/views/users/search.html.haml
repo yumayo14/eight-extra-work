@@ -1,0 +1,51 @@
+= render 'users/myhome'
+.search
+  .search-search
+    .search-search_result
+      .search-search_list_navigation
+        .tab
+          .left
+            .tab__item
+              あなたのネットワーク
+          .right
+            .tab__item2
+              Eightのネットワーク
+    .search_view
+      %section.search-searched_company_list
+        - @company.each do |company|
+          .company-company_list
+            .company-company
+              .hitarea
+                %dt.company-img
+                  %i.fa.fa-building.fa-4x
+                %dd.company-info
+                  .name
+                    = company.name
+                  .address
+                    東京都渋谷区
+        -  if  @company.present?
+          .count-lavel
+            上位3件を表示しています
+      .search-eight_people_list
+        - @user.each do |users|
+          .scroll
+            %article.search-eight_person
+              = link_to user_path(users.id) do
+                %dl.item-field
+                  %dt.thumbnail
+                    .image_box
+                      %i.fa.fa-user.fa-2x
+                  .text-field
+                    .user-name
+                      = users.name
+                      %i.fe.fe-link
+                    .ellipsis-field
+                      .company-name
+                        株式会社 div
+                      .company-department
+                        マーケティング担当
+                  .people-follow_button
+                    .div
+                      .common-text_button
+                        追加
+                    .people-follow_button__note

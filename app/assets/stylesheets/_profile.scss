@@ -37,10 +37,43 @@
   }
 }
 
-.policy-icon-field{
-  background-color: #e8e8e8;
-  border-radius: 5px;
+.common-text_button {
+  color: #a0a0a0;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline
 }
+
+.policy-icon-field {
+  opacity: 0;
+}
+
+.profile-my_profile-career_summary:hover .policy-icon-field {
+  opacity: 1;
+}
+.profile-my_profile-careers_info:hover .policy-icon-field {
+  opacity: 1;
+}
+.profile-my_profile_academy-info:hover .policy-icon-field {
+  opacity: 1;
+}
+.profile-my_profile-private_info:hover .policy-icon-field {
+  opacity: 1;
+}
+.profile-career_status:hover .policy-icon-field {
+  opacity: 1;
+}
+.profile-my_profile-profile-main:hover .policy-icon-field {
+  opacity: 1;
+}
+.profile-article:hover .policy-icon-field {
+  opacity: 1;
+}
+
 a {
   color: #a0a0a0;
   text-decoration: none;
@@ -149,13 +182,6 @@ a {
         position: relative;
         background: #ffffff;
         border-bottom: 1px solid #e8e8e8;
-        .profile-title{
-          height: 35px;
-          margin-left: 10px;
-          color: #a0a0a0;
-          font-size: 1.6rem;
-          font-weight: bold;
-        }
         .career_summary{
           max-height: 160px;
           &__content{
@@ -355,7 +381,7 @@ a {
         }
       }
     }
-    .profile-my_profile-my_profile__profile-main{
+    .profile-my_profile-profile-main{
       box-sizing: border-box;
       padding: 15px;
       width: 492px;
@@ -444,159 +470,6 @@ a {
       }
     }
   }
-
-
-.modal_content {
-  display: none;
-  position: fixed;
-  margin:1.5em auto 0;
-  padding:10px 20px;
-  z-index:2;
-  border-radius: 2px;
-  background: #ffffff;
-  border: 1px solid #307caf;
-  .modal_avatar_form_title{
-    height: 20px;
-    margin-left: 10px;
-    margin-bottom: 15px;
-    color: #585858;
-    font-size: 1.6rem;
-    font-weight: bold;
-  }
-  .modal_form_title{
-    height: 20px;
-    margin-left: 10px;
-    color: #585858;
-    font-size: 1.6rem;
-    font-weight: bold;
-  }
-  &__user_avatar{
-    width: 320px;
-    height: 385px;
-    #user_avatar{
-    font-size: 10px;
-    }
-  }
-  &__summary{
-    width: 573px;
-    height: 371px;
-    .career_summary_form {
-      width: 542px;
-      height: 282px;
-    }
-  }
-  &__career_info{
-    width : 494px;
-    height: 580px;
-    .field_set{
-      margin-top: 15px;
-      .career_info_label{
-        font-size: 1.2rem;
-      }
-    }
-    .career_info_text_field {
-      width: 100%;
-    }
-  }
-  &__academic_info{
-    width: 485px;
-    height: 401px;
-    .field_set{
-      margin-top: 15px;
-      .academic_info_label{
-        font-size: 1.2rem;
-      }
-    }
-    #academy_school_type{
-      height: 2rem;
-    }
-    .academic_info_text_field{
-      width: 100%;
-    }
-  }
-  &__personal_info{
-    width: 340px;
-    height: 235px;
-    .field_set{
-      margin-top: 15px;
-      .personal_info_label{
-        font-size: 1.2rem;
-      }
-    }
-    ul{
-      display: flex;
-      margin-top: 10px;
-      li{
-        margin-right: 30px;
-        #user_gender_男性{
-          position: absolute;
-        }
-        #user_gender_女性{
-          position: absolute;
-        }
-        .radio_button_label{
-          padding-left: 10px;
-          font-size: 1.4rem;
-          line-height: 10px;
-        }
-      }
-    }
-    .personal_info_text_field{
-      width: 100%;
-      height: 26px;
-    }
-  }
-  &__career_status{
-    width: 410px;
-    height: 320px;
-    .field_set{
-      margin: 15px 0px 10px;
-      .career_status_label{
-        font-size: 1.2rem;
-      }
-    }
-    #user_career_status{
-      height: 36px;
-      width: 100%;
-    }
-    .career_status_text_field{
-      height: 36px;
-      width: 100%;
-    }
-  }
-  &__basic_info{
-    width: 494px;
-    height: 580px;
-    .field_set{
-      margin-top: 10px;
-      .basic_info_label{
-        font-size: 1.2rem;
-      }
-    }
-    .basic_info_text_field{
-      width: 100%;
-      height: 26px;
-      font-size: 1.2rem;
-    }
-  }
-}
-
-#modal_overlay {
-  z-index:1;
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:120%;
-  background-color:rgba(0,0,0,0.75);
-}
-
-.modal_form_title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #585858;
-}
 
 
 

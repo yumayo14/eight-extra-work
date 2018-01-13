@@ -316,46 +316,6 @@
   }
 }
 
-.common-text_button {
-  color: #a0a0a0;
-  text-decoration: none;
-  background: transparent;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1.2rem;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  &:hover, &.active {
-    color: #307caf;
-    text-decoration: none;
-  }
-  &:active {
-    position: relative;
-    top: 1px;
-  }
-  &.disabled {
-    color: #a0a0a0;
-    text-decoration: none;
-    opacity: .5;
-    cursor: default;
-    &:hover {
-      color: #a0a0a0;
-      text-decoration: none;
-    }
-    &.active {
-      color: #307caf;
-      text-decoration: none;
-    }
-    &:active {
-      top: 0;
-    }
-  }
-  .fe {
-    margin-right: 3px;
-  }
-}
-
 .common-menu_item {
   white-space: nowrap;
   font-size: 1.2rem;

@@ -61,14 +61,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def user_set
-    @user = User.find(params[:id])
-  end
-
   def profile
   end
 
   private
+
+  def user_set
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:avatar, :summary, :gender, :birthday, :career_status, :timing, :name, :email, :post_code, :address, :homepage_url)

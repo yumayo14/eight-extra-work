@@ -10,6 +10,7 @@ class AcademiesController < ApplicationController
   end
 
   def update
+    @academy = Academy.find(params[:id])
     @academy.update(academy_params)
   end
 

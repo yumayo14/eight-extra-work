@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @academy = Academy.new
+    @academies = current_user.academies
     @company = Company.new
     @career = Career.new
   end
@@ -88,6 +89,7 @@ class UsersController < ApplicationController
   # def basic_info_params
   #   params.require(:user).permit(:name, :email, :post_code, :address, :homepage_url)
   # end
+
 
   def company_params
     params.require(:company).permit(:company_name, :company_phone_num)

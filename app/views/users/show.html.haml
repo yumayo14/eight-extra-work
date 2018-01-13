@@ -103,7 +103,7 @@
                       %span.school_name
                         = academy.name
                       %span.common-text_button.policy-icon-field
-                        .a.modal_syncer{data: {target: "academic_info_edit"} }
+                        .a.modal_syncer{data: {target: "academic_info_edit#{academy.id}"} }
                           %i.fe.fe-pencil
                     .set_academy_content
                       .school_term
@@ -155,7 +155,7 @@
               .my_profile_career_status
                 %p 未設定
 
-        .profile-my_profile-my_profile__profile-main
+        .profile-my_profile-profile-main
           .base_info_title
             %span 基本情報
             %span.common-text_button.policy-icon-field
@@ -377,12 +377,12 @@
           %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
--current_user.academies.each do |academy|
-  .modal_content#academic_info_edit
+- @academies.each do |academy|
+  .modal_content{id: "academic_info_edit#{academy.id}"}
     .modal_form_title
       %span 学歴を編集する
     .modal_content__academic_info
-      = form_for [@user, @academy] do |f|
+      = form_for [@user, academy] do |f|
         .field_set
           = f.label :学校区分, class: "academic_info_label"
         = f.select :school_type, [["高等学校", "高等学校"], ["高等専門学校", "高等専門学校"], ["専門学校", "専門学校"], ["短期大学", "短期大学"], ["大学", "大学"], ["大学院", "大学院"]]
@@ -401,7 +401,6 @@
         .field_set
           = f.label :卒業年と卒業月, class: "academic_info_label"
         = f.text_field :to, class: "academic_info_text_field"
-        / = f.hidden_field :id
         %ul.edit_buttons
           %li
             = f.submit value: "保存",class: "common-button profile_edit_button";

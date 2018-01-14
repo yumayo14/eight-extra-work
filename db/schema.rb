@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109081134) do
+ActiveRecord::Schema.define(version: 20171221005617) do
 
   create_table "academies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "school_type"
@@ -28,10 +28,8 @@ ActiveRecord::Schema.define(version: 20180109081134) do
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "image", null: false
     t.bigint "user_id"
-    t.bigint "career_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["career_id"], name: "index_cards_on_career_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
@@ -42,8 +40,10 @@ ActiveRecord::Schema.define(version: 20180109081134) do
     t.date "to"
     t.bigint "user_id"
     t.bigint "company_id"
+    t.bigint "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_careers_on_card_id"
     t.index ["company_id"], name: "index_careers_on_company_id"
     t.index ["user_id"], name: "index_careers_on_user_id"
   end
@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 20180109081134) do
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "company_name", null: false
     t.string "url"
+    t.string "company_phone_num", limit: 11
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "company_phone_num"
   end
 
   create_table "telephone_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20180109081134) do
   end
 
   create_table "telephones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "num"
+    t.string "num", limit: 11
     t.bigint "telephone_type_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -91,13 +91,14 @@ ActiveRecord::Schema.define(version: 20180109081134) do
     t.date "birthday"
     t.string "address"
     t.string "avatar"
+    t.string "introduction", limit: 25
     t.string "facebook_url"
     t.text "summary"
     t.string "gender"
-    t.string "career_status"
     t.string "timing"
-    t.integer "post_code"
+    t.string "post_code", limit: 7
     t.string "homepage_url"
+    t.string "career_status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

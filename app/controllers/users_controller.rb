@@ -8,8 +8,21 @@ class UsersController < ApplicationController
   def show
     @academy = Academy.new
     @academies = current_user.academies
-    @company = Company.new
-    @career = Career.new
+
+    if current_user.companies
+      @company = @user.companies.last
+    else
+      @company = Company.new
+    end
+
+    if current_user.careers
+      @career = @user.careers.last
+    else
+      @career = Career.new
+    end
+
+    @card = Card.new
+    @cards = current_user.cards
   end
 
   def new
@@ -71,7 +84,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:avatar, :summary, :gender, :birthday, :career_status, :timing, :name, :email, :post_code, :address, :homepage_url)
+    params.require(:user).permit(:avatar, :introduction, :summary, :gender, :birthday, :career_status, :timing, :name, :email, :post_code, :address, :homepage_url)
   end
 
   # def career_summary_params
@@ -96,7 +109,7 @@ class UsersController < ApplicationController
   end
 
   def career_params
-    params.require(:career).permit(:department, :position, :from, :to).merge(user_id: current_user.id, company_id: @company.id)
+    params.require(:career).permit(:department, :position, :from, :to).merge(user_id: current_user.id, company_id: @company.id, card_id: @card.id)
   end
 
 end

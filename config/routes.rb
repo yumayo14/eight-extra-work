@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get :profile
     end
     resources :academies
+    resources :cards
     resources :careers
     resources :companies
   end

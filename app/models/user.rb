@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :academies
   has_many :careers
   has_many :companies, through: :careers
+  has_many :cards
 end

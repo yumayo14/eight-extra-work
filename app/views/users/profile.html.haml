@@ -39,7 +39,8 @@
             .thumbnail
               %img.people_avatar_face{src: "https://upload-contents.8card.net/profiles/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg?1514256011745"}
             .text_field
-              %h2.user_name 小坂 佳裕
+              %h2.user_name
+                = @user.name
               %p.text_part IT系のエンジニアをやっています
 
 
@@ -49,41 +50,99 @@
             .box.crr
               .profile-title
                 %span キャリアサマリー
-              %dd.cts
-                %p ここにキャリアサマリ引用、必要ならcss設定
+              -if @user.try(:summary)
+                .career_summary
+                  %p.career_summary__content
+                    = @user.summary
+              - else
+                .notfriend
+                  %p あなたの経歴、スキル、受賞歴
+                  %p 関わった主なプロジェクトなどを
+                  %p 記載しましょう
 
           .profile-my_profile-careers_info
             .profile-title
               %span 職歴
-            .merged-career
-              .career-piece - 2017/11/01 ~ 2017/11/30
-              .profile-card_thumbnail.tmb
-                = link_to root_path do
-                  %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+            .career
+              - @user.companies.each do |company|
+                .company_box
+                  %span.company_name
+                    = company.company_name
+                - company.careers.each do |career|
+                  .set_career_card
+                    .career_box
+                      .career_term
+                        %span.career_term__per
+                          = career.from
+                        %span.career_term__per
+                          = career.to
+                      .set_career_detail
+                        .department_info
+                          %span.department_info__content
+                            = career.department
+                        .position_info
+                          %span.position_info__content
+                            = career.position
+                    .profile_card_thumbnail_box
+                      = link_to root_path do
+                        %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
 
-          .profile-my_profile-educational_records_info.sec
+          .profile-my_profile_academy-info
             .profile-title
               %span 学歴
-            %dd.cts
-              %p ここに学歴、必要ならクラス
+            .academy
+              - if @user.academies.present?
+                - @user.academies.each do |academy|
+                  .academy_box
+                    .school_name_box
+                      %span.school_name
+                        = academy.name
+                      %span.common-text_button.policy-icon-field
+                        .a.modal_syncer{data: {target: "academic_info_edit#{academy.id}"} }
+                          %i.fe.fe-pencil
+                    .set_academy_content
+                      .school_term
+                        %p.school_term__per
+                          = academy.from
+                        %p.school_term__per
+                          = academy.to
+                      .set_academy_detail
+                        .school_major
+                          %p.school_major__content
+                            = academy.major
+                        .school_degree
+                          %p.school_degree__content
+                            = academy.degree
+              - else
+                .notfriend
+                  %p ここに学歴が表示
 
-          .profile-my_profile-basic_info
+          .profile-my_profile-private_info
             .profile-title
-              %span.title 性別・生年月日
-            .cts
+              %span 性別・生年月日
+            .private_table_box
               %table
+                %tr.first_tr
+                  %td.label 性別
+                  %td.birthday
+                    %span.gender_content
+                      = @user.gender
                 %tr
-                  %td 性別
-                  %td 男性
-                %tr
-                  %td 生年月日
-                  %td 1987年08月02日
+                  %td.label 生年月日
+                  %td.content
+                    %span.birthday_content
+                      = @user.birthday
 
           .profile-career_status
             .profile-title
               %span キャリアステータス
-            .my_profile_career_status
-              %p 未設定
+            - if current_user.try(:career_status)
+              .my_profile_career_status
+                %p
+                  = current_user.career_status
+            - else
+              .my_profile_career_status
+                %p 未設定
 
         .profile-my_profile-profile-main
           .inner-header
@@ -94,42 +153,48 @@
                 .title.icon_field
                   %i.fe.fe-building
                 .contents
-                  %span 会社名
+                  %span
+                    = @user.companies.last.company_name
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-department
                 .contents
-                  %span 部署
+                  %span
+                    = @user.careers.last.department
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-title
                 .contents
-                  %span 役職
+                  %span
+                    = @user.careers.last.position
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-mail
                 .contents
-                  %span メールアドレス
+                  %span
+                    = @user.email
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-telephone
                 .contents
-                  %span 会社電話
+                  %span
+                    = @user.companies.last.company_phone_num
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-profile-url
                 .contents
-                  %span プロフィールURL
+                  %span
+                    = link_to "profile_URL", "#"
                 .policy
                   %span.icons
           %section
@@ -146,9 +211,10 @@
 
                           .txt
                             .ttl
-                              %span.common-text_button.profile-link 真柴隆一
+                              %span.common-text_button.profile-link
+                                = @user.name
                               %span.description
-                                株式会社Lorem Ipsum
+                                = @user.companies.last.company_name
                             %a.link-to-detail{:href => "/myhome/posts/ebca62527d312f8cf98296c4eecd0ace998b198f041eacb3289b5ed4e0bf0825"}
                               %span 2018年1月6日
                         .post-ctrl

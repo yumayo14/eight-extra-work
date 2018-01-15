@@ -1,0 +1,7 @@
+.message-form
+  .message-form__new
+    新規作成
+    = form_for @message do |f|
+      = f.text_field :user_id, class: "message-form__destination",placeholder: "宛先"
+      = f.text_field :message, class: "message-form__msg", placeholder: "type a message";
+      = f.submit value: "送信する",class: "message-form__submit"

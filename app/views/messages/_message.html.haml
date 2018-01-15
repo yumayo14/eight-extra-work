@@ -33,7 +33,7 @@
                 %span
                   フィード
             %li.side_bar-linked_menu_item.title-menu
-              = link_to "#", class: "link-component" do
+              = link_to messages_path, class: "link-component" do
                 %i.fe.fe-message
                 %span
                   メッセージ
@@ -92,10 +92,12 @@
                           0
     %article.chat-rooms
       .chat-rooms__navigation
-        %button.common-button.l-normal-button.chat-rooms__new-message-button
-          %i.fe.fe-plus
-          %span
-            新規メッセージ作成
+        =link_to new_message_path do
+          %button.common-button.l-normal-button
+            .chat-rooms__new-message-button
+              %i.fe.fe-plus
+              %span
+                新規メッセージ作成
       .chat-rooms__rooms-title
         %span
           %span.common-text_button

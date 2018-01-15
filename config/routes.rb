@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
   resources :landings, only: :index
   root "landings#index"
+  resources :messages
 end

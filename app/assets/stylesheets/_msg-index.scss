@@ -1,0 +1,128 @@
+.chat-rooms{
+  height: 1090px;
+  width: calc(100% - 558px);
+  float: left;
+  padding-left: 253px;
+  .chat-rooms__navigation{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 0 10px 0 #454545;
+    padding: 12px;
+    width: 520px;
+    z-index: 9;
+    .chat-rooms_new-message-button{
+      background: #ffffff;
+      border-radius: 2px;
+      border: 1px solid #d5d5d5;
+      color: #585858;
+      font-size: 1.4rem;
+      font-weight: normal;
+      line-height: 1;
+      min-height: 30px;
+      padding: 4px 8px;
+      min-width: 105px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      .fe{
+        color: #307caf;
+        font-weight: bold;
+        margin-right: 6px;
+        vertical-align: middle;
+        width: 1.2857142857142858rem;
+        text-align: center;
+        display: inline-block;
+        font-family: "EightSymbols";
+        font-style: normal;
+        line-height: 1;
+      }
+    }
+  }
+  .chat-rooms__rooms-title{
+    padding: 20px 0 15px;
+    text-align: center;
+    position: relative;
+    .common-text_button{
+      text-decoration: none;
+      background: transparent;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.2rem;
+      margin: 0;
+      padding: 0;
+      vertical-align: baseline;
+      .fa.fa-caret-down{
+        height: 10px;
+        width: 10px;
+        margin: 0 4px;
+      }
+    }
+  }
+  .chat-room_list{
+    padding-bottom: 100px;
+    .chat-room_item{
+      height: 55px;
+      border-radius: 3px;
+      padding: 16px;
+      position: relative;
+      background: #ffffff;
+      .room-thumbnail-field{
+        border-radius: 30px;
+        border: 2px solid #307caf;
+        margin: 10px 0;
+        float:left;
+        width: 40px;
+        height: 40px;
+        .fa.fa-user{
+          margin: 5px 0 5px 9px;
+          width: 40px;
+          height: 40px;
+          overflow: hidden;
+        }
+      }
+      .room-info-field{
+        margin-left: 10px;
+        height: 55px;
+        width: 432px;
+        float: left;
+        .title-field{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 400px;
+          margin-bottom: 8px;
+          .room-name{
+            color: #000000;
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: inline-block;
+            max-width: 180px;
+            vertical-align: bottom;
+          }
+          .person-company-info{
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            margin-left: 16px;
+          }
+        }
+        .summary-field{
+          color: #585858;
+          font-size: 1.2rem;
+          margin: 8px 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-wrap: break-work;
+        }
+        .posted-at-field{
+          font-size: 1rem;
+          margin-top: 8px;
+          color: #a0a0a0;
+        }
+      }
+    }
+  }
+}

@@ -90,3 +90,81 @@
                           ラベル作成
                         %span.num
                           0
+    %article.chat-rooms
+      .chat-rooms__navigation
+        %button.common-button.l-normal-button.chat-rooms__new-message-button
+          %i.fe.fe-plus
+          %span
+            新規メッセージ作成
+      .chat-rooms__rooms-title
+        %span
+          %span.common-text_button
+            %span
+              受信ボックス
+            %i.fa.fa-caret-down
+      %section.chat-room_list.chat-rooms__room-list
+        =link_to do
+          .chat-room_item.list-item
+            .room-thumbnail-field
+              %i.fa.fa-user.fa-3x
+            %dl.room-info-field
+              %dt.title-field
+                %span.room-name
+                  花田　暁
+                %span.person-company
+                  株式会社　人事　課長
+              %dd.summary-field
+                こんにちは
+              %dd.posted-at-field
+                時間
+                %span
+          .room-menu_button
+            .chat-room_menu_button
+              %span.common-text_button.menu-button
+                %i.fe.fe-setup_icon
+
+
+
+
+
+
+    .recomended_people
+      .guide_info
+        %p.guide_info__guidance お知り合いですか？
+        %p.guide_info__help 名刺リクエストを送信して、追加しましょう。
+      .scroll
+        %ul
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close
+          %li.recomended_people-recomended_person
+            .friend_info.clickable
+              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
+              .profile-info
+                .full-name 山田尚孝
+                .company Sansan株式会社
+            .recommended_people-follow_button
+              %button.common-button.theme-primary.l-mini-button.follow-button
+                %span 追加
+                .dialog-position
+            %i.fe.fe-close
+

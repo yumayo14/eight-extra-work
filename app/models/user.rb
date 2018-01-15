@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :academies
   has_many :careers
   has_many :companies, through: :careers
+
+  has_many :following_relationships, classname: "Relatioship", foreign_key: "follower_id", dependent: :destroy
 end

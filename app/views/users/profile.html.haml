@@ -27,14 +27,13 @@
                   .profile-eight_user-follow_section_button
                     .button-field
                       .dialog-button-container
-                        %button.common-button.theme-primary.l-mini-button.message-btn
-                          - if current_user.following?(@user)
-                            %span 名刺交換リクエスト送信済
-                          - else
-                            = form_for(current_user.following_relationships.build) do |f|
-                              = hidden_field_tag :followed_id, @user.id
-                              = f.submit "Follow"
-                              / %span 名刺交換リクエストを送信
+                        - if current_user.following?(@user)
+                          .common-button.theme-primary.l-mini-button.message-btn
+                            %span 名刺交換済
+                        - else
+                          = form_for(current_user.following_relationships.build) do |f|
+                            = hidden_field_tag :followed_id, @user.id
+                            = f.submit "名刺を交換", class: "common-button theme-primary l-mini-button message-btn"
                         .menu-position
                           %div
                     / react-empty: 53

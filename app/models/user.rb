@@ -23,12 +23,15 @@ class User < ApplicationRecord
   # userAは複数のfollower_id(=userAをフォローしているuserid)を持つ
   has_many :followers, through: :followed_relationships, source: :follower
 
-  def follow(other_user)
+  # 今回は双方向のフォロー関係を同時に設定
+  def follow(own_user,other_user)
     following_relationships.create(followed_id: other_user.id)
+    other_user.following_relationships.create(followed_id: own_user.id)
   end
 
-  def unfollow(other_user)
+  def unfollow(own_user,other_user)
     following_relationships.find_by(followed_id: other_user.id).destroy
+    other_user.following_relationships.find_by(followed_id: own_user.id).destroy
   end
 
   def following?(other_user)

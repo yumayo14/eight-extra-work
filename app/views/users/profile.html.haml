@@ -27,19 +27,19 @@
                   .profile-eight_user-follow_section_button
                     .button-field
                       .dialog-button-container
-                        / current_userが現在のユーザーをフォローしているかで分岐
-                        - if current_user.following?(@user)
-                          = form_for(current_user.following_relationships.find_by(followed_id: @user.id), {method: :delete}) do |f|
-                            = f.submit "フォローを解消", class: "common-button theme-primary l-mini-button message-btn"
-                          / %button.common-button.theme-primary.l-mini-button.message-btn
-                          /   %span 名刺交換済
-                        - else
-                          = form_for(current_user.following_relationships.build) do |f|
-                            = hidden_field_tag :followed_id, @user.id
-                            = f.submit "名刺を交換", class: "common-button theme-primary l-mini-button message-btn"
+                        - unless current_user == @user
+                          / current_userが現在のユーザーをフォローしているかで分岐
+                          - if current_user.following?(@user)
+                            = form_for(current_user.following_relationships.find_by(followed_id: @user.id), {method: :delete}) do |f|
+                              = f.submit "フォローを解消", class: "common-button theme-primary l-mini-button message-btn"
+                            / %button.common-button.theme-primary.l-mini-button.message-btn
+                            /   %span 名刺交換済
+                          - else
+                            = form_for(current_user.following_relationships.build) do |f|
+                              = hidden_field_tag :followed_id, @user.id
+                              = f.submit "名刺を交換", class: "common-button theme-primary l-mini-button message-btn"
                         .menu-position
                           %div
-                    / react-empty: 53
             .thumbnail
               = link_to root_path do
                 %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}

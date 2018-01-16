@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180115014838) do
+ActiveRecord::Schema.define(version: 20180115034234) do
 
   create_table "academies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "school_type"
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(version: 20180115014838) do
     t.integer "company_phone_num"
   end
 
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "message"
+    t.integer "user_id", null: false
+    t.integer "send_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "follower_id"
     t.integer "followed_id"

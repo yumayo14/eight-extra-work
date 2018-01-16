@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :landings, only: :index
   resources :relationships, only: [:create, :destroy]
   root "landings#index"
+  resources :messages
 end

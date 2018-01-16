@@ -334,53 +334,56 @@
     %span 職歴を追加する
 
   .modal_content__career_info
-    = form_for @user do |f|
-      .field_set
-        = f.label :氏名, class: "career_info_label"
-      = f.text_field :name, class: "career_info_text_field"
-      .field_set
-        = f.label :メールアドレス, class: "career_info_label"
-      = f.text_field :email, class: "career_info_text_field"
-      .field_set
-        = f.label :郵便番号, class: "career_info_label"
-      = f.text_field :post_code, class: "career_info_text_field"
-      .field_set
-        = f.label :住所, class: "career_info_label"
-      = f.text_field :address, class: "career_info_text_field"
-      .field_set
-        = f.label :eightのホームページ, class: "career_info_label"
-      = f.text_field :homepage_url, class: "career_info_text_field"
-
-      = fields_for @new_company do |co|
-        .field_set
-          = co.label :会社名, class: "career_info_label"
-        = co.text_field :company_name, class: "career_info_text_field"
-        .field_set
-          = co.label :会社電話, class: "career_info_label"
-        = co.text_field :company_phone_num, class: "career_info_text_field"
+    = form_for [@user, @new_career] do |career|
 
 
-      = fields_for @new_card do |card|
+      = fields_for @user do |user|
         .field_set
-          = card.label :名刺情報, class: "career_info_label"
+          = user.label :氏名, class: "career_info_label"
+        = user.text_field :name, class: "career_info_text_field"
+        .field_set
+          = user.label :メールアドレス, class: "career_info_label"
+        = user.text_field :email, class: "career_info_text_field"
+        .field_set
+          = user.label :郵便番号, class: "career_info_label"
+        = user.text_field :post_code, class: "career_info_text_field"
+        .field_set
+          = user.label :住所, class: "career_info_label"
+        = user.text_field :address, class: "career_info_text_field"
+        .field_set
+          = user.label :eightのホームページ, class: "career_info_label"
+        = user.text_field :homepage_url, class: "career_info_text_field"
+
+
+      = fields_for @new_company do |company|
+        .field_set
+          = company.label :会社名, class: "career_info_label"
+        = company.text_field :company_name, class: "career_info_text_field"
+        .field_set
+          = company.label :会社電話, class: "career_info_label"
+        = company.text_field :company_phone_num, class: "career_info_text_field"
+
+      .field_set
+        = career.label :部署, class: "career_info_label"
+      = career.text_field :department, class: "career_info_text_field"
+      .field_set
+        = career.label :役職, class: "career_info_label"
+      = career.text_field :position, class: "career_info_text_field"
+      .field_set
+        = career.label :入社時期, class: "career_info_label"
+      = career.text_field :from, class: "career_info_text_field"
+      .field_set
+        = career.label :退社時期, class: "career_info_label"
+      = career.text_field :to, class: "career_info_text_field"
+
+      = career.fields_for :card do |card|
+        .field_set
+          = card.label :image, class: "名刺画像"
         = card.file_field :image
 
-      = fields_for @new_career do |ca|
-        .field_set
-          = ca.label :部署, class: "career_info_label"
-        = ca.text_field :department, class: "career_info_text_field"
-        .field_set
-          = ca.label :役職, class: "career_info_label"
-        = ca.text_field :position, class: "career_info_text_field"
-        .field_set
-          = ca.label :入社時期, class: "career_info_label"
-        = ca.text_field :from, class: "career_info_text_field"
-        .field_set
-          = ca.label :退社時期, class: "career_info_label"
-        = ca.text_field :to, class: "career_info_text_field"
       %ul.edit_buttons
         %li
-          = f.submit value: "保存",class: "common-button profile_edit_button";
+          = career.submit value: "保存",class: "common-button profile_edit_button";
         %li
           %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
@@ -391,48 +394,77 @@
     .modal_form_title
       %span 職歴を編集する
     .modal_content__career_info
-      = form_for @user do |f|
-        .field_set
-          = f.label :氏名, class: "career_info_label"
-        = f.text_field :name, class: "career_info_text_field"
-        .field_set
-          = f.label :メールアドレス, class: "career_info_label"
-        = f.text_field :email, class: "career_info_text_field"
-        .field_set
-          = f.label :郵便番号, class: "career_info_label"
-        = f.text_field :post_code, class: "career_info_text_field"
-        .field_set
-          = f.label :住所, class: "career_info_label"
-        = f.text_field :address, class: "career_info_text_field"
-        .field_set
-          = f.label :eightのホームページ, class: "career_info_label"
-        = f.text_field :homepage_url, class: "career_info_text_field"
+      = form_for [@user, career] do |career|
 
+        = fields_for @user do |user|
+          .field_set
+            = user.label :氏名, class: "career_info_label"
+          = user.text_field :name, class: "career_info_text_field"
+          .field_set
+            = user.label :メールアドレス, class: "career_info_label"
+          = user.text_field :email, class: "career_info_text_field"
+          .field_set
+            = user.label :郵便番号, class: "career_info_label"
+          = user.text_field :post_code, class: "career_info_text_field"
+          .field_set
+            = user.label :住所, class: "career_info_label"
+          = user.text_field :address, class: "career_info_text_field"
+          .field_set
+            = user.label :eightのホームページ, class: "career_info_label"
+          = user.text_field :homepage_url, class: "career_info_text_field"
 
-        = fields_for @company do |co|
+        = fields_for @combined_company do |company|
           .field_set
-            = co.label :会社名, class: "career_info_label"
-          = co.text_field :company_name, class: "career_info_text_field"
+            = company.label :会社名, class: "career_info_label"
+          = company.text_field :company_name, class: "career_info_text_field"
           .field_set
-            = co.label :会社電話, class: "career_info_label"
-          = co.text_field :company_phone_num, class: "career_info_text_field"
+            = company.label :会社電話, class: "career_info_label"
+          = company.text_field :company_phone_num, class: "career_info_text_field"
 
+        .field_set
+          = career.label :部署, class: "career_info_label"
+        = career.text_field :department, class: "career_info_text_field"
+        .field_set
+          = career.label :役職, class: "career_info_label"
+        = career.text_field :position, class: "career_info_text_field"
+        .field_set
+          = career.label :入社時期, class: "career_info_label"
+        = career.text_field :from, class: "career_info_text_field"
+        .field_set
+          = career.label :退社時期, class: "career_info_label"
+        = career.text_field :to, class: "career_info_text_field"
 
-        = fields_for career do |ca|
-          .field_set
-            = ca.label :部署, class: "career_info_label"
-          = ca.text_field :department, class: "career_info_text_field"
-          .field_set
-            = ca.label :役職, class: "career_info_label"
-          = ca.text_field :position, class: "career_info_text_field"
-          .field_set
-            = ca.label :入社時期, class: "career_info_label"
-          = ca.text_field :from, class: "career_info_text_field"
-          .field_set
-            = ca.label :退社時期, class: "career_info_label"
-          = ca.text_field :to, class: "career_info_text_field"
-          = ca.hidden_field :card_id, value:
+        %ul.edit_buttons
+          %li
+            = career.submit value: "保存",class: "common-button profile_edit_button";
+          %li
+            %button.common-button.close_button{ type: "button" }
+              %a#modal_close.button_link
+                キャンセル
 
+  .modal_content#academic_info_add
+    .modal_form_title
+      %span 学歴を追加する
+    .modal_content__academic_info
+      = form_for [@user, @academy] do |f|
+        .field_set
+          = f.label :学校区分, class: "academic_info_label"
+        = f.select :school_type, [["高等学校", "高等学校"], ["高等専門学校", "高等専門学校"], ["専門学校", "専門学校"], ["短期大学", "短期大学"], ["大学", "大学"], ["大学院", "大学院"]]
+        .field_set
+          = f.label :学校名, class: "academic_info_label"
+        = f.text_field :name, class: "academic_info_text_field"
+        .field_set
+          = f.label :学部学科, class: "academic_info_label"
+        = f.text_field :major, class: "academic_info_text_field"
+        .field_set
+          = f.label :取得学位, class: "academic_info_label"
+        = f.text_field :degree, class: "academic_info_text_field"
+        = f.label :入学年と卒業月, class: "academic_info_label"
+        .field_set
+        = f.text_field :from, class: "academic_info_text_field"
+        .field_set
+          = f.label :卒業年と卒業月, class: "academic_info_label"
+        = f.text_field :to, class: "academic_info_text_field"
         %ul.edit_buttons
           %li
             = f.submit value: "保存",class: "common-button profile_edit_button";
@@ -440,37 +472,6 @@
             %button.common-button.close_button{ type: "button" }
               %a#modal_close.button_link
                 キャンセル
-
-.modal_content#academic_info_add
-  .modal_form_title
-    %span 学歴を追加する
-  .modal_content__academic_info
-    = form_for [@user, @academy] do |f|
-      .field_set
-        = f.label :学校区分, class: "academic_info_label"
-      = f.select :school_type, [["高等学校", "高等学校"], ["高等専門学校", "高等専門学校"], ["専門学校", "専門学校"], ["短期大学", "短期大学"], ["大学", "大学"], ["大学院", "大学院"]]
-      .field_set
-        = f.label :学校名, class: "academic_info_label"
-      = f.text_field :name, class: "academic_info_text_field"
-      .field_set
-        = f.label :学部学科, class: "academic_info_label"
-      = f.text_field :major, class: "academic_info_text_field"
-      .field_set
-        = f.label :取得学位, class: "academic_info_label"
-      = f.text_field :degree, class: "academic_info_text_field"
-      = f.label :入学年と卒業月, class: "academic_info_label"
-      .field_set
-      = f.text_field :from, class: "academic_info_text_field"
-      .field_set
-        = f.label :卒業年と卒業月, class: "academic_info_label"
-      = f.text_field :to, class: "academic_info_text_field"
-      %ul.edit_buttons
-        %li
-          = f.submit value: "保存",class: "common-button profile_edit_button";
-        %li
-          %button.common-button.close_button{ type: "button" }
-            %a#modal_close.button_link
-              キャンセル
 
 - @academies.each do |academy|
   .modal_content{id: "academic_info_edit#{academy.id}"}

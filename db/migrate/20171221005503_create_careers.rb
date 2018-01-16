@@ -7,7 +7,6 @@ class CreateCareers < ActiveRecord::Migration[5.1]
       t.date   :to
       t.references :user
       t.references :company
-      t.references :card
       t.timestamps
     end
   end

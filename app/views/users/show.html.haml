@@ -1,12 +1,5 @@
 .my_profile_main
-  %header.header-header.profile-header-container
-    .container
-      = link_to root_path do
-        %h1.logo-title Eight
-      %form.search-field{action: "/users/search", method: "get"}
-        %input.srh-txt{name: "keyword", type: "text", placeholder: "名前、会社を検索"}
-        %button.common-text_button.search-button{type: "submit"}
-          %i.fe.fe-search
+  = render partial: "header"
   .main_container
     .profile_container
       .profile_preview
@@ -19,26 +12,34 @@
               %i.fe.fe-camera
               %span カバー写真を変更
           .profile-card.thumbnail
-            = link_to root_path do
-              %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+            %a.modal_syncer{data: {target: "user_new_card"} }
+              / - if current_user.cards
+              /   .card
+              /     = image_tag @latest_card.image
+              / - else
+              /   .card
             .profile-policy_icon
               .profile-policy_icon
-                = link_to root_path do
+                %a.modal_syncer{data: {target: "user_new_card"} }
                   %i.fe.fe-camera
           .profile-title-field
             - if current_user.try(:avatar)
               .thumbnail
-                = image_tag(current_user.avatar)
+                = image_tag @user.avatar.thumb
             %span.common-text_button.policy-icon-field
               %a.modal_syncer{data: {target: "user_avatar"} }
                 %i.fe.fe-camera
             .text_field
+              %span.common-text_button.policy-icon-field
+                %a.modal_syncer{data: {target: "user_introduction"} }
+                  %i.fe.fe-pencil
               %h2.user_name
                 = current_user.name
-              %p.text_part IT系のエンジニアをやっています
-              / .common-text_button.policy-icon-field
-              /   = link_to root_path do
-              /     %i.fe.fe-pencil
+              %p.text_part
+                - if current_user.try(:introduction)
+                  = current_user.introduction
+                - else
+                  入力されていません
 
       .flex_box
         .my_profile__profile-aside
@@ -63,19 +64,20 @@
             .profile-title
               %span 職歴
               %span.common-text_button.policy-icon-field
-                %a.modal_syncer{data: {target: "career_info"} }
+                %a.modal_syncer{data: {target: "career_info_add"} }
                   %i.fe.fe-pencil
             .career
-              - current_user.companies.each do |company|
+              - @companies.each do |company|
                 .company_box
                   %span.company_name
                     = company.company_name
                 - company.careers.each do |career|
                   .set_career_card
                     .career_box
-                      .career_term
+                      %p.career_term
                         %span.career_term__per
                           = career.from
+                        %span.career_term__space ~
                         %span.career_term__per
                           = career.to
                       .set_career_detail
@@ -86,8 +88,10 @@
                           %span.position_info__content
                             = career.position
                     .profile_card_thumbnail_box
-                      = link_to root_path do
-                        %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+                      = image_tag career.card.image
+                      %span.common-text_button.policy-icon-field
+                        %a.modal_syncer{data: {target: "career_info_edit#{career.id}"} }
+                          %i.fe.fe-pencil
 
           .profile-my_profile_academy-info
             .profile-title
@@ -166,15 +170,34 @@
               %li
                 .title.icon_field
                   %i.fe.fe-building
-
                 .contents
                   - if current_user.companies
-                    - company = current_user.companies.last
                     %span
-                      = company.try(:company_name)
+                      = @company.try(:company_name)
                   - else
                     %p 会社情報は入力されていません
-
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-shopping-bag
+                .contents
+                  - if current_user.careers
+                    %span
+                      = @career.try(:department)
+                  - else
+                    %p 所属している部署の情報は入力されていません
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-user
+                .contents
+                  - if current_user.careers
+                    %span
+                      = @career.try(:position)
+                  - else
+                    %p 現在の役職の情報は入力されていません
                 .policy
                   %span.icons
               %li
@@ -187,13 +210,26 @@
                   %span.icons
               %li
                 .title.icon_field
-                  %i.fe.fe-postal-code
+                  %i.fe.fe-phone
                 .contents
-                  %span
-                    - if current_user.try(:post_code)
+                  - if current_user.companies
+                    %span
+                      = @company.try(:company_phone_num)
+                    %span （会社電話番号）
+                  - else
+                    %p 勤務先の電話番号は入力されていません
+                .policy
+                  %span.icons
+              %li
+                .title.icon_field
+                  %i.fe.fe-location
+                .contents
+                  - if current_user.try(:post_code)
+                    %span
                       = current_user.post_code
-                    - else
-                      %p 入力されていません
+                    %span (郵便番号)
+                  - else
+                    %p 入力されていません
                 .policy
                   %span.icons
               %li
@@ -230,45 +266,8 @@
                 .policy
                   %span.icons
 
-    .recomended_people
-      .guide_info
-        %p.guide_info__guidance お知り合いですか？
-        %p.guide_info__help 名刺リクエストを送信して、追加しましょう。
-      .scroll
-        %ul
-          %li.recomended_people-recomended_person
-            .friend_info.clickable
-              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
-              .profile-info
-                .full-name 山田尚孝
-                .company Sansan株式会社
-            .recommended_people-follow_button
-              %button.common-button.theme-primary.l-mini-button.follow-button
-                %span 追加
-                .dialog-position
-            %i.fe.fe-close
-          %li.recomended_people-recomended_person
-            .friend_info.clickable
-              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
-              .profile-info
-                .full-name 山田尚孝
-                .company Sansan株式会社
-            .recommended_people-follow_button
-              %button.common-button.theme-primary.l-mini-button.follow-button
-                %span 追加
-                .dialog-position
-            %i.fe.fe-close
-          %li.recomended_people-recomended_person
-            .friend_info.clickable
-              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
-              .profile-info
-                .full-name 山田尚孝
-                .company Sansan株式会社
-            .recommended_people-follow_button
-              %button.common-button.theme-primary.l-mini-button.follow-button
-                %span 追加
-                .dialog-position
-            %i.fe.fe-close
+    = render partial: "recomended_people"
+
 
 .modal_content#user_avatar
   .modal_avatar_form_title
@@ -283,7 +282,38 @@
           %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
-  }
+
+/ .modal_content#user_new_card
+/   .modal_intro_form_title
+/     %p.modal_intro_form__title 新しい名刺の追加
+/     %p.modal_intro_form__addtional_info 名刺を追加すると、職歴の欄にその名刺情報が自動で追加されます。
+/   .modal_content__card
+/     = form_for [@user, @card] do |c|
+/       = c.file_field :image, class: "user_intro_form"
+/       %ul.edit_buttons
+/         %li
+/           = c.submit value: "保存",class: "common-button profile_edit_button";
+/         %li
+/           %button.common-button.close_button{ type: "button" }
+/             %a#modal_close.button_link
+/               キャンセル
+
+
+.modal_content#user_introduction
+  .modal_intro_form_title
+    %p.modal_intro_form__title 仕事内容
+    %p.modal_intro_form__addtional_info 名刺だけではわからないあなたの仕事内容を伝えられます。
+    %p.modal_intro_form__addtional_info 例）Web解析サービスの営業をしています。
+  .modal_content__user_intro
+    = form_for @user do |f|
+      = f.text_field :introduction, class: "user_intro_form"
+      %ul.edit_buttons
+        %li
+          = f.submit value: "保存",class: "common-button profile_edit_button";
+        %li
+          %button.common-button.close_button{ type: "button" }
+            %a#modal_close.button_link
+              キャンセル
 
 .modal_content#career_summary
   .modal_form_title
@@ -299,9 +329,10 @@
             %a#modal_close.career_summary_button
               キャンセル
 
-.modal_content#career_info
+.modal_content#career_info_add
   .modal_form_title
-    %span 職歴を編集する
+    %span 職歴を追加する
+
   .modal_content__career_info
     = form_for @user do |f|
       .field_set
@@ -319,14 +350,22 @@
       .field_set
         = f.label :eightのホームページ, class: "career_info_label"
       = f.text_field :homepage_url, class: "career_info_text_field"
-      = fields_for @company do |co|
+
+      = fields_for @new_company do |co|
         .field_set
           = co.label :会社名, class: "career_info_label"
         = co.text_field :company_name, class: "career_info_text_field"
         .field_set
           = co.label :会社電話, class: "career_info_label"
         = co.text_field :company_phone_num, class: "career_info_text_field"
-      = fields_for @career do |ca|
+
+
+      = fields_for @new_card do |card|
+        .field_set
+          = card.label :名刺情報, class: "career_info_label"
+        = card.file_field :image
+
+      = fields_for @new_career do |ca|
         .field_set
           = ca.label :部署, class: "career_info_label"
         = ca.text_field :department, class: "career_info_text_field"
@@ -346,6 +385,61 @@
           %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
+
+- @careers.each do |career|
+  .modal_content{id: "career_info_edit#{career.id}"}
+    .modal_form_title
+      %span 職歴を編集する
+    .modal_content__career_info
+      = form_for @user do |f|
+        .field_set
+          = f.label :氏名, class: "career_info_label"
+        = f.text_field :name, class: "career_info_text_field"
+        .field_set
+          = f.label :メールアドレス, class: "career_info_label"
+        = f.text_field :email, class: "career_info_text_field"
+        .field_set
+          = f.label :郵便番号, class: "career_info_label"
+        = f.text_field :post_code, class: "career_info_text_field"
+        .field_set
+          = f.label :住所, class: "career_info_label"
+        = f.text_field :address, class: "career_info_text_field"
+        .field_set
+          = f.label :eightのホームページ, class: "career_info_label"
+        = f.text_field :homepage_url, class: "career_info_text_field"
+
+
+        = fields_for @company do |co|
+          .field_set
+            = co.label :会社名, class: "career_info_label"
+          = co.text_field :company_name, class: "career_info_text_field"
+          .field_set
+            = co.label :会社電話, class: "career_info_label"
+          = co.text_field :company_phone_num, class: "career_info_text_field"
+
+
+        = fields_for career do |ca|
+          .field_set
+            = ca.label :部署, class: "career_info_label"
+          = ca.text_field :department, class: "career_info_text_field"
+          .field_set
+            = ca.label :役職, class: "career_info_label"
+          = ca.text_field :position, class: "career_info_text_field"
+          .field_set
+            = ca.label :入社時期, class: "career_info_label"
+          = ca.text_field :from, class: "career_info_text_field"
+          .field_set
+            = ca.label :退社時期, class: "career_info_label"
+          = ca.text_field :to, class: "career_info_text_field"
+          = ca.hidden_field :card_id, value:
+
+        %ul.edit_buttons
+          %li
+            = f.submit value: "保存",class: "common-button profile_edit_button";
+          %li
+            %button.common-button.close_button{ type: "button" }
+              %a#modal_close.button_link
+                キャンセル
 
 .modal_content#academic_info_add
   .modal_form_title
@@ -377,6 +471,7 @@
           %button.common-button.close_button{ type: "button" }
             %a#modal_close.button_link
               キャンセル
+
 - @academies.each do |academy|
   .modal_content{id: "academic_info_edit#{academy.id}"}
     .modal_form_title
@@ -473,6 +568,7 @@
       .field_set
         = f.label :eightのホームページurl, class: "basic_info_label"
       = f.text_field :homepage_url, class: "basic_info_text_field"
+
       = fields_for @company do |co|
         .field_set
           = co.label :会社名, class: "basic_info_label"
@@ -482,6 +578,7 @@
         = co.text_field :company_phone_num, class: "basic_info_text_field"
 
         = co.hidden_field :user_ids, value: current_user.id, multiple: true
+
       = fields_for @career do |ca|
         .field_set
           = ca.label :部署, class: "basic_info_label"
@@ -489,6 +586,7 @@
         .field_set
           = ca.label :役職, class: "basic_info_label"
         = ca.text_field :position, class: "basic_info_text_field"
+
       %ul.edit_buttons
         %li
           = f.submit value: "保存",class: "common-button profile_edit_button";

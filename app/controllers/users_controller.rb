@@ -8,14 +8,18 @@ class UsersController < ApplicationController
   def show
     @academy = Academy.new
     @academies = current_user.academies
+    @companies = current_user.companies
 
-    @company = @user.companies.new
-    @created_company = @user.companies.last
+      @new_company = Company.new
+      @company = @user.companies.last
 
-    @career = @user.careers.new
-    @created_career = @user.careers.last
+      @careers = current_user.careers
 
-    @card = Card.new
+      @new_career = Career.new
+      @career = @user.careers.last
+
+    @new_card = Card.new
+
     @latest_card = current_user.cards.last
   end
 
@@ -45,17 +49,27 @@ class UsersController < ApplicationController
       else
         render "show"
       end
+    @latest_card = @user.cards.last
+    @company = @user.companies.last
+    @career = @user.careers.last
 
-    @created_company = @user.companies.last
-    @created_career = @user.careers.last
+    if params[:company].present?
+      if @company.present?
+        @company.update(company_params)
+      else
+        @company = @user.companies.new(company_params)
+        @company.save
+      end
+    end
 
-    @company = @user.companies.new(company_params)
-    @company.save
-
-    @latest_card = current_user.cards.last
-    @career = @user.careers.new(career_params)
-    @career.save
-
+    if params[:career][:card_id] == nil
+      if @career.present?
+        @career.update(career_params)
+      else
+        @career = @user.careers.new(career_params)
+        @career.save
+      end
+    end
   end
 
   def user_set
@@ -93,7 +107,7 @@ class UsersController < ApplicationController
   end
 
   def career_params
-    params.require(:career).permit(:department, :position, :from, :to).merge(company_id: @company.id, card_id: @latest_card.id)
+    params.require(:career).permit(:department, :position, :from, :to).merge(user_id: current_user.id, company_id: @company.id, card_id: @latest_card.id)
   end
 
 end

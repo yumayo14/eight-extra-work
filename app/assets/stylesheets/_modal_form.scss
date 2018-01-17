@@ -7,7 +7,20 @@
   border-radius: 2px;
   background: #ffffff;
   border: 1px solid #307caf;
-  .modal_avatar_form_title{
+  .modal_intro_form {
+    height: 20px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    color: #585858;
+    &__title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__additional_info {
+      font-size: 10px;
+    }
+  }
+  .modal_avatar_form_title {
     height: 20px;
     margin-left: 10px;
     margin-bottom: 15px;
@@ -21,6 +34,14 @@
     color: #585858;
     font-size: 1.6rem;
     font-weight: bold;
+  }
+  &__user_intro {
+    width: 345px;
+    max-height: 155px;
+    margin-top: 15px;
+    .user_intro_form {
+      width: 100%;
+    }
   }
   &__user_avatar{
     width: 320px;
@@ -39,7 +60,7 @@
   }
   &__career_info{
     width : 494px;
-    height: 580px;
+    height: 600px;
     .field_set{
       margin-top: 15px;
       .career_info_label{

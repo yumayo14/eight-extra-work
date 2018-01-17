@@ -132,10 +132,6 @@ a {
         position: absolute;
         bottom: 0;
         float: left;
-        img{
-          height: 46px;
-          width: 46px;
-        }
       }
       .text_field{
         position: relative;
@@ -220,16 +216,18 @@ a {
             display: flex;
             margin: 16px 0 18px;
             .career_box {
-              max-height: 40px;
-              padding-left: 10px;
+              max-height: 50px;
+              width: 180px;
               .career_term {
                 position: relative;
                 vertical-align: middle;
                 padding-right: 10px;
-                display: flex;
                 &__per {
-                  font-size: 12px;
-                  padding-right: 8px;
+                  font-size: 11px;
+                }
+                &__space {
+                  font-size: 11px;
+                  padding: 0 3px;
                 }
               }
               .set_career_detail{
@@ -249,11 +247,9 @@ a {
               }
             }
             .profile_card_thumbnail_box{
-              width: 60px;
-              height: 40px;
-              img.card{
-                width: 60px;
-                height: 40px;
+              img{
+                width: 70px;
+                height: 50px;
                 vertical-align: middle;
               }
             }
@@ -385,7 +381,7 @@ a {
       box-sizing: border-box;
       padding: 15px;
       width: 492px;
-      height: 250px;
+      height: 360px;
       background-color: white;
       position: relative;
       .base_info_title{

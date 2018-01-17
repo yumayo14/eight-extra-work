@@ -1,4 +1,4 @@
-class AvatarUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -8,8 +8,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # storage :file
   storage :fog
   version :thumb do
-    process resize_to_fill: [50, 50]
+    process resize_to_fill: [46, 46]
   end
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

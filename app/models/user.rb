@@ -4,11 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, presence: true
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :avatar, ImageUploader
   has_many :telephones
   has_many :academies
   has_many :careers
   has_many :companies, through: :careers
+  has_many :cards
 
   # one user has many follower_ids
   # userAは複数のフォロー関係を持つ

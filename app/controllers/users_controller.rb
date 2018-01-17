@@ -6,10 +6,22 @@ class UsersController < ApplicationController
   end
 
   def show
-    @academy = Academy.new
-    @academies = current_user.academies
     @company = Company.new
+    @companies = @user.companies
+    @latest_company = @user.companies.last
+
+
     @career = Career.new
+    @careers = @user.careers
+    @latest_career = @user.careers.last
+
+    # カードモデルのみ、Userモデルとのネストがないが、ユーザーのidという情報を、テーブルにデータを保存するために必要なので、current_userを用いてnewアクションを走らせている
+    @card = Card.new
+    @latest_card = @user.cards.last
+
+    @academy = Academy.new
+    @academies = @user.academies
+
   end
 
   def new
@@ -38,25 +50,20 @@ class UsersController < ApplicationController
       else
         render "show"
       end
+    @latest_company = @user.companies.last
+    @latest_career = @user.careers.last
 
-    @company = @user.companies.last
-    @career = @user.careers.last
+# 以下の条件分岐は、名刺情報編集というformで情報を保存する際に、companiesテーブルとcareersテーブルの情報を保存した上で、他のユーザー情報更新の際に、正しくformを動作させるために必要
 
     if params[:company].present?
-      if @company.present?
-        @company.update(company_params)
-      else
-        @company = @user.companies.new(company_params)
-        @company.save
+      if @latest_company.present?
+        @latest_company.update(company_params)
       end
     end
 
     if params[:career].present?
-      if @career.present?
-        @career.update(career_params)
-      else
-        @career = @user.careers.new(career_params)
-        @career.save
+      if @latest_career.present?
+        @latest_career.update(career_params)
       end
     end
   end
@@ -71,32 +78,15 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:avatar, :summary, :gender, :birthday, :career_status, :timing, :name, :email, :post_code, :address, :homepage_url)
+    params.require(:user).permit(:avatar, :introduction, :summary, :gender, :birthday, :career_status, :timing, :name, :email, :post_code, :address, :homepage_url)
   end
-
-  # def career_summary_params
-  #   params.require(:user).permit(:summary)
-  # end
-
-  # def personal_info_params
-  #   params.require(:user).permit(:gender, :birthday)
-  # end
-
-  # def career_status
-  #   params.require(:user).permit(:career_status, :timing)
-  # end
-
-  # def basic_info_params
-  #   params.require(:user).permit(:name, :email, :post_code, :address, :homepage_url)
-  # end
-
 
   def company_params
     params.require(:company).permit(:company_name, :company_phone_num)
   end
 
   def career_params
-    params.require(:career).permit(:department, :position, :from, :to).merge(user_id: current_user.id, company_id: @company.id)
+    params.require(:career).permit(:department, :position, :from, :to).merge(user_id: current_user.id, company_id: @latest_company.id)
   end
 
 end

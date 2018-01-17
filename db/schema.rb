@@ -51,9 +51,9 @@ ActiveRecord::Schema.define(version: 20180115034234) do
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "company_name", null: false
     t.string "url"
+    t.string "company_phone_num", limit: 11
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "company_phone_num"
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20180115034234) do
   end
 
   create_table "telephones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "num"
+    t.string "num", limit: 11
     t.bigint "telephone_type_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -109,13 +109,14 @@ ActiveRecord::Schema.define(version: 20180115034234) do
     t.date "birthday"
     t.string "address"
     t.string "avatar"
+    t.string "introduction", limit: 25
     t.string "facebook_url"
     t.text "summary"
     t.string "gender"
-    t.string "career_status"
     t.string "timing"
-    t.integer "post_code"
+    t.string "post_code", limit: 7
     t.string "homepage_url"
+    t.string "career_status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

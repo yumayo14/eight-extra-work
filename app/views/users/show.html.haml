@@ -12,16 +12,9 @@
               %i.fe.fe-camera
               %span カバー写真を変更
           .profile-card.thumbnail
-            %a.modal_syncer{data: {target: "user_new_card"} }
-              / - if current_user.cards
-              /   .card
-              /     = image_tag @latest_card.image
-              / - else
-              /   .card
-            .profile-policy_icon
-              .profile-policy_icon
-                %a.modal_syncer{data: {target: "user_new_card"} }
-                  %i.fe.fe-camera
+            .card
+              = image_tag @latest_card.image unless @latest_card.blank?
+
           .profile-title-field
             - if current_user.try(:avatar)
               .thumbnail
@@ -173,7 +166,7 @@
                 .contents
                   - if current_user.companies
                     %span
-                      = @company.try(:company_name)
+                      = @latest_company.try(:company_name)
                   - else
                     %p 会社情報は入力されていません
                 .policy
@@ -184,7 +177,7 @@
                 .contents
                   - if current_user.careers
                     %span
-                      = @career.try(:department)
+                      = @latest_career.try(:department)
                   - else
                     %p 所属している部署の情報は入力されていません
                 .policy
@@ -195,7 +188,7 @@
                 .contents
                   - if current_user.careers
                     %span
-                      = @career.try(:position)
+                      = @latest_career.try(:position)
                   - else
                     %p 現在の役職の情報は入力されていません
                 .policy
@@ -214,7 +207,7 @@
                 .contents
                   - if current_user.companies
                     %span
-                      = @company.try(:company_phone_num)
+                      = @latest_company.try(:company_phone_num)
                     %span （会社電話番号）
                   - else
                     %p 勤務先の電話番号は入力されていません
@@ -334,8 +327,7 @@
     %span 職歴を追加する
 
   .modal_content__career_info
-    = form_for [@user, @new_career] do |career|
-
+    = form_for [@user, @career], html: { multipart: true } do |career|
 
       = fields_for @user do |user|
         .field_set
@@ -355,7 +347,7 @@
         = user.text_field :homepage_url, class: "career_info_text_field"
 
 
-      = fields_for @new_company do |company|
+      = fields_for @company do |company|
         .field_set
           = company.label :会社名, class: "career_info_label"
         = company.text_field :company_name, class: "career_info_text_field"
@@ -376,9 +368,9 @@
         = career.label :退社時期, class: "career_info_label"
       = career.text_field :to, class: "career_info_text_field"
 
-      = career.fields_for :card do |card|
+      = fields_for @card do |card|
         .field_set
-          = card.label :image, class: "名刺画像"
+          = card.label :名刺画像, class: "名刺画像"
         = card.file_field :image
 
       %ul.edit_buttons
@@ -390,6 +382,10 @@
               キャンセル
 
 - @careers.each do |career|
+
+  - combined_company = Company.find_by(id: career.company_id)
+  - combined_card = Card.find_by(id: career.card.id)
+
   .modal_content{id: "career_info_edit#{career.id}"}
     .modal_form_title
       %span 職歴を編集する
@@ -413,13 +409,15 @@
             = user.label :eightのホームページ, class: "career_info_label"
           = user.text_field :homepage_url, class: "career_info_text_field"
 
-        = fields_for @combined_company do |company|
+
+        = fields_for combined_company do |company|
           .field_set
             = company.label :会社名, class: "career_info_label"
           = company.text_field :company_name, class: "career_info_text_field"
           .field_set
             = company.label :会社電話, class: "career_info_label"
           = company.text_field :company_phone_num, class: "career_info_text_field"
+          = company.hidden_field :id, value: combined_company.id
 
         .field_set
           = career.label :部署, class: "career_info_label"
@@ -433,6 +431,9 @@
         .field_set
           = career.label :退社時期, class: "career_info_label"
         = career.text_field :to, class: "career_info_text_field"
+
+        = fields_for combined_card do |card|
+          = card.hidden_field :id, value: combined_card.id
 
         %ul.edit_buttons
           %li
@@ -570,7 +571,7 @@
         = f.label :eightのホームページurl, class: "basic_info_label"
       = f.text_field :homepage_url, class: "basic_info_text_field"
 
-      = fields_for @company do |co|
+      = fields_for @latest_company do |co|
         .field_set
           = co.label :会社名, class: "basic_info_label"
         = co.text_field :company_name, class: "basic_info_text_field"
@@ -580,7 +581,7 @@
 
         = co.hidden_field :user_ids, value: current_user.id, multiple: true
 
-      = fields_for @career do |ca|
+      = fields_for @latest_career do |ca|
         .field_set
           = ca.label :部署, class: "basic_info_label"
         = ca.text_field :department, class: "basic_info_text_field"

@@ -3,6 +3,11 @@ class AcademiesController < ApplicationController
   def create
     @academy = Academy.new(academy_params)
     @academy.save
+      if @academy.save(academy_params)
+        redirect_to user_path(current_user.id)
+      else
+        render "show"
+      end
 
   end
 

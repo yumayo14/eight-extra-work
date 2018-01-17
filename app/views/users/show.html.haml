@@ -63,23 +63,23 @@
               - @companies.each do |company|
                 .company_box
                   %span.company_name
-                    = company.company_name
+                    = company.try(:company_name)
                 - company.careers.each do |career|
                   .set_career_card
                     .career_box
                       %p.career_term
                         %span.career_term__per
-                          = career.from
+                          = career.try(:from)
                         %span.career_term__space ~
                         %span.career_term__per
-                          = career.to
+                          = career.try(:to)
                       .set_career_detail
                         .department_info
                           %span.department_info__content
-                            = career.department
+                            = career.try(:department)
                         .position_info
                           %span.position_info__content
-                            = career.position
+                            = career.try(:position)
                     .profile_card_thumbnail_box
                       = image_tag career.card.image
                       %span.common-text_button.policy-icon-field

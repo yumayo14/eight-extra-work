@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20180115034234) do
     t.integer "send_user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    end
+  end
 
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "follower_id"

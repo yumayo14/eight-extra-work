@@ -6,3 +6,5 @@
       %input.srh-txt{name: "keyword", type: "text", placeholder: "名前、会社を検索"}
       %button.common-text_button.search-button{type: "submit"}
         %i.fe.fe-search
+    = link_to destroy_user_session_path, method: :delete do
+      %h3.sign_out サインアウト

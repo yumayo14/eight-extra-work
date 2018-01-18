@@ -1,1 +1,26 @@
-= render 'messages/message'
+.right-contents
+  .main-group
+    %h3.main-group__name 花田暁さんとのメッセージ
+    %h3.main-group__member
+      Member : 花田暁
+  .chatspace
+    - @messages.each do |message|
+      .chatspace-content{ "data-message-id": "#{message.id}" }
+        .chatspace-content__member= message.user.name
+        .chatspace-content__post-time= message.created_at
+        - if message.image.present?
+          .chatspace-content__chat
+            = message.text
+          .chatspace-content__chat
+            = image_tag message.image
+        - else
+          .chatspace-content__chat
+            = message.text
+  %footer.form-box
+    = form_for @message, remote: true do |f|
+    / どういうモデル関係のもと、メッセージの送受信が行われているかは考える必要がある
+      = f.text_field :text, class: "form-box__text-field", placeholder: "Type a text"
+      %label.form-box__picture-set
+        = f.file_field :image, class: "form-box__picture-set__field"
+        %i.fa.fa-file-picture-o.fa-fw
+      = f.submit value: "Send", class: "form-box__button"

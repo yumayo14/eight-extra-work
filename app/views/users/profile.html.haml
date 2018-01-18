@@ -153,7 +153,7 @@
                   %i.fe.fe-building
                 .contents
                   %span
-                    = @user.companies.last.company_name
+                    = @user.companies.last.company_name if @user.companies.present?
                 .policy
                   %span.icons
               %li
@@ -161,7 +161,7 @@
                   %i.fe.fe-department
                 .contents
                   %span
-                    = @user.careers.last.department
+                    = @user.careers.last.department if @user.careers.present?
                 .policy
                   %span.icons
               %li
@@ -169,7 +169,7 @@
                   %i.fe.fe-title
                 .contents
                   %span
-                    = @user.careers.last.position
+                    = @user.careers.last.position if @user.careers.present?
                 .policy
                   %span.icons
               %li
@@ -185,7 +185,7 @@
                   %i.fe.fe-telephone
                 .contents
                   %span
-                    = @user.companies.last.company_phone_num
+                    = @user.companies.last.company_phone_num if @user.companies.present?
                 .policy
                   %span.icons
               %li
@@ -213,7 +213,7 @@
                               %span.common-text_button.profile-link
                                 = @user.name
                               %span.description
-                                = @user.companies.last.company_name
+                                = @user.companies.last.company_name if @user.companies.present?
                             %a.link-to-detail{:href => "/myhome/posts/ebca62527d312f8cf98296c4eecd0ace998b198f041eacb3289b5ed4e0bf0825"}
                               %span 2018年1月6日
                         .post-ctrl

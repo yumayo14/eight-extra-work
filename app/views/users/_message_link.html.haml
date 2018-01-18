@@ -33,7 +33,7 @@
                 %span
                   フィード
             %li.side_bar-linked_menu_item.title-menu
-              = link_to messages_path, class: "link-component" do
+              = link_to users_path, class: "link-component" do
                 %i.fe.fe-message
                 %span
                   メッセージ
@@ -91,39 +91,40 @@
                         %span.num
                           0
     %article.chat-rooms
-      .chat-rooms__navigation
-        =link_to new_message_path do
-          %button.common-button.l-normal-button
-            .chat-rooms__new-message-button
-              %i.fe.fe-plus
-              %span
-                新規メッセージ作成
-      .chat-rooms__rooms-title
-        %span
-          %span.common-text_button
-            %span
-              受信ボックス
-            %i.fa.fa-caret-down
-      %section.chat-room_list.chat-rooms__room-list
-        =link_to do
-          .chat-room_item.list-item
-            .room-thumbnail-field
-              %i.fa.fa-user.fa-3x
-            %dl.room-info-field
-              %dt.title-field
-                %span.room-name
-                  花田　暁
-                %span.person-company
-                  株式会社　人事　課長
-              %dd.summary-field
-                こんにちは
-              %dd.posted-at-field
-                時間
+      - @followers.each do |follower|
+        .chat-rooms__navigation
+          =link_to do
+            %button.common-button.l-normal-button
+              .chat-rooms__new-message-button
+                %i.fe.fe-plus
                 %span
-          .room-menu_button
-            .chat-room_menu_button
-              %span.common-text_button.menu-button
-                %i.fe.fe-setup_icon
+                  新規メッセージ作成
+        .chat-rooms__rooms-title
+          %span
+            %span.common-text_button
+              %span
+                受信ボックス
+              %i.fa.fa-caret-down
+        %section.chat-room_list.chat-rooms__room-list
+          =link_to user_messages_path(follower.id) do
+            .chat-room_item.list-item
+              .room-thumbnail-field
+                %i.fa.fa-user.fa-3x
+              %dl.room-info-field
+                %dt.title-field
+                  %span.room-name
+                    = follower.name
+                  %span.person-company
+                    = follower.companies.last if follower.companies.present?
+                %dd.summary-field
+                  こんにちは
+                %dd.posted-at-field
+                  時間
+                  %span
+            .room-menu_button
+              .chat-room_menu_button
+                %span.common-text_button.menu-button
+                  %i.fe.fe-setup_icon
 
 
 
@@ -169,4 +170,3 @@
                 %span 追加
                 .dialog-position
             %i.fe.fe-close
-

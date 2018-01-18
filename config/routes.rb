@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     resources :cards
     resources :careers
     resources :companies
+    resources :messages
   end
   resources :landings, only: :index
   resources :relationships, only: [:create, :destroy]
   root "landings#index"
-  resources :messages
 end

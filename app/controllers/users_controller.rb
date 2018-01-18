@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :user_set, only: [:show, :edit, :update, :profile]
 
   def index
+    @followers = current_user.following
   end
 
   def show

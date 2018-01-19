@@ -91,20 +91,20 @@
                         %span.num
                           0
     %article.chat-rooms
-      - @followers.each do |follower|
-        .chat-rooms__navigation
-          =link_to do
-            %button.common-button.l-normal-button
-              .chat-rooms__new-message-button
-                %i.fe.fe-plus
-                %span
-                  新規メッセージ作成
+      .chat-rooms__navigation
+        =link_to do
+          %button.common-button.l-normal-button
+            .chat-rooms__new-message-button
+              %i.fe.fe-plus
+              %span
+                新規メッセージ作成
         .chat-rooms__rooms-title
           %span
             %span.common-text_button
               %span
                 受信ボックス
               %i.fa.fa-caret-down
+      - @followers.each do |follower|
         %section.chat-room_list.chat-rooms__room-list
           =link_to user_messages_path(follower.id) do
             .chat-room_item.list-item

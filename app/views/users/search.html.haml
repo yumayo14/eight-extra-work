@@ -1,52 +1,137 @@
-= render 'users/myhome'
-.search
-  .search-search
-    .search-search_result
-      .search-search_list_navigation
-        .tab
-          .left
-            .tab__item
-              あなたのネットワーク
-          .right
-            .tab__item2
-              Eightのネットワーク
-    .search_view
-      %section.search-searched_company_list
-        - @company.each do |company|
-          .company-company_list
-            .company-company
-              .hitarea
-                %dt.company-img
-                  %i.fa.fa-building.fa-4x
-                %dd.company-info
-                  .name
-                    = company.company_name
-                  .address
-                    東京都渋谷区
-        -  if  @company.present?
-          .count-lavel
-            上位3件を表示しています
-      .search-eight_people_list
-        - @user.each do |users|
-          .scroll
-            %article.search-eight_person
-              = link_to user_path(users.id) do
-                %dl.item-field
-                  %dt.thumbnail
-                    .image_box
-                      %i.fa.fa-user.fa-2x
-                  .text-field
-                    .user-name
-                      = users.name
-                      %i.fe.fe-link
-                    .ellipsis-field
-                      .company-name
-                        株式会社 div
-                      .company-department
-                        マーケティング担当
-                  .people-follow_button
-                    .div
-                      .common-text_button
-                        追加
-                    .people-follow_button__note
-  = render partial: "recomended_people"
+.main
+  .my_profile_main
+    = render partial: "users/header"
+  .main__container
+    %nav.side_bar-side_bar
+      = link_to "/", class: "side_bar-my_profile_info js-me" do
+        %article.profiles
+          .profile__data
+            .thumbnail
+              .image-box
+                %i.fa.fa-user.fa-3x
+            .text-field
+              .text-box
+                .text-name
+                  花田  暁
+                .text-company
+                  株式会社  div
+          .card
+            .side_bar-profile_card_image
+      .navs
+        .side_bar-menu
+          %ul.nav.menu#js-nav
+            %li.side_bar-linked_menu_item.title-menu
+              = link_to "#", class: "link-component" do
+                %i.fe.fe-feed_icon
+                %span
+                  フィード
+            %li.side_bar-linked_menu_item.title-menu
+              = link_to users_path, class: "link-component" do
+                %i.fe.fe-message
+                %span
+                  メッセージ
+            %li.side_bar-linked_menu_item.title-menu
+              = link_to "#", class: "link-component" do
+                %i.fe.fe-news
+                %span
+                  お知らせ
+          %ul.nav.networks
+            %li.side_bar-linked_menu_item.title-menu
+              = link_to "#", class: "link-component" do
+                %i.fe.fe-personals_icon
+                %span
+                  あなたのネットワーク
+                %span.num
+                  0
+            %li#js-network-menu.network-menu
+              %ul
+                %li
+                  %ul.sub-menu-items
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          データ入力待ち
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          最近見た名刺
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          つながっている人
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベル
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベルなし
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベル作成
+                        %span.num
+                          0
+
+    .search
+      .search-search
+        .search-search_result
+          .search-search_list_navigation
+            .tab
+              .left
+                .tab__item
+                  あなたのネットワーク
+              .right
+                .tab__item2
+                  Eightのネットワーク
+        .search_view
+          %section.search-searched_company_list
+            - @company.each do |company|
+              .company-company_list
+                .company-company
+                  .hitarea
+                    %dt.company-img
+                      %i.fa.fa-building.fa-4x
+                    %dd.company-info
+                      .name
+                        = company.company_name
+                      .address
+                        東京都渋谷区
+            - if @company.present?
+              .count-lavel
+                上位3件を表示しています
+          .search-eight_people_list
+            - @user.each do |users|
+              .scroll
+                %article.search-eight_person
+                  = link_to user_path(users.id) do
+                    %dl.item-field
+                      %dt.thumbnail
+                        .image_box
+                          %i.fa.fa-user.fa-2x
+                      .text-field
+                        .user-name
+                          = users.name
+                          %i.fe.fe-link
+                        .ellipsis-field
+                          .company-name
+                            株式会社 div
+                          .company-department
+                            マーケティング担当
+                      .people-follow_button
+                        .div
+                          .common-text_button
+                            追加
+                        .people-follow_button__note
+      = render partial: "recomended_people"

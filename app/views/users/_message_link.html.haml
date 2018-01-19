@@ -115,7 +115,7 @@
                   %span.room-name
                     = follower.name
                   %span.person-company
-                    = follower.companies.last if follower.companies.present?
+                    = follower.companies.last.company_name if follower.companies.present?
                 %dd.summary-field
                   こんにちは
                 %dd.posted-at-field

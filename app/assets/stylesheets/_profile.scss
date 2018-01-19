@@ -771,3 +771,45 @@ a {
     vertical-align: baseline;
   }
 }
+
+.show-my_profile-profile-main{
+  box-sizing: border-box;
+  padding: 15px;
+  width: 492px;
+  height: 260px;
+  background-color: white;
+  position: relative;
+  .base_info_title{
+    height: 25px;
+    margin-left: 5px;
+    color: #a0a0a0;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .action-icons{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+  .profile-profile_info{
+    margin-top: 15px;
+    li {
+        align-items: center;
+        display: flex;
+        min-height: 26px;
+        padding: 3px 0;
+        border-bottom: 1px solid #e8e8e8;
+      .title.icon_field{
+        width: 54px;
+      }
+      .fe{
+        font-size: 16px;
+      }
+      .contents{
+        font-size: 1.2rem;
+        font-weight: bold;
+        max-width: 370px;
+      }
+    }
+  }
+}

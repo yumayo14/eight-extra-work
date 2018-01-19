@@ -1,12 +1,5 @@
 .my_profile_main
-  %header.header-header.profile-header-container
-    .container
-      = link_to root_path do
-        %h1.logo-title Eight
-      %form.search-field
-        %input.srh-txt{type: "text", placeholder: "名前、会社を検索"}
-        %button.common-text_button.search-button{type: "button"}
-          %i.fe.fe-search
+  = render partial: "header"
   .main_container
     .profile_container
       .profile_preview
@@ -17,7 +10,7 @@
                 .common-back_button
                   %span.common-text_button.prev
                     = link_to "#" do
-                      %i.fe.fe-back.fe-fw
+                      %i.fe.fe-backward
                       %span
                         %span 戻る
           .profile-card
@@ -33,15 +26,20 @@
                           - else
                             = render "follow"
             .thumbnail
-              = link_to root_path do
-                %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+              .card
+                = image_tag @user.cards.last.image if @user.cards.last
           .profile-title-field
             .thumbnail
-              %img.people_avatar_face{src: "https://upload-contents.8card.net/profiles/8cd7c719fc9b3930c7251efd7a69537a3d18582dd3e62c365c3fe3fa37ff576493d920552_76.jpg?1514256011745"}
+              = image_tag @user.avatar.thumb
             .text_field
               %h2.user_name
                 = @user.name
-              %p.text_part IT系のエンジニアをやっています
+              %p.text_part
+                - if current_user.following?(@user)
+                  - if current_user.try(:introduction)
+                    = current_user.introduction
+                  - else
+                    入力されていません
 
       .flex_box
         .my_profile__profile-aside
@@ -49,15 +47,17 @@
             .box.crr
               .profile-title
                 %span キャリアサマリー
-              -if @user.try(:summary)
-                .career_summary
-                  %p.career_summary__content
-                    = @user.summary
+              - if current_user.following?(@user)
+                -if @user.try(:summary)
+                  .career_summary
+                    %p.career_summary__content
+                      = @user.summary
+                - else
+                  .notfriend
+                    %p 入力されていません
               - else
                 .notfriend
-                  %p あなたの経歴、スキル、受賞歴
-                  %p 関わった主なプロジェクトなどを
-                  %p 記載しましょう
+                  %p つながっている人のみに公開されています。
 
           .profile-my_profile-careers_info
             .profile-title
@@ -83,67 +83,43 @@
                           %span.position_info__content
                             = career.position
                     .profile_card_thumbnail_box
-                      = link_to root_path do
-                        %img.card{src: "//i0.8card.net/p/39687685458/career_images/313503909?nocard=1&size=NS&target=F&1514256011766"}
+                      = image_tag career.card.image
 
           .profile-my_profile_academy-info
             .profile-title
               %span 学歴
             .academy
-              - if @user.academies.present?
-                - @user.academies.each do |academy|
-                  .academy_box
-                    .school_name_box
-                      %span.school_name
-                        = academy.name
-                      %span.common-text_button.policy-icon-field
-                        .a.modal_syncer{data: {target: "academic_info_edit#{academy.id}"} }
-                          %i.fe.fe-pencil
-                    .set_academy_content
-                      .school_term
-                        %p.school_term__per
-                          = academy.from
-                        %p.school_term__per
-                          = academy.to
-                      .set_academy_detail
-                        .school_major
-                          %p.school_major__content
-                            = academy.major
-                        .school_degree
-                          %p.school_degree__content
-                            = academy.degree
+              - if current_user.following?(@user)
+                - if @user.academies.present?
+                  - @user.academies.each do |academy|
+                    .academy_box
+                      .school_name_box
+                        %span.school_name
+                          = academy.name
+                        %span.common-text_button.policy-icon-field
+                          .a.modal_syncer{data: {target: "academic_info_edit#{academy.id}"} }
+                            %i.fe.fe-pencil
+                      .set_academy_content
+                        .school_term
+                          %p.school_term__per
+                            = academy.from
+                          %p.school_term__per
+                            = academy.to
+                        .set_academy_detail
+                          .school_major
+                            %p.school_major__content
+                              = academy.major
+                          .school_degree
+                            %p.school_degree__content
+                              = academy.degree
+                - else
+                  .notfriend
+                    %p 入力されていません
               - else
                 .notfriend
-                  %p ここに学歴が表示
+                  %p つながっている人のみに公開されています。
 
-          .profile-my_profile-private_info
-            .profile-title
-              %span 性別・生年月日
-            .private_table_box
-              %table
-                %tr.first_tr
-                  %td.label 性別
-                  %td.birthday
-                    %span.gender_content
-                      = @user.gender
-                %tr
-                  %td.label 生年月日
-                  %td.content
-                    %span.birthday_content
-                      = @user.birthday
-
-          .profile-career_status
-            .profile-title
-              %span キャリアステータス
-            - if current_user.try(:career_status)
-              .my_profile_career_status
-                %p
-                  = current_user.career_status
-            - else
-              .my_profile_career_status
-                %p 未設定
-
-        .profile-my_profile-profile-main
+        .show-my_profile-profile-main
           .inner-header
             %p.base_info_title 基本情報
           .profile-profile_info
@@ -158,7 +134,7 @@
                   %span.icons
               %li
                 .title.icon_field
-                  %i.fe.fe-department
+                  %i.fe.fe-timeline
                 .contents
                   %span
                     = @user.careers.last.department if @user.careers.present?
@@ -166,7 +142,7 @@
                   %span.icons
               %li
                 .title.icon_field
-                  %i.fe.fe-title
+                  %i.fe.fe-user
                 .contents
                   %span
                     = @user.careers.last.position if @user.careers.present?
@@ -176,24 +152,26 @@
                 .title.icon_field
                   %i.fe.fe-mail
                 .contents
-                  %span
-                    = @user.email
+                  - if current_user.following?(@user)
+                    %span
+                      = @user.email
                 .policy
                   %span.icons
               %li
                 .title.icon_field
-                  %i.fe.fe-telephone
+                  %i.fe.fe-phone
                 .contents
-                  %span
-                    = @user.companies.last.company_phone_num if @user.companies.present?
+                  - if current_user.following?(@user)
+                    %span
+                      = @user.companies.last.company_phone_num if @user.companies.present?
                 .policy
                   %span.icons
               %li
                 .title.icon_field
-                  %i.fe.fe-profile-url
+                  %i.fe.fe-info
                 .contents
                   %span
-                    = link_to "profile_URL", "#"
+                    = link_to "#{profile_user_url}", profile_user_path
                 .policy
                   %span.icons
           %section
@@ -214,19 +192,14 @@
                                 = @user.name
                               %span.description
                                 = @user.companies.last.company_name if @user.companies.present?
-                            %a.link-to-detail{:href => "/myhome/posts/ebca62527d312f8cf98296c4eecd0ace998b198f041eacb3289b5ed4e0bf0825"}
+                            .link-to-detail
                               %span 2018年1月6日
-                        .post-ctrl
-                          %a.nav-btn{:href => "javascript:void(0)"}
-                            %span
-                          %div
                       .post-body
                         %p.text-contents test
                         %figure.post-detail
                       %footer.post-footer
                         %ul.post-count
                           %li.align-right.comment-count
-                            / %span コメント 1件
                         %ul.post-ctrl
                           %li.align-left
                             %span.common-text_button
@@ -237,42 +210,4 @@
                               %i.fe.fe-comment.fe-1-6x
                               %span コメントする
 
-    .recomended_people
-      .guide_info
-        %p.guide_info__guidance お知り合いですか？
-        %p.guide_info__help 名刺リクエストを送信して、追加しましょう。
-      .scroll
-        %ul
-          %li.recomended_people-recomended_person
-            .friend_info.clickable
-              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
-              .profile-info
-                .full-name 山田尚孝
-                .company Sansan株式会社
-            .recommended_people-follow_button
-              %button.common-button.theme-primary.l-mini-button.follow-button
-                %span 追加
-                .dialog-position
-            %i.fe.fe-close
-          %li.recomended_people-recomended_person
-            .friend_info.clickable
-              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
-              .profile-info
-                .full-name 山田尚孝
-                .company Sansan株式会社
-            .recommended_people-follow_button
-              %button.common-button.theme-primary.l-mini-button.follow-button
-                %span 追加
-                .dialog-position
-            %i.fe.fe-close
-          %li.recomended_people-recomended_person
-            .friend_info.clickable
-              %img.common-avatar.people-avatar.tmb{:src => "https://upload-contents.8card.net/profiles/cec94304d8094508866590a8d5c37df11b8163eb63643deadfde157bf4ad134c2f773c8f9_76.jpg"}/
-              .profile-info
-                .full-name 山田尚孝
-                .company Sansan株式会社
-            .recommended_people-follow_button
-              %button.common-button.theme-primary.l-mini-button.follow-button
-                %span 追加
-                .dialog-position
-            %i.fe.fe-close
+    = render partial: "recomended_people"

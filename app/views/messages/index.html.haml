@@ -129,7 +129,7 @@
               %i.fa.fa-user.fa-3x
           .form_box
             = form_for [@poster, @message] do |f|
-              = f.text_field :message, class: "text-field", placeholder: "返信する"
+              = f.text_area :message, class: "text-field", placeholder: "返信する"
               = f.hidden_field :receive_user_id, value: @follower.id
               .action_field
                 = f.submit value: "送信", class: "form-box__button"

@@ -35,10 +35,11 @@
               %h2.user_name
                 = @user.name
               %p.text_part
-                - if current_user.try(:introduction)
-                  = current_user.introduction
-                - else
-                  入力されていません
+                - if current_user.following?(@user)
+                  - if current_user.try(:introduction)
+                    = current_user.introduction
+                  - else
+                    入力されていません
 
       .flex_box
         .my_profile__profile-aside
@@ -46,13 +47,17 @@
             .box.crr
               .profile-title
                 %span キャリアサマリー
-              -if @user.try(:summary)
-                .career_summary
-                  %p.career_summary__content
-                    = @user.summary
+              - if current_user.following?(@user)
+                -if @user.try(:summary)
+                  .career_summary
+                    %p.career_summary__content
+                      = @user.summary
+                - else
+                  .notfriend
+                    %p 入力されていません
               - else
                 .notfriend
-                  %p 入力されていません
+                  %p つながっている人のみに公開されています。
 
           .profile-my_profile-careers_info
             .profile-title
@@ -84,31 +89,35 @@
             .profile-title
               %span 学歴
             .academy
-              - if @user.academies.present?
-                - @user.academies.each do |academy|
-                  .academy_box
-                    .school_name_box
-                      %span.school_name
-                        = academy.name
-                      %span.common-text_button.policy-icon-field
-                        .a.modal_syncer{data: {target: "academic_info_edit#{academy.id}"} }
-                          %i.fe.fe-pencil
-                    .set_academy_content
-                      .school_term
-                        %p.school_term__per
-                          = academy.from
-                        %p.school_term__per
-                          = academy.to
-                      .set_academy_detail
-                        .school_major
-                          %p.school_major__content
-                            = academy.major
-                        .school_degree
-                          %p.school_degree__content
-                            = academy.degree
+              - if current_user.following?(@user)
+                - if @user.academies.present?
+                  - @user.academies.each do |academy|
+                    .academy_box
+                      .school_name_box
+                        %span.school_name
+                          = academy.name
+                        %span.common-text_button.policy-icon-field
+                          .a.modal_syncer{data: {target: "academic_info_edit#{academy.id}"} }
+                            %i.fe.fe-pencil
+                      .set_academy_content
+                        .school_term
+                          %p.school_term__per
+                            = academy.from
+                          %p.school_term__per
+                            = academy.to
+                        .set_academy_detail
+                          .school_major
+                            %p.school_major__content
+                              = academy.major
+                          .school_degree
+                            %p.school_degree__content
+                              = academy.degree
+                - else
+                  .notfriend
+                    %p 入力されていません
               - else
                 .notfriend
-                  %p 入力されていません
+                  %p つながっている人のみに公開されています。
 
         .show-my_profile-profile-main
           .inner-header
@@ -143,16 +152,18 @@
                 .title.icon_field
                   %i.fe.fe-mail
                 .contents
-                  %span
-                    = @user.email
+                  - if current_user.following?(@user)
+                    %span
+                      = @user.email
                 .policy
                   %span.icons
               %li
                 .title.icon_field
                   %i.fe.fe-phone
                 .contents
-                  %span
-                    = @user.companies.last.company_phone_num if @user.companies.present?
+                  - if current_user.following?(@user)
+                    %span
+                      = @user.companies.last.company_phone_num if @user.companies.present?
                 .policy
                   %span.icons
               %li
@@ -183,10 +194,6 @@
                                 = @user.companies.last.company_name if @user.companies.present?
                             .link-to-detail
                               %span 2018年1月6日
-                        .post-ctrl
-                          %a.nav-btn{:href => "javascript:void(0)"}
-                            %span
-                          %div
                       .post-body
                         %p.text-contents test
                         %figure.post-detail

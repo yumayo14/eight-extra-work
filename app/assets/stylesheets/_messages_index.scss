@@ -1,0 +1,165 @@
+.chat_room {
+  width: 542px;
+  padding-left: 20px;
+  &__navigation {
+    width: 520px;
+    height: 60px;
+  }
+  &__content{
+    height: calc(100vh - 60px);
+    .room_title{
+      padding: 20px 0;
+      text-align: center;
+      .main-group__name {
+        font-size: 14px;
+        font-weight: bold;
+        color: #8c8c8c;
+      }
+    }
+    .message_box{
+      height: calc(100vh - 110px);
+      .room_space{
+        background-color: #FFFFFF ;
+        margin: 16px 0;
+        .follower_info_box{
+          display: flex;
+          .follower_avatar{
+            height: 40px;
+            padding: 16px;
+            width: 40px;
+            .thumbnail{
+              border-radius: 40px;
+              border: 2px solid #307caf;
+              padding-left: 7px;
+              padding-top: 2px;
+              i {
+                height: 40px;
+                width: 40px;
+              }
+            }
+          }
+          .follower_profile{
+            height: 40px;
+            padding: 16px;
+            padding-top: 22px;
+            .follower_name{
+              margin-bottom: 8px;
+              color: #191919;
+              font-size: 14px;
+              font-weight: bold;
+            }
+            .follower_company{
+              color: #585858;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .chat_box{
+        overflow: scroll;
+        background-color: #FFFFFF;
+        .chat_info_message{
+          margin-bottom: 20px;
+          padding: 12px 0;
+          text-align: center;
+          border-bottom: 1px solid #d5d5d5;
+          .inline_block{
+            background-color: #f6fafd;
+            display: inline-block;
+            width: 235px;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 4px;
+            p {
+              line-height: 1.5rem;
+              margin-bottom: 5px;
+            }
+          }
+        }
+        .chat_screen{
+          overflow: scroll;
+          max-height: 400px;
+          height: 400px;
+          .chat_space{
+            display: flex;
+            &__avatar{
+              height: 40px;
+              padding: 16px;
+              width: 40px;
+              .thumbnail{
+                border-radius: 40px;
+                border: 2px solid #307caf;
+                padding-left: 7px;
+                padding-top: 2px;
+                i {
+                  height: 40px;
+                  width: 40px;
+                }
+              }
+            }
+            &__content{
+              padding-top: 15px;
+              &__user_info{
+                display: flex;
+                &__person{
+                  font-size: 1.4rem;
+                  font-weight: bold;
+                }
+                &__post-time{
+                  padding-left:70px;
+                  font-size: 10px;
+                }
+              }
+              &__chat{
+                font-size: 13px;
+                line-height: 3.1;
+              }
+            }
+          }
+        }
+      }
+    }
+    .post_box{
+      display: flex;
+      padding: 12px 10px;
+      border-radius: 2px;
+      background-color: #f6fafd;
+      .thumbnail{
+        border-radius: 40px;
+        border: 2px solid #307caf;
+        height: 40px;
+        width: 35px;
+        margin-right: 15px;
+        padding-left: 10px;
+        padding-top: 2px;
+        i {
+          height: 40px;
+          width: 40px;
+        }
+      }
+      .form_box{
+        width: 450px;
+        .text-field{
+          font-size: 12px;
+          padding: 5px;
+          width: 95%;
+          height: 80px;
+        }
+        .action_field{
+          padding-left: 370px;
+          padding-top: 10px;
+          .form-box__button{
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 3px;
+            width: 70px;
+            height: 30px;
+            background: #307caf;
+            border: 1px solid #307caf;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,26 +1,137 @@
-.right-contents
-  .main-group
-    %h3.main-group__name 花田暁さんとのメッセージ
-    %h3.main-group__member
-      Member : 花田暁
-  .chatspace
-    - @messages.each do |message|
-      .chatspace-content{ "data-message-id": "#{message.id}" }
-        .chatspace-content__member= message.user.name
-        .chatspace-content__post-time= message.created_at
-        - if message.image.present?
-          .chatspace-content__chat
-            = message.text
-          .chatspace-content__chat
-            = image_tag message.image
-        - else
-          .chatspace-content__chat
-            = message.text
-  %footer.form-box
-    = form_for @message, remote: true do |f|
-    / どういうモデル関係のもと、メッセージの送受信が行われているかは考える必要がある
-      = f.text_field :text, class: "form-box__text-field", placeholder: "Type a text"
-      %label.form-box__picture-set
-        = f.file_field :image, class: "form-box__picture-set__field"
-        %i.fa.fa-file-picture-o.fa-fw
-      = f.submit value: "Send", class: "form-box__button"
+.main
+  .my_profile_main
+    = render partial: "users/header"
+  .main__container
+    %nav.side_bar-side_bar
+      = link_to "/", class: "side_bar-my_profile_info js-me" do
+        %article.profiles
+          .profile__data
+            .thumbnail
+              .image-box
+                %i.fa.fa-user.fa-3x
+            .text-field
+              .text-box
+                .text-name
+                  = @follower.name
+                .text-company
+                  = @follower_company.company_name if @follower_company.present?
+          .card
+            .side_bar-profile_card_image
+      .navs
+        .side_bar-menu
+          %ul.nav.menu#js-nav
+            %li.side_bar-linked_menu_item.title-menu
+              = link_to "#", class: "link-component" do
+                %i.fe.fe-feed_icon
+                %span
+                  フィード
+            %li.side_bar-linked_menu_item.title-menu
+              = link_to users_path, class: "link-component" do
+                %i.fe.fe-message
+                %span
+                  メッセージ
+            %li.side_bar-linked_menu_item.title-menu
+              = link_to "#", class: "link-component" do
+                %i.fe.fe-news
+                %span
+                  お知らせ
+          %ul.nav.networks
+            %li.side_bar-linked_menu_item.title-menu
+              = link_to "#", class: "link-component" do
+                %i.fe.fe-personals_icon
+                %span
+                  あなたのネットワーク
+                %span.num
+                  0
+            %li#js-network-menu.network-menu
+              %ul
+                %li
+                  %ul.sub-menu-items
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          データ入力待ち
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          最近見た名刺
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          つながっている人
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベル
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベルなし
+                        %span.num
+                          0
+                    %li.side_bar-linked_menu_item.sub-menu
+                      = link_to "#", class: "link-component" do
+                        %span
+                          ラベル作成
+                        %span.num
+
+    .chat_room
+      .chat_room__navigation
+      .chat_room__content
+        .room_title
+          %span.main-group__name
+            = @follower.name
+          %span.main-group__name
+            さんとのメッセージ
+        .message_box
+          .room_space
+            .follower_info_box
+              .follower_avatar
+                .thumbnail
+                  = link_to user_path(params[:user_id]) do
+                    %i.fa.fa-user.fa-3x
+              .follower_profile
+                .follower_name
+                  = @follower.name
+                .follower_company
+                  = @follower_company.company_name if @follower_company.present?
+          .chat_box
+            .chat_info_message
+              .inline_block
+                %p 株式会社 の花田暁さんとつながりました。
+                %p あいさつのメッセージを送ってみましょう。
+            .chat_screen
+              - @viewed_messages.each do |message|
+                .chat_space
+                  .chat_space__avatar
+                    .thumbnail
+                      = link_to user_path(params[:user_id]) do
+                        %i.fa.fa-user.fa-3x
+                  .chat_space__content
+                    .chat_space__content__user_info
+                      .chat_space__content__user_info__person
+                        = message.user.name
+                      .chat_space__content__user_info__post-time
+                        = message.created_at
+                    .chat_space__content__chat
+                      = message.message
+        .post_box
+          .thumbnail
+            = link_to user_path(params[:user_id]) do
+              %i.fa.fa-user.fa-3x
+          .form_box
+            = form_for [@poster, @message] do |f|
+              = f.text_field :message, class: "text-field", placeholder: "返信する"
+              = f.hidden_field :receive_user_id, value: @follower.id
+              .action_field
+                = f.submit value: "送信", class: "form-box__button"
+
+    = render partial: "users/recomended_people"

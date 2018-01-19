@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20180115034234) do
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "message"
     t.integer "user_id", null: false
-    t.integer "send_user_id", null: false
+    t.integer "receive_user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

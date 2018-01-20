@@ -97,7 +97,7 @@
                   Eightのネットワーク
         .search_view
           %section.search-searched_company_list
-            - @company.each do |company|
+            - @companies.each do |company|
               .company-company_list
                 .company-company
                   .hitarea
@@ -108,14 +108,14 @@
                         = company.company_name
                       .address
                         東京都渋谷区
-            - if @company.present?
+            - if @companies.present?
               .count-lavel
                 上位3件を表示しています
           .search-eight_people_list
-            - @user.each do |user|
+            - @users.each do |user|
               .scroll
                 %article.search-eight_person
-                  = link_to user_path(users.id) do
+                  = link_to user_path(user.id) do
                     %dl.item-field
                       %dt.thumbnail
                         .image_box

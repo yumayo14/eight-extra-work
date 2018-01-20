@@ -33,8 +33,8 @@ class UsersController < ApplicationController
 
   def search
     @latest_company = current_user.companies.last
-    @user = User.where('name Like(?)',"%#{params[:keyword]}%").limit(30)
-    @company = Company.where('company_name Like(?)',"%#{params[:keyword]}%").limit(3)
+    @users = User.where('name Like(?)',"%#{params[:keyword]}%").limit(30)
+    @companies = Company.where('company_name Like(?)',"%#{params[:keyword]}%").limit(3)
   end
 
   # def search_me

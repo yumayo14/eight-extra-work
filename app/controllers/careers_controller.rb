@@ -26,11 +26,6 @@ class CareersController < ApplicationController
 
   def update
     @user.update(user_params)
-      if @user.update(user_params)
-        redirect_to user_path(current_user.id)
-      else
-        render "show"
-      end
 
     @company = Company.find(params[:company][:id])
     @company.update(company_params)

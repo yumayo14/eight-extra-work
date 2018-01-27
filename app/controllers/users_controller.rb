@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def index
     @followers = current_user.following
+    @latest_company = current_user.companies.last
+    @latest_card = current_user.cards.last
   end
 
   def show
@@ -33,6 +35,7 @@ class UsersController < ApplicationController
 
   def search
     @latest_company = current_user.companies.last
+    @latest_card = current_user.cards.last
     @users = User.where('name Like(?)',"%#{params[:keyword]}%").limit(30)
     @companies = Company.where('company_name Like(?)',"%#{params[:keyword]}%").limit(3)
   end

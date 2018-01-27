@@ -128,7 +128,7 @@
             = link_to user_path(params[:user_id]) do
               %i.fa.fa-user.fa-3x
           .form_box
-            = form_for [@poster, @message] do |f|
+            = form_for [@poster, @message], remote: true do |f|
               = f.text_area :message, class: "text-field", placeholder: "返信する"
               = f.hidden_field :receive_user_id, value: @follower.id
               .action_field

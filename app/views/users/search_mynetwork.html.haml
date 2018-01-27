@@ -13,7 +13,7 @@
         - @user.each do |users|
           .scroll
             %article.search-eight_person
-              = link_to user_path(users.id) do
+              = link_to profile_user_path(users.id) do
                 %dl.item-field
                   %dt.thumbnail
                     .image_box

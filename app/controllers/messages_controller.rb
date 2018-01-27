@@ -3,6 +3,10 @@ class MessagesController < ApplicationController
   before_action :follower_set, only: :index
 
   def index
+    @latest_company = current_user.companies.last
+
+    @latest_card = current_user.cards.last
+
     @message = Message.new
 
     @follower_company = @follower.companies.last

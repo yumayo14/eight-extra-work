@@ -20,8 +20,11 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.save
       if @message.save
-        redirect_to user_messages_path(params[:message][:receive_user_id])
-      else render "index"
+        respond_to do |format|
+          format.json
+        end
+      else
+        render "index"
       end
   end
 

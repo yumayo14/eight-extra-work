@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :companies, through: :careers
   has_many :cards
   has_many :messages
+  has_many :posts
 
   # one user has many follower_ids
   # userAは複数のフォロー関係を持つ

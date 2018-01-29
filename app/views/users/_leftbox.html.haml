@@ -18,7 +18,7 @@
     .side_bar-menu
       %ul.nav.menu#js-nav
         %li.side_bar-linked_menu_item.title-menu
-          = link_to "#", class: "link-component" do
+          = link_to user_posts_path(current_user.id), class: "link-component" do
             %i.fe.fe-feed_icon
             %span
               フィード

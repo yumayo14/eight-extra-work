@@ -1,0 +1,137 @@
+.posts_main {
+  width: 540px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  .post_form_box {
+    padding: 10px 24px 8px;
+    background-color:#ffffff;
+    ul {
+      display: flex;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      li {
+        color: #585858;
+        margin-right: 25px;
+        font-weight: bold;
+        label {
+          display: flex;
+          cursor: pointer;
+          color: #48a1e3;
+          .file_field {
+            display: none;
+          }
+          .post_image_icon {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .post_text_area {
+      width: 100%;
+      .text_area {
+        box-sizing: border-box;
+        width: 100%;
+        height: 60px;
+        font-size: 12px;
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+        padding: 10px;
+      }
+    }
+    footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      .submit_button {
+        box-sizing: border-box;
+        background-color: #48a1e3;
+        color: #ffffff;
+        border-color: #48a1e3;
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        height: 30px;
+        padding: 5px 20px;
+        text-decoration: none;
+        border-radius: 3px;
+      }
+    }
+  }
+  .post_content_box {
+    width: 100%;
+    margin-top: 10px;
+    background-color:#ffffff;
+    header {
+      box-sizing: border-box;
+      padding: 10px 2px 8px;
+      overflow: hidden;
+      .thumbnail{
+        float: left;
+        width: 35px;
+        height: 35px;
+        border-radius: 40px;
+        border: 2px solid #307caf;
+        .content_avatar {
+          padding-left: 7px;
+
+        }
+      }
+
+      .wrapper {
+        margin-left: 30px;
+        margin-top: 4px;
+
+        ul.content_poster_info {
+          display: flex;
+          justify-content: space-between;
+
+          li {
+            font-size: 13px;
+
+            &.content_poster_info__name {
+              font-weight: bold;
+              color: #000000;
+              font-size: 14px;
+            }
+
+          }
+        }
+        .content_posted_time {
+          margin-top: 10px;
+          font-size: 14px;
+        }
+
+      }
+
+    }
+    .content_main {
+      margin: 10px 25px;
+      padding-bottom: 20px;
+
+      .content_message_field {
+        color: #191919;
+        font-size: 13px;
+        margin: 15px 0;
+      }
+      .content_image_field {
+        text-align: center;
+      }
+
+    }
+
+    footer {
+      border-top: 1px solid #e8e8e8;
+      ul {
+        display: flex;
+        font-weight: bold;
+        font-size: 13px;
+        margin: 0 15px;
+        padding: 12px 11px 10px;
+        li {
+          padding-right: 15px;
+        }
+      }
+    }
+
+  }
+}

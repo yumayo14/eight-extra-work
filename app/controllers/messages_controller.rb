@@ -1,13 +1,13 @@
 class MessagesController < ApplicationController
-  before_action :poster_set, only: :index
+  before_action :poster_set, only: [:index, :create]
   before_action :follower_set, only: :index
 
   def index
+    @message = current_user.messages.new
+
     @latest_company = current_user.companies.last
 
     @latest_card = current_user.cards.last
-
-    @message = Message.new
 
     @follower_company = @follower.companies.last
 
@@ -21,14 +21,14 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = current_user.messages.new(message_params)
     @message.save
       if @message.save
         respond_to do |format|
           format.json
         end
       else
-        render "index"
+        render :index
       end
   end
 
@@ -43,7 +43,7 @@ private
   end
 
   def message_params
-    params.require(:message).permit(:message, :receive_user_id).merge(user_id: current_user.id)
+    params.require(:message).permit(:message, :receive_user_id)
   end
 
 end

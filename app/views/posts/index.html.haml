@@ -1,0 +1,65 @@
+.main
+  .my_profile_main
+    = render partial: "users/header"
+  .main__container
+
+    = render partial: "users/leftbox"
+
+    .posts_main
+      .post_form_box
+        = form_for [@user, @post] do |f|
+          %ul
+            %li.post_form_label
+              %span.label 近況をアップデート
+            %li.post_image_area
+              %label
+                = f.file_field :image, class: "file_field"
+                .post_image_icon
+                  %i.fa.fa-picture-o
+                .post_image_button
+                %span 画像を追加
+          .post_text_area
+            = f.text_area :text , class: "text_area", placeholder: "仕事の近況を報告しよう"
+          %footer
+            .space_maker
+            = f.submit class: "submit_button", value: "投稿する"
+
+      .post_content_box
+        %header
+          .thumbnail
+            .content_avatar
+              %i.fa.fa-user.fa-3x
+
+          .wrapper
+
+            %ul.content_poster_info
+              %li.content_poster_info__name
+                %span ヨシオカ ユウマ
+              %li.content_poster_info__company
+                %span ソウカイヤ
+              %li.content_poster_info__department
+                %span ソウカイ・シックスゲイツ
+              %li.content_poster_info__position
+                %span 構成員
+
+            .content_posted_time
+              %span たった今
+
+        .content_main
+          .content_message_field
+            %p.message こんにちは
+          .content_image_field
+            %img{src: "https://upload-contents.8card.net/user_post/7150b209aaf498df39073123c7c7ccc24d796c81e51e5b9934eae65413cd43c7_1_thumbnail.png"}
+        %footer
+          %ul
+            %li.like_box
+              %i.fa.fa-thumbs-up
+              %span いいね
+            %li.comment_box
+              %i.fa.fa-comment-o
+              %span コメント
+            %li.share_box
+              %i.fa.fa-share
+              %span シェア
+
+    = render partial: "users/recomended_people"

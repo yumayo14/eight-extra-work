@@ -13,7 +13,7 @@
               = company.company_name if @latest_company.present?
       .card
         .side_bar-profile_card_image
-          = image_tag card.image if @latest_card.present?
+          = image_tag card.image.card if @latest_card.present?
   .navs
     .side_bar-menu
       %ul.nav.menu#js-nav

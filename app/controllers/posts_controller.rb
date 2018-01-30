@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   def index
     @post = current_user.posts.new
     @posts = Post.all
+    @latest_company = current_user.companies.last
+    @latest_career = current_user.careers.last
   end
 
   def create

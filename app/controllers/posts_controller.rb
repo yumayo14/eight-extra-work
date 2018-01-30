@@ -2,10 +2,14 @@ class PostsController < ApplicationController
   before_action :user_set, only: [:index, :create]
 
   def index
-    @post = current_user.posts.new
-    @posts = Post.all
-    @latest_company = current_user.companies.last
-    @latest_career = current_user.careers.last
+    @post = @user.posts.new
+
+    posts = current_user.posts
+    room_posts = Post.where(user_id: current_user.following.ids) | (posts)
+
+
+    @viewed_posts = room_posts.sort{|new_post,old_post| old_post.created_at <=> new_post.created_at}
+
   end
 
   def create
@@ -20,7 +24,9 @@ class PostsController < ApplicationController
 
 private
   def user_set
-    @user = current_user
+    @user = User.find(params[:user_id])
+    # poster_ids = Post.where(user_id: )
+    # @poster = User.find_by(id: )
   end
 
   def post_params

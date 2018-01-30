@@ -25,7 +25,7 @@
             = f.submit class: "submit_button", value: "投稿する"
 
       .post_content_box
-        - @posts.each do |post|
+        - @viewed_posts.each do |post|
           .per_post_content
             %header
               .thumbnail
@@ -40,22 +40,23 @@
                       = post.user.name
                   %li.content_poster_info__company
                     %span
-                      = @latest_company.try(:company_name)
+                      = company_search(post) if post.user.companies.present?
                   %li.content_poster_info__department
                     %span
-                      = @latest_career.try(:department)
+                      = department_search(post) if post.user.companies.present?
                   %li.content_poster_info__position
                     %span
-                      = @latest_career.try(:position)
+                      = position_search(post) if post.user.companies.present?
 
                 .content_posted_time
                   %span たった今
 
             .content_main
               .content_message_field
-                %p.message こんにちは
+                %p.message
+                  = post.text
               .content_image_field
-                %img{src: "https://upload-contents.8card.net/user_post/7150b209aaf498df39073123c7c7ccc24d796c81e51e5b9934eae65413cd43c7_1_thumbnail.png"}
+                = image_tag post.image
             %footer
               %ul
                 %li.like_box

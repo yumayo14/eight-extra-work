@@ -9,7 +9,7 @@
           %button.common-text_button.search-button{type: "submit"}
             %i.fe.fe-search
   .main__container
-    = render partial: "users/leftbox"
+    = render partial: "users/leftbox", locals: {company: @latest_company, card: @latest_card}
     %article.chat-rooms
       .chat-rooms__navigation
         =link_to do

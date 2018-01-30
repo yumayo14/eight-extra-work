@@ -1,5 +1,5 @@
 %nav.side_bar-side_bar
-  = link_to "/", class: "side_bar-my_profile_info js-me" do
+  = link_to user_path(current_user.id), class: "side_bar-my_profile_info js-me" do
     %article.profiles
       .profile__data
         .thumbnail
@@ -10,10 +10,10 @@
             .text-name
               = current_user.name
             .text-company
-              = @latest_company.company_name if @latest_company.present?
+              = company.company_name if @latest_company.present?
       .card
         .side_bar-profile_card_image
-          = image_tag @latest_card.image if @latest_card.present?
+          = image_tag card.image if @latest_card.present?
   .navs
     .side_bar-menu
       %ul.nav.menu#js-nav

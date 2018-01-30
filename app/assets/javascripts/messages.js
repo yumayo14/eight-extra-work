@@ -41,10 +41,12 @@ $(document).on('turbolinks:load', function () {
         var html = buildHTML(data);
         $(".chat_screen").append(html);
         $(".text-field").val("");
+        $(".chat_screen").animate({scrollTop: $(".chat_screen")[0].scrollHeight}, 'slow');
       })
       .fail(function(){
         alert('error')
       })
+      return false;
     })
   })
 })

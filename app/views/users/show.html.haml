@@ -13,7 +13,7 @@
               %span カバー写真を変更
           .profile-card.thumbnail
             .card
-              = image_tag @latest_card.image unless @latest_card.blank?
+              = image_tag @latest_card.image.card unless @latest_card.blank?
 
           .profile-title-field
             - if current_user.try(:avatar)

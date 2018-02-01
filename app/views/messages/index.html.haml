@@ -2,7 +2,7 @@
   .my_profile_main
     = render partial: "users/header"
   .main__container
-    = render partial: "users/leftbox"
+    = render partial: "users/leftbox", locals: {company: @latest_company, card: @latest_card}
 
     .chat_room
       .chat_room__navigation

@@ -50,6 +50,16 @@
 
                 .content_posted_time
                   %span たった今
+              .post-ctrl
+                - if post.user_id == current_user.id
+                  %a.nav-btn{id: "#{post.id}"}
+                    %i.fa.fa-angle-down
+                  .menu_box{id: "menubox_#{post.id}"}
+                    %ul.commmon_menu
+                      %li.commmon_menu__item
+                        = link_to user_post_path(id: post.id), method: :delete do
+                          %i.fa.fa-trash
+                          %span 投稿を削除する
 
             .content_main
               .content_message_field

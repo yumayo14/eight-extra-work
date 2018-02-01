@@ -8,6 +8,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :file
   storage :fog
 
+  process resize_to_limit: [470, 800]
+
   version :thumb do
     process resize_to_fill: [46, 46]
     def full_filename for_file

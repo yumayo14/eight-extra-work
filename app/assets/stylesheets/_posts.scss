@@ -65,7 +65,7 @@
       header {
         box-sizing: border-box;
         padding: 10px 2px 8px;
-        overflow: hidden;
+        position: relative;
         .thumbnail{
           float: left;
           width: 35px;
@@ -74,7 +74,6 @@
           border: 2px solid #307caf;
           .content_avatar {
             padding-left: 7px;
-
           }
         }
 
@@ -105,6 +104,50 @@
 
         }
 
+        .post-ctrl {
+          position: absolute;
+          right: 14px;
+          top: 10px;
+          .nav-btn {
+            cursor: pointer;
+            i {
+              font-size: 22px;
+            }
+          }
+          .menu_box {
+            position: relative;
+            display: none;
+            ul {
+              width: 215px;
+              box-sizing: border-box;
+              border: 1px solid #307caf;
+              border-radius: 3px;
+              box-shadow: 2px 0 7px 0 rgba(0,0,0,0.35);
+              list-style-type: none;
+              vertical-align: baseline;
+              position: absolute;
+              right: 0;
+              z-index: 1;
+              li {
+                margin: 5px auto;
+                text-align: center;
+                white-space: nowrap;
+                a {
+                  i {
+                    font-size: 14px;
+                    color: #48a1e3;
+                    padding-right: 10px;
+                  }
+                  span {
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: #000000;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
       .content_main {
         margin: 10px 25px;

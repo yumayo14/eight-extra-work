@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :careers
     resources :companies
     resources :messages
-    resources :posts, only: [:index, :create]
+    resources :posts, only: [:index, :create, :destroy]
   end
   resources :landings, only: :index
   resources :relationships, only: [:create, :destroy]

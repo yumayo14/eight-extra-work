@@ -15,10 +15,8 @@
     %title Eight - 名刺でつながる、ビジネスのためのSNS
     %link{:href => "https://assets.8card.net/assets/top/normalize.min-d2ae371c287484040b245c193a62f19a.css", :media => "screen", :rel => "stylesheet"}/
     / [if gt IE 8]><!
-    %link{:href => "https://assets.8card.net/assets/top/main_v8-a63ee13f1cd26772694e3d1f1a766820.css", :media => "screen", :rel => "stylesheet"}/
-    / <![endif]
-    /[if lt IE 9]
-      <link rel="stylesheet" media="screen" href="https://assets.8card.net/assets/top/main_v8_lt-ie9-9171d9ef01012fe1a053b90ef134daf9.css" />
+    %link{:href => "https://assets.8card.net/assets/top/main_v8-a63ee13f1cd26772694e3d1f1a766820.css", :media => "screen", :rel => "stylesheet"}
+
     %meta{:content => "ja", "http-equiv" => "content-language"}/
     %meta{:content => "名刺管理,名刺アプリ,Eight,エイト,えいと,無料,Sansan,クラウド,成田凌,青木崇高,CM", :name => "keywords"}/
     %meta{:content => "Eight（エイト）は、名刺管理ができる無料のアプリです。スマホで名刺を撮るだけでクラウドにデータを保存でき、いつでも全ての名刺情報にアクセスできます。メッセージやフィードで情報交換もでき、仕事のご縁を、絶やすことなく、未来につなぎます。", :name => "description"}/
@@ -52,15 +50,8 @@
     %meta{:content => "eightcard://net.8card.eightcard", :name => "twitter:app:url:googleplay"}/
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/vnd.microsoft.icon"}/
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/vnd.microsoft.icon"}/
-    %link{:href => "/apple-touch-icon-200x200.png", :rel => "apple-touch-icon", :sizes => "200x200"}/
-    / Google Tag Manager
-    :javascript
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-M4FVTG6');
-    / End Google Tag Manager
+    %link{:href => "/apple-touch-icon-200x200.png", :rel => "apple-touch-icon", :sizes => "200x200"}
+
     %link{:href => "https://assets.8card.net/assets/registration-0021626fb5b571973641e75f26f335a5.css", :media => "screen", :rel => "stylesheet"}/
     %link{:href => "https://assets.8card.net/assets/top-page-32bb89d1874ba13b892a8ff3e99f6528.css", :media => "screen", :rel => "stylesheet"}/
   %body
@@ -68,18 +59,6 @@
       / Google Tag Manager (noscript)
       %noscript
         %iframe{:height => "0", :src => "https://www.googletagmanager.com/ns.html?id=GTM-M4FVTG6", :style => "display:none;visibility:hidden", :width => "0"}
-      / End Google Tag Manager (noscript)
-    / /////facebook SDK/////
-    #fb-root
-    :javascript
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.6&appId=350764341782744";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    / /////facebook SDK/////
     .overlay
       %a.overlay__close{:href => "javascript:void(0);"}
         %span close
@@ -130,11 +109,10 @@
               %a.appBanner--android{:href => "f/google_play/6hDNnpP1qd", :target => "_blank"}
                 %span GET IT ON Google Play
         .hero__video
-          %video{:autoplay => "", :loop => "", :muted => "", :preload => "auto"}
+          %video{:autoplay => "", :loop => "", :muted => "muted", :preload => "auto"}
             %source{:src => "https://materials.8card.net/web/movie/cm.mp4", :type => "video/mp4"}
         .hero__img{"data-images" => "8"}
-          %img{:alt => "CMキャプチャ", :src => "https://materials.8card.net/web/top/images/cm--capture.jpg"}/
-          / <canvas width="960" height="540" class="hero__img--canvas"></canvas>
+          %img{:alt => "CMキャプチャ", :src => "https://materials.8card.net/web/top/images/cm--capture.jpg"}
       .inner
         %nav.intro__nav
           %ul.intro__gnavi
@@ -387,10 +365,7 @@
                 %iframe{:allowtransparency => "true", :frameborder => "0", :scrolling => "no", :src => "//www.facebook.com/plugins/like.php?locale=ja_JP&href=https://www.facebook.com/Eight.33inc&send=false&layout=button_count&width=116&show_faces=false&action=like&colorscheme=light&font&height=21", :style => "border:none; overflow:hidden; width:116px; height:21px;"}
           .footer__row--lower
             %p.footer__copyright ©Sansan, Inc.
-    :javascript
-      //<![CDATA[
-      window.gon={};gon.language="ja";gon.facebook_application_id=165066846847451;gon.config={"hosts":{"www":"https:\/\/8card.net","message":"8card.net","message_hook":"message-hook.8card.net","i0":"i0.8card.net"},"contents_url":"https:\/\/contents.8card.net","materials_url":"https:\/\/materials.8card.net"};
-      //]]>
+
     %script{:src => "https://assets.8card.net/assets/registration-97e5cb2954bdf729900791da45540f38.js"}
     /[if lt IE 10]
       <script src="https://assets.8card.net/assets/top/libs/ie_support-8f88135fdd5725e0c6ccb15ec9255e88.js"></script>

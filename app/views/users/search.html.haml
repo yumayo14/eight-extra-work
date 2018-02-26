@@ -45,9 +45,10 @@
                           %i.fe.fe-link
                         .ellipsis-field
                           .company-name
-                            株式会社 div
+                            = searched_user_company(user) if user.companies
                           .company-department
-                            マーケティング担当
+                            = searchd_user_department(user) if user.careers
+
                       .people-follow_button
                         .div
                           .common-text_button

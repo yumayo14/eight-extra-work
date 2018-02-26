@@ -1,49 +1,35 @@
 class UsersController < ApplicationController
 
   before_action :user_set, only: [:show, :edit, :update, :profile]
+  before_action :latest_company_set, only: [:index, :show, :search, :update]
+  before_action :latest_career_set, only: [:show, :update]
+  before_action :latest_card_set, only: [:index, :show, :search]
 
   def index
     @followers = current_user.following
-    @latest_company = current_user.companies.last
-    @latest_card = current_user.cards.last
   end
 
   def show
     @company = Company.new
     @companies = @user.companies
-    @latest_company = @user.companies.last
 
 
     @career = Career.new
     @careers = @user.careers
-    @latest_career = @user.careers.last
 
     # カードモデルのみ、Userモデルとのネストがないが、ユーザーのidという情報を、テーブルにデータを保存するために必要なので、current_userを用いてnewアクションを走らせている
     @card = Card.new
-    @latest_card = @user.cards.last
 
     @academy = Academy.new
     @academies = @user.academies
 
   end
 
-  def new
-  end
-
-  def create
-  end
-
   def search
-    @latest_company = current_user.companies.last
-    @latest_card = current_user.cards.last
+    @followers = current_user.following
     @users = User.where('name Like(?)',"%#{params[:keyword]}%").limit(30)
     @companies = Company.where('company_name Like(?)',"%#{params[:keyword]}%").limit(3)
   end
-
-  # def search_me
-  #   @user = User.where('name Like(?)',"%#{params[:keyword]}").limit(30)
-  #   @company = Company.where('name Like(?)',"#{params[:keyword]}").limit(3)
-  # end
 
   def edit
   end
@@ -55,31 +41,27 @@ class UsersController < ApplicationController
       else
         render "show"
       end
-    @latest_company = @user.companies.last
-    @latest_career = @user.careers.last
 
-# 以下の条件分岐は、名刺情報編集というformで情報を保存する際に、companiesテーブルとcareersテーブルの情報を保存した上で、他のユーザー情報更新の際に、正しくformを動作させるために必要
-
-    if params[:company].present?
-      if @latest_company.present?
-        @latest_company.update(company_params)
-      end
-    end
-
-    if params[:career].present?
-      if @latest_career.present?
-        @latest_career.update(career_params)
-      end
-    end
-  end
-
-  def profile
+    @latest_company.company_update(company_params)
+    @latest_career.career_update(career_params)
   end
 
   private
 
   def user_set
     @user = User.find(params[:id])
+  end
+
+  def latest_company_set
+    @latest_company = current_user.companies.last
+  end
+
+  def latest_career_set
+    @latest_career = current_user.careers.last
+  end
+
+  def latest_card_set
+    @latest_card = current_user.cards.last
   end
 
   def user_params

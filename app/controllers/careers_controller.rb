@@ -19,9 +19,6 @@ class CareersController < ApplicationController
         render "show"
       end
 
-    # @new_card = @new_career.build_card(user_id: @user.id)
-    # @new_card.save
-
   end
 
   def update

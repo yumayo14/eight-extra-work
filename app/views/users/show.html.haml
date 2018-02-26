@@ -383,8 +383,8 @@
 
 - @careers.each do |career|
 
-  - combined_company = Company.find_by(id: career.company_id)
-  - combined_card = Card.find_by(id: career.card.id)
+  - combined_company = combined_company(career)
+  - combined_card = combined_card(career)
 
   .modal_content{id: "career_info_edit#{career.id}"}
     .modal_form_title

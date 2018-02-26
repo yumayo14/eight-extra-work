@@ -36,6 +36,8 @@
                     = follower.name
                   %span.person-company
                     = follower.companies.last.company_name if follower.companies.present?
+                  %span.person-career
+                    = follower.careers.last.department if follower.companies.present?
                 %dd.summary-field
                   こんにちは
                 %dd.posted-at-field

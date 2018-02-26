@@ -1,17 +1,23 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.registration-registration_top_window
+  .article
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = devise_error_messages!
+      .inner-container
+        %img{:alt => "画像", :height => "144", :src => "https://cdn0.iconfinder.com/data/icons/users-android-l-lollipop-icon-pack/24/user-512.png", :witdth => "144"}/
+        %p.title_text ログイン
+        .registration-registration_form
+          %span.alert_message
+          = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "account_form"
+          %br/
+          = f.password_field :password, autocomplete: "off", placeholder: "パスワード (6文字以上 30文字以内)", class: "password_form"
+          = f.submit "ログイン", class: "common-button theme-primary l-normal-button registration_button"
+        .common-facebook.top-page-facebook
+          %button.common-button.theme-primary.l-normal-button.facebook_registration_button
+            %span Facebookでログイン
+        .bottom_info
+          %a{:href => "/kiyaku", :rel => "nofollow", :target => "_blank"}
+            %span 利用規約
+          %span および
+          %a{:href => "/permission", :rel => "nofollow", :target => "_blank"}
+            %span 個人情報の取り扱い
+          %span に同意して、新規アカウント登録をしてください。

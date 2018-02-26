@@ -42,8 +42,8 @@ class UsersController < ApplicationController
         render "show"
       end
 
-    @latest_company.company_update(company_params)
-    @latest_career.career_update(career_params)
+    @latest_company.company_update(company_params) if params[:company]
+    @latest_career.career_update(career_params) if params[:career]
   end
 
   private

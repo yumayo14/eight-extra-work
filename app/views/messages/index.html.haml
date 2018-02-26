@@ -27,7 +27,13 @@
           .chat_box
             .chat_info_message
               .inline_block
-                %p 株式会社 の花田暁さんとつながりました。
+                %span.intro 株式会社
+                %span.intro
+                  = @follower_company.company_name if @follower_company.present?
+                %span.intro の
+                %span.intro
+                  = @follower.name
+                %span.intro さんとつながりました。
                 %p あいさつのメッセージを送ってみましょう。
             .chat_screen
               - @viewed_messages.each do |message|

@@ -1,20 +1,21 @@
 .search_view#eight_network_search
-  %section.search-searched_company_list
-    - @companies.each do |company|
-      .company-company_list
-        .company-company
-          .hitarea
-            %dt.company-img
-              %i.fa.fa-building.fa-4x
-            %dd.company-info
-              .name
-                = company.company_name
-              .address
-                東京都渋谷区
+  .search-searched_company_list
     - if companies.present?
-      .count-lavel
-        上位3件を表示しています
-    .search-eight_people_list
+      - companies.each do |company|
+        .company-company_list
+          .company-company
+            .hitarea
+              %dt.company-img
+                %i.fa.fa-building.fa-4x
+              %dd.company-info
+                .name
+                  = company.company_name
+                .address
+                  東京都渋谷区
+        .count-lavel
+          上位3件を表示しています
+  .search-eight_people_list
+    - if users.present?
       - users.each do |user|
         .scroll
           %article.search-eight_person

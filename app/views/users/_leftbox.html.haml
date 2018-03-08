@@ -10,10 +10,10 @@
             .text-name
               = current_user.name
             .text-company
-              = company.company_name if @latest_company.present?
+              = company.company_name if company.present?
       .card
         .side_bar-profile_card_image
-          = image_tag card.image.card if @latest_card.present?
+          = image_tag card.image.card if card.present?
   .navs
     .side_bar-menu
       %ul.nav.menu#js-nav
@@ -80,4 +80,3 @@
                       ラベル作成
                     %span.num
                       0
-

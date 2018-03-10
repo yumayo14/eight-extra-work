@@ -1,13 +1,6 @@
 .main
   .my_profile_main
-    %header.header-header.profile-header-container
-      .container
-        = link_to root_path do
-          %h1.logo-title Eight
-        %form.search-field{action: "/users/search", method: "get"}
-          %input.srh-txt{name: "keyword", type: "text", placeholder: "名前、会社を検索"}
-          %button.common-text_button.search-button{type: "submit"}
-            %i.fe.fe-search
+    = render partial: "users/header"
   .main__container
     = render partial: "users/leftbox", locals: {company: @latest_company, card: @latest_card}
     %article.chat-rooms

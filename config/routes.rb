@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
     collection do
-      get :message_link
+      get 'search'
     end
     member do
       get :profile

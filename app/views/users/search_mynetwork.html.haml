@@ -1,0 +1,34 @@
+.search
+  .search-search
+    .search-search_result
+      .search-search_list_navigation
+        #id.tab
+          .left
+            .tab__item
+              あなたのネットワーク
+          .right
+            .tab__item
+              Eightのネットワーク
+      .search-eight_people_list
+        - @user.each do |users|
+          .scroll
+            %article.search-eight_person
+              = link_to profile_user_path(users.id) do
+                %dl.item-field
+                  %dt.thumbnail
+                    .image_box
+                      %i.fa.fa-user.fa-2x
+                  .text-field
+                    .user-name
+                      = users.name
+                      %i.fe.fe-link
+                    .ellipsis-field
+                      .company-name
+                        株式会社 div
+                      .company-department
+                        マーケティング担当
+                  .people-follow_button
+                    .div
+                      .common-text_button
+                        追加
+                    .people-follow_button__note

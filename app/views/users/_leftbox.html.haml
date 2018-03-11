@@ -10,10 +10,10 @@
             .text-name
               = current_user.name
             .text-company
-              = company.company_name if company.present?
+              = company.company_name if @latest_company.present?
       .card
         .side_bar-profile_card_image
-          = image_tag card.image.card if card.present?
+          = image_tag card.image.card if @latest_card.present?
   .navs
     .side_bar-menu
       %ul.nav.menu#js-nav
@@ -23,7 +23,7 @@
             %span
               フィード
         %li.side_bar-linked_menu_item.title-menu
-          = link_to message_link_users_path, class: "link-component" do
+          = link_to users_path, class: "link-component" do
             %i.fe.fe-message
             %span
               メッセージ
@@ -80,3 +80,4 @@
                       ラベル作成
                     %span.num
                       0
+

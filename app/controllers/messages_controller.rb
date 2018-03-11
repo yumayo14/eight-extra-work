@@ -11,7 +11,11 @@ class MessagesController < ApplicationController
 
     @follower_company = @follower.companies.last
 
-    room_messages = Message.where(receive_user_id: @follower.id, user_id: current_user.id) | (Message.where(receive_user_id: current_user.id, user_id: @follower.id))
+    my_send_messages = Message.where(receive_user_id: @follower.id, user_id: current_user.id)
+
+    my_received_message = Message.where(receive_user_id: current_user.id, user_id: @follower.id)
+
+    room_messages = my_send_messages | (my_received_message)
 
     @viewed_messages = room_messages.sort{|new_message,old_message| new_message.created_at <=> old_message.created_at}
   end
@@ -21,7 +25,6 @@ class MessagesController < ApplicationController
     @message.save
       if @message.save
         respond_to do |format|
-          format.html
           format.json
         end
       else

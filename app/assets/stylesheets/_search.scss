@@ -71,6 +71,9 @@
     .search_view{
       height: 100%;
       width: 100%;
+      &#my_network_search {
+        display: none;
+      }
       .search-searched_company_list{
         margin-top: 20px;
         .company-company_list{

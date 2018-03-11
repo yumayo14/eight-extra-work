@@ -2,7 +2,7 @@
   .container
     = link_to user_posts_path(current_user.id) do
       %h1.logo-title Eight
-    %form.search-field{action: "/users", method: "get"}
+    %form.search-field{action: "/users/search", method: "get"}
       %input.srh-txt{name: "keyword", type: "text", placeholder: "名前、会社を検索"}
       %button.common-text_button.search-button{type: "submit"}
         %i.fe.fe-search
